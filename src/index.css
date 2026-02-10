@@ -1,0 +1,35 @@
+/* index.css */
+:root {
+  /* Backgrounds */
+  --bg-main: #0f0f1a;       /* purplish black */
+  --bg-section: #141428;    /* section background */
+  --bg-card: #1c1c3a;       /* cards */
+
+  /* Text */
+  --text-primary: #e5e7eb;  /* main text */
+  --text-secondary: #a1a1aa;
+
+  /* Accent */
+  --accent-primary: #8b5cf6;
+
+  /* Borders */
+  --border-color: #2a2a4a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

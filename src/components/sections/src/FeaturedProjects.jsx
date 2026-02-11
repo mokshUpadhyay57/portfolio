@@ -1,4 +1,4 @@
-import "../../sections/styles/Projects.css";
+import "../../sections/styles/FeaturedProjects.css";
 import { Link } from "react-router-dom";
 
 function Projects() {

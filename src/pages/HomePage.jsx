@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./Home.css";
+import "./HomePage.css";
 
 import About from "../components/sections/src/About";
 import Skills from "../components/sections/src/Skills";
-import Projects from "../components/sections/src/Projects";
+import Projects from "../components/sections/src/FeaturedProjects";
 import Contact from "../components/sections/src/Contact";
 
 const roles = [

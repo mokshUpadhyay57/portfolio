@@ -3,13 +3,22 @@
   margin: 0 auto;
 }
 
+.skills.section {
+  padding: 100px 24px;
+}
+
+
 /* TITLE */
 
 .skills-title {
-  font-size: 36px;
-  margin-bottom: 48px;
-  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;       /* ~40px */
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 56px;
+  color: var(--text-primary);
 }
+
 
 /* GRID */
 
@@ -22,30 +31,46 @@
 /* CARD */
 
 .skill-card {
-  padding: 28px;
+  padding: 30px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 14px;
+  transition: transform 0.25s ease, border 0.25s ease;
 }
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+}
+
 
 .skill-card h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;      /* ~18px */
+  font-weight: 700;
+  margin-bottom: 12px;
   color: var(--text-primary);
-  font-weight: 600;
 }
+
 
 .skill-card .tech {
-  font-size: 15px;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.skill-card .desc {
-  font-size: 14px;
-  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;       /* ~14–15px */
+  font-weight: 500;
+  color: var(--accent-primary);
+  margin-bottom: 10px;
   line-height: 1.6;
 }
+
+
+.skill-card .desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;      /* ~15px */
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 
 /* RESPONSIVE */
 

@@ -13,7 +13,7 @@ function Skills() {
           <div className="skill-card">
             <h4>Backend Development</h4>
             <p className="tech">
-              Java · Spring Boot · Spring MVC · JPA · Hibernate · REST APIs
+              Java · Spring Boot · Spring MVC · Hibernate · REST APIs
             </p>
             <p className="desc">
               Backend services, API design, integrations, production fixes.
@@ -33,7 +33,7 @@ function Skills() {
           <div className="skill-card">
             <h4>Web Development</h4>
             <p className="tech">
-              React · JavaScript · Node.js · Express · Django · HTML · CSS
+              React · JavaScript · Node.js · Express · Django
             </p>
             <p className="desc">
               Web apps and API-driven frontend–backend integration.
@@ -53,7 +53,7 @@ function Skills() {
           <div className="skill-card">
             <h4>CI/CD & Version Control</h4>
             <p className="tech">
-              Git · GitHub · GitLab · CI/CD pipelines · Build automation
+              Git · GitHub · GitLab · Build automation
             </p>
             <p className="desc">
               Source control, deployments, and workflow automation.
@@ -63,7 +63,7 @@ function Skills() {
           <div className="skill-card">
             <h4>Engineering Practices</h4>
             <p className="tech">
-              Debugging · Code reviews · Clean code · Performance optimization
+              Debugging · Code reviews · Clean code
             </p>
             <p className="desc">
               Working with real production systems.

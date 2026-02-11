@@ -11,7 +11,7 @@ function Projects() {
 
         {/* FEATURED PROJECTS */}
         <div className="projects-group">
-          <h3>Featured Projects</h3>
+          {/* <h3>Featured Projects</h3> */}
 
           <div className="projects-grid featured">
             <ProjectCard

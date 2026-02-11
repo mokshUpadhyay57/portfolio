@@ -1,7 +1,7 @@
 /* SECTION BASE */
 
 .section {
-  padding: 100px 32px;
+  padding: 60px 32px;
   max-width: 1200px;
   margin: auto;
 }
@@ -21,11 +21,36 @@
 
 /* LEFT SIDE */
 
-.hero-intro {
-  color: var(--text-secondary);
-  font-size: 14px;
-  letter-spacing: 1px;
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1.2;
 }
+
+.hero-role {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--accent-primary);
+  margin-top: 0.5rem;
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 1.2rem;
+  max-width: 500px;
+}
+
+.hero-intro {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 
 .hero h1 {
   font-size: 52px;

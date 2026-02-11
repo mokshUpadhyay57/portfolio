@@ -6,7 +6,6 @@ import Skills from "../components/sections/src/Skills";
 import Projects from "../components/sections/src/Projects";
 import Contact from "../components/sections/src/Contact";
 
-
 const roles = [
   {
     title: "Java Backend Engineer",
@@ -30,34 +29,30 @@ function Home() {
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
-    const currentLine =
-      lineIndex === 0
-        ? `> ${currentRole.title}`
-        : `> ${currentRole.subtitle}`;
+    const lines = [`> ${currentRole.title}`, `> ${currentRole.subtitle}`];
 
-    const typingInterval = setInterval(() => {
-      setDisplayText(currentLine.slice(0, charIndex));
-      setCharIndex((prev) => prev + 1);
+    let timeout;
 
-      if (charIndex > currentLine.length) {
-        clearInterval(typingInterval);
-
+    const typeLine = (line, i = 0) => {
+      if (i <= line.length) {
+        setDisplayText(line.slice(0, i));
+        timeout = setTimeout(() => typeLine(line, i + 1), 70);
+      } else {
         setTimeout(() => {
           if (lineIndex === 0) {
             setLineIndex(1);
-            setCharIndex(0);
           } else {
             setLineIndex(0);
-            setCharIndex(0);
-            setDisplayText("");
             setRoleIndex((prev) => (prev + 1) % roles.length);
           }
-        }, 1600);
+        }, 1400);
       }
-    }, 80);
+    };
 
-    return () => clearInterval(typingInterval);
-  }, [charIndex, lineIndex, roleIndex]);
+    typeLine(lines[lineIndex]);
+
+    return () => clearTimeout(timeout);
+  }, [roleIndex, lineIndex]);
 
   return (
     <>
@@ -67,13 +62,13 @@ function Home() {
         <div className="hero-left">
           <span className="hero-intro">Hi, I’m</span>
 
-          <h1>
+          <h1 className="hero-title">
             Moksh <span className="accent">Upadhyay</span>
           </h1>
 
-          <h2>Java Backend Engineer</h2>
+          <h2 className="hero-role">Java Backend Engineer</h2>
 
-          <p>
+          <p className="hero-description">
             I design and build scalable backend systems, REST APIs, and
             full-stack applications using Java, Spring Boot, and modern
             technologies.

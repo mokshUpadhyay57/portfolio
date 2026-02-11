@@ -3,19 +3,29 @@
   margin: 0 auto;
 }
 
+.projects.section {
+  padding: 70px 24px;
+}
+
+
 /* TITLE */
 
 .projects-title {
-  font-size: 36px;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;      /* ~40px */
+  font-weight: 800;
+  line-height: 1.2;
   margin-bottom: 56px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
+
+
 
 /* GROUPS */
 
-.projects-group {
+/* .projects-group {
   margin-bottom: 72px;
-}
+} */
 
 .projects-group h3 {
   font-size: 20px;
@@ -76,27 +86,35 @@
 }
 
 .project-placeholder-title {
-  font-size: 16px;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;      /* ~18px */
+  font-weight: 700;
   color: var(--text-primary);
   text-align: center;
   padding: 0 16px;
-  line-height: 1.4;
+  line-height: 1.3;
 }
+
 
 /* TEXT */
 
 .project-desc {
-  font-size: 15px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;      /* ~15px */
+  font-weight: 400;
+  line-height: 1.7;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .project-tech {
-  font-size: 14px;
-  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;      /* ~13–14px */
+  font-weight: 500;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
 }
+
 
 /* ACTION BUTTONS */
 
@@ -109,15 +127,23 @@
 
 .project-actions a,
 .project-actions .disabled {
-  font-size: 13px;
-  padding: 6px 12px;
-  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 8px;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   text-decoration: none;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
+
+.project-actions a:first-child {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
 
 .project-actions a:hover {
   border-color: var(--accent-primary);

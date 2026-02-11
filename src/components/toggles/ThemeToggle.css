@@ -1,0 +1,33 @@
+.toggle-wrapper {
+  cursor: pointer;
+}
+
+.toggle-switch {
+  width: 52px;
+  height: 26px;
+  background-color: #1c1c3a;
+  border-radius: 50px;
+  position: relative;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+
+.toggle-switch.light {
+  background-color: #e5e7eb;
+}
+
+.toggle-circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch.light .toggle-circle {
+  transform: translateX(26px);
+}

@@ -1,5 +1,5 @@
 import "../../sections/styles/Projects.css";
-
+import { Link } from "react-router-dom";
 
 function Projects() {
   return (
@@ -18,31 +18,35 @@ function Projects() {
               title="Pet Care & Aid"
               desc="Mobile application for pet owners with care utilities, e-commerce features, and integrated payments."
               tech="Flutter · Firebase · Payments"
-              github="https://github.com/yourusername/pet-care"
-              android="https://play.google.com/store/apps/details?id=petcare"
+              github="https://github.com/mokshUpadhyay57/PetCareApp"
             />
 
             <ProjectCard
               title="Bizzare E-commerce"
               desc="Full-stack e-commerce platform with product management, checkout flow, and secure transactions."
               tech="Django · JavaScript · HTML · CSS · SQLite"
-              github="https://github.com/yourusername/bizzare"
-              website="https://bizzare.store"
+              github="https://github.com/mokshUpadhyay57/BizarreEcom"
+            />
+            <ProjectCard
+              title="Lockify"
+              desc="Mobile application focused on authentication workflows."
+              tech="Flutter · Firebase · Netlify"
+              github="https://github.com/mokshUpadhyay57/LockifyFrontend"
             />
 
-            <ProjectCard
+            {/* <ProjectCard
               title="Online Bookstore Backend"
               desc="Backend system focused on APIs, data handling, and backend architecture."
               tech="Spring · REST APIs · SQL"
               comingSoon
-            />
+            /> */}
 
-            <ProjectCard
+            {/* <ProjectCard
               title="Payroll Batch Processor"
               desc="Batch processing application for payroll calculation and scheduled jobs."
               tech="Spring Boot · Spring Batch · SQL"
               comingSoon
-            />
+            /> */}
           </div>
         </div>
 
@@ -91,17 +95,25 @@ function Projects() {
           </div>
         </div> */}
       </div>
-       {/* <div className="home-project-cta">
-        <Link to="/projects" className="cta-btn outline">
-          View All Projects
+      <div className="projects-more">
+        <Link to="/project" className="projects-more-link">
+          View More Projects →
         </Link>
-      </div> */}
+      </div>
     </section>
   );
 }
 
 /* REUSABLE PROJECT CARD */
-function ProjectCard({ title, desc, tech, github, website, android, comingSoon }) {
+function ProjectCard({
+  title,
+  desc,
+  tech,
+  github,
+  website = "",
+  android = "",
+  comingSoon,
+}) {
   return (
     <div className="project-card">
       <div className="project-image default">

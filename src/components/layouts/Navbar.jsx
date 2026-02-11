@@ -1,15 +1,6 @@
 import "./Navbar.css";
-
-
-const handleProjectsClick = () => {
-  if (window.location.pathname === "/") {
-    document
-      .getElementById("projects")
-      ?.scrollIntoView({ behavior: "smooth" });
-  } else {
-    window.location.href = "/#projects";
-  }
-};
+import ThemeToggle from "../toggles/ThemeToggle";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -19,15 +10,46 @@ function Navbar() {
         <span className="brand-accent">codes</span>
       </div>
 
-      
-
       <ul className="navbar-menu">
-        <li className="nav-item active">Home</li>
-        <li className="nav-item" onClick={handleProjectsClick}>Projects</li>
-        <li className="nav-item">Services</li>
-        <li className="nav-item">Contact</li>
-        <li className="nav-cta">Hire Me</li>
-      </ul>
+  <li className="nav-item">
+    <NavLink to="/" end className={({ isActive }) =>
+      isActive ? "active" : ""
+    }>
+      Home
+    </NavLink>
+  </li>
+
+  <li className="nav-item">
+    <NavLink to="/projects" className={({ isActive }) =>
+      isActive ? "active" : ""
+    }>
+      Projects
+    </NavLink>
+  </li>
+
+  <li className="nav-item">
+    <NavLink to="/services" className={({ isActive }) =>
+      isActive ? "active" : ""
+    }>
+      Services
+    </NavLink>
+  </li>
+
+  <li className="nav-item">
+    <NavLink to="/contact" className={({ isActive }) =>
+      isActive ? "active" : ""
+    }>
+      Contact
+    </NavLink>
+  </li>
+
+  <li className="nav-cta">Hire Me</li>
+
+  <li className="nav-toggle">
+    <ThemeToggle />
+  </li>
+</ul>
+
     </nav>
   );
 }

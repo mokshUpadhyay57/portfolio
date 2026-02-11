@@ -25,7 +25,6 @@ function Home() {
   const [displayText, setDisplayText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [lineIndex, setLineIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -88,7 +87,6 @@ function Home() {
         </div>
       </section>
 
-      {/* PLACEHOLDER SECTIONS */}
       <About />
 
       <Skills />

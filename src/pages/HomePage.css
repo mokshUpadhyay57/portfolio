@@ -55,8 +55,9 @@
 .hero h1 {
   font-size: 52px;
   margin: 12px 0;
-  color: #ffffff;
+  color: var(--text-primary);
 }
+
 
 .hero h2 {
   font-size: 24px;
@@ -102,7 +103,7 @@
 
 .btn.primary {
   background-color: var(--accent-primary);
-  color: #ffffff;
+  color: var(--bg-main);
 }
 
 .btn.primary:hover {
@@ -139,7 +140,7 @@
 }
 
 .terminal {
-  background-color: #0b0b16;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 24px;
@@ -148,7 +149,8 @@
   min-height: 220px;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 24px rgba(139, 92, 246, 0.08);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent-primary) 20%, transparent);
+
 }
 
 .terminal pre {

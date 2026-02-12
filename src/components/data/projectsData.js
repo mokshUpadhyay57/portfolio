@@ -74,7 +74,7 @@ const projects = [
       "Secure payment integration",
       "Realtime database syncing"
     ],
-    github: "https://github.com/yourusername/lockify-app",
+    github: "https://github.com/mokshupadhyay57/LockifyFrontend",
     images: []
   },
 
@@ -165,7 +165,7 @@ const projects = [
       "HTML",
       "CSS"
     ],
-    github: "https://github.com/yourusername/xcom",
+    github: "https://github.com/mokshUpadhyay57/Xcom-Django-Summer-Training-Project",
     images: []
   },
 
@@ -183,7 +183,7 @@ const projects = [
       "HTML5",
       "CSS3"
     ],
-    github: "https://github.com/yourusername/textwizard",
+    github: "https://github.com/mokshUpadhyay57/TextWizard",
     images: []
   }
 

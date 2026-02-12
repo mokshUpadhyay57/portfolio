@@ -1,21 +1,24 @@
-import React from "react";
 import "../styles/ProjectCard.css";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="flip-card">
-  <div className="flip-card-inner">
+    <div className="project-tile">
+      <h3 className="project-title">{project.title}</h3>
 
-    {/* FRONT */}
-    <div className="flip-card-front">
-      <h3>{project.title}</h3>
-      <p>{project.description}</p>
-    </div>
+      <div className="project-tags">
+        {project.category.map((tag, index) => (
+          <span key={index} className="project-tag">
+            {tag}
+          </span>
+        ))}
+      </div>
 
-    {/* BACK */}
-    <div className="flip-card-back">
+      <p className="project-desc">{project.description}</p>
+
+      {/* <p>{project.features.length > 0 ? `Features: ${project.features.slice(0, 3).join(', ')}` : ''}</p> */}
+
       <div className="tech-stack">
-        {project.tech.map((item, index) => (
+        {project.tech.slice(0, 5).map((item, index) => (
           <span key={index} className="tech-badge">
             {item}
           </span>
@@ -28,13 +31,9 @@ const ProjectCard = ({ project }) => {
         rel="noreferrer"
         className="github-btn"
       >
-        View Code
+        View Repository →
       </a>
     </div>
-
-  </div>
-</div>
-
   );
 };
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import "./HomePage.css";
+import { Link } from "react-router-dom";
 
 import About from "../components/sections/src/About";
 import Skills from "../components/sections/src/Skills";
-import Projects from "../components/sections/src/FeaturedProjects";
+import FeaturedProjects from "../components/sections/src/FeaturedProjects";
 import Contact from "../components/sections/src/Contact";
 
 const roles = [
@@ -74,7 +75,7 @@ function Home() {
           </p>
 
           <div className="hero-actions">
-            <button className="btn primary">View Projects</button>
+              <Link to="/projects"><button className="btn primary">View Projects</button></Link>
             <button className="btn outline">Hire Me</button>
           </div>
         </div>
@@ -91,7 +92,7 @@ function Home() {
 
       <Skills />
 
-      <Projects />
+      <FeaturedProjects />
 
       <Contact />
     </>

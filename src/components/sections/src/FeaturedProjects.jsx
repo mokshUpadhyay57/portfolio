@@ -1,7 +1,7 @@
 import "../../sections/styles/FeaturedProjects.css";
 import { Link } from "react-router-dom";
 
-function Projects() {
+function FeaturedProjects() {
   return (
     <section className="projects section light" id="projects">
       <div className="projects-container">
@@ -96,7 +96,7 @@ function Projects() {
         </div> */}
       </div>
       <div className="projects-more">
-        <Link to="/project" className="projects-more-link">
+        <Link to="/projects" className="projects-more-link">
           View More Projects →
         </Link>
       </div>
@@ -151,4 +151,4 @@ function ProjectCard({
   );
 }
 
-export default Projects;
+export default FeaturedProjects;

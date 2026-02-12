@@ -1,33 +1,36 @@
-.toggle-wrapper {
-  cursor: pointer;
-}
-
-.toggle-switch {
-  width: 52px;
-  height: 26px;
-  background-color: #1c1c3a;
-  border-radius: 50px;
-  position: relative;
-  transition: background-color 0.3s ease;
-  border: 1px solid var(--border-color);
+.theme-toggle {
   display: flex;
   align-items: center;
-  padding: 3px;
+  gap: 16px;
 }
 
-.toggle-switch.light {
-  background-color: #e5e7eb;
+/* Base icon */
+.icon {
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  opacity: 0.35;
 }
 
-.toggle-circle {
-  width: 20px;
-  height: 20px;
-  background-color: var(--accent-primary);
-  box-shadow: 0 0 8px var(--accent-primary);
-  border-radius: 50%;
-  transition: transform 0.3s ease;
+/* Vibrant colors */
+.sun {
+  color: #f59e0b;   /* amber-500 */
 }
 
-.toggle-switch.light .toggle-circle {
-  transform: translateX(26px);
+.moon {
+  color: #3b82f6;
+}
+
+/* Active state */
+.icon.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Subtle glow for active */
+.sun.active {
+  filter: drop-shadow(0 0 6px #ff6a00);
+}
+
+.moon.active {
+  filter: drop-shadow(0 0 6px #3b82f6);
 }

@@ -2,7 +2,7 @@ import "./Navbar.css";
 import ThemeToggle from "../toggles/ThemeToggle";
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({darkMode, setDarkMode }) {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -46,7 +46,7 @@ function Navbar() {
   <li className="nav-cta">Hire Me</li>
 
   <li className="nav-toggle">
-    <ThemeToggle />
+    <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
   </li>
 </ul>
 

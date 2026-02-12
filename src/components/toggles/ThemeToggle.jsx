@@ -1,17 +1,24 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+import { Sun, Moon } from "lucide-react";
 import "./ThemeToggle.css";
 
-const ThemeToggle = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-
+function ThemeToggle({ darkMode, setDarkMode }) {
   return (
-    <div className="toggle-wrapper" onClick={toggleTheme}>
-      <div className={`toggle-switch ${theme === "light" ? "light" : ""}`}>
-        <div className="toggle-circle" />
-      </div>
+    <div className="theme-toggle">
+      <Sun
+        size={24}
+        strokeWidth={2}
+        className={`icon sun ${!darkMode ? "active" : ""}`}
+        onClick={() => setDarkMode(false)}
+      />
+
+      <Moon
+        size={24}
+        strokeWidth={2}
+        className={`icon moon ${darkMode ? "active" : ""}`}
+        onClick={() => setDarkMode(true)}
+      />
     </div>
   );
-};
+}
 
 export default ThemeToggle;

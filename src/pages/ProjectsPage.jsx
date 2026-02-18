@@ -17,7 +17,7 @@ const ProjectsPage = () => {
   </div>
 
   <div className="stat-card">
-    <h3>Java & Spring</h3>
+    <h3>Java & SpringBoot</h3>
     <span>Primary Focus</span>
   </div>
 

@@ -31,12 +31,12 @@ function About() {
           </p>
 
           <p>
-  During my internship, I worked on OCR system improvement by preparing
-  structured training datasets and refining Tesseract-based text recognition
-  workflows. I also collaborated on creating image datasets for YOLO model
-  training, contributing to better detection accuracy and document
-  digitization performance.
-</p>
+            During my internship, I worked on OCR system improvement by
+            preparing structured training datasets and refining Tesseract-based
+            text recognition workflows. I also collaborated on creating image
+            datasets for YOLO model training, contributing to better detection
+            accuracy and document digitization performance.
+          </p>
 
           <p>
             My core strength is Java backend engineering; however, I also build

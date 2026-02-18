@@ -3,7 +3,7 @@
 /* ===================================================== */
 
 .project-tile {
-  background: var(--bg-card);
+  background: var(--bg-section);
   border: 1px solid var(--border-color);
   border-radius: 18px;
   padding: 28px;
@@ -23,8 +23,7 @@
 /* ================= TOP ROW ================= */
 
 .project-title {
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.3rem;
   color: var(--text-primary);
   line-height: 1.4;
 }

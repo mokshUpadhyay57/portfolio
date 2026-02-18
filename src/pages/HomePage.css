@@ -103,13 +103,11 @@
 
 .btn.primary {
   background-color: var(--accent-primary);
-  color: var(--bg-main);
+  color: #ffffff;
 }
 
 .btn.primary:hover {
-  box-shadow:
-    0 0 12px rgba(139, 92, 246, 0.6),
-    0 0 24px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent-primary) 35%, transparent);
   transform: translateY(-1px);
 }
 

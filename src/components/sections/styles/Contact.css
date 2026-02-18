@@ -9,7 +9,7 @@
 .contact-title {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--text-primary); /* Ensure text color follows theme */
 }
 
 /* INTRO */
@@ -17,62 +17,12 @@
 .contact-intro {
   font-size: 16px;
   color: var(--text-secondary);
-  margin-bottom: 40px;
+  margin-bottom: 32px; /* Increased margin */
 }
 
-/* FORM */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 32px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px 14px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-card);
-  color: var(--text-primary);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: var(--text-secondary);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-}
-
-/* BUTTON */
-
-.contact-btn.primary {
-  margin-top: 10px;
-  background-color: var(--accent-primary);
-  color: #ffffff;
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.contact-btn.primary:hover {
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.45);
-  transform: translateY(-1px);
-}
-
-/* STATUS */
-
-.form-status {
-  font-size: 13px;
-  color: var(--text-secondary);
+/* New redirect button style */
+.contact-redirect-btn {
+  margin-bottom: 40px; /* Space between button and platforms */
 }
 
 /* PLATFORMS */
@@ -82,17 +32,30 @@
   color: var(--text-secondary);
   display: flex;
   justify-content: center;
+  align-items: center; /* Align items vertically */
   gap: 14px;
   flex-wrap: wrap;
+  border-top: 1px solid var(--border-color); /* Add a separator */
+  padding-top: 32px; /* Space above platforms */
+  margin-top: 40px; /* Space below button */
 }
 
-.contact-platforms a {
-  color: var(--text-primary);
+.platform-link {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  font-weight: 500;
   text-decoration: none;
+  transition: all 0.25s ease;
 }
 
-.contact-platforms a:hover {
+.platform-link:hover {
+  border-color: var(--accent-primary);
   color: var(--accent-primary);
+  transform: translateY(-1px);
 }
 
 /* RESPONSIVE */

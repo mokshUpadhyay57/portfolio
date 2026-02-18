@@ -20,6 +20,13 @@
   --font-heading: 'Manrope', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover:
+    0 14px 35px rgba(0, 0, 0, 0.6),
+    0 30px 70px rgba(0, 0, 0, 0.75);
+
+  --icon-subtle: rgba(255, 255, 255, 0.4); /* Subtle white for dark theme icons */
 }
 
 [data-theme="light"] {
@@ -37,6 +44,11 @@
 
   /* Borders */
   --border-color: #e5e7eb;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover:
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.12);
+  --icon-subtle: rgba(0, 0, 0, 0.4); /* Subtle black for light theme icons */
 }
 
 

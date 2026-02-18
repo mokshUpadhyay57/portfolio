@@ -3,21 +3,17 @@ import "./ThemeToggle.css";
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
-    <div className="theme-toggle">
-      <Sun
-        size={24}
-        strokeWidth={2}
-        className={`icon sun ${!darkMode ? "active" : ""}`}
-        onClick={() => setDarkMode(false)}
+    <label className="switch">
+      <input
+        type="checkbox"
+        checked={darkMode}
+        onChange={() => setDarkMode(!darkMode)}
       />
-
-      <Moon
-        size={24}
-        strokeWidth={2}
-        className={`icon moon ${darkMode ? "active" : ""}`}
-        onClick={() => setDarkMode(true)}
-      />
-    </div>
+      <span className="slider round">
+        <Sun size={16} strokeWidth={2} className="slider-icon sun-to-light-icon" />
+        <Moon size={16} strokeWidth={2} className="slider-icon moon-to-dark-icon" />
+      </span>
+    </label>
   );
 }
 

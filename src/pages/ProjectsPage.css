@@ -3,7 +3,7 @@
 /* ===================================================== */
 
 .projects-page {
-  padding: 100px 8%;
+  padding: 65px 8%;
   min-height: 100vh;
   background: var(--bg-main);
   color: var(--text-primary);
@@ -13,7 +13,7 @@
 
 .projects-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 55px;
 }
 
 .projects-header h1 {
@@ -24,7 +24,7 @@
 
 .projects-header p {
   max-width: 650px;
-  margin: 12px auto 0;
+  margin: 12px auto;
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -35,12 +35,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
-  margin-bottom: 90px;
+  margin-bottom: 50px;
 }
 
 .stat-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: var(--bg-section);
   border-radius: 16px;
   padding: 24px;
   text-align: center;

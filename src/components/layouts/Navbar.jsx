@@ -1,8 +1,20 @@
+import { useState } from "react";
 import "./Navbar.css";
 import ThemeToggle from "../toggles/ThemeToggle";
 import { NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
-function Navbar({darkMode, setDarkMode }) {
+function Navbar({ darkMode, setDarkMode }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -10,46 +22,51 @@ function Navbar({darkMode, setDarkMode }) {
         <span className="brand-accent">codes</span>
       </div>
 
-      <ul className="navbar-menu">
-  <li className="nav-item">
-    <NavLink to="/" end className={({ isActive }) =>
-      isActive ? "active" : ""
-    }>
-      Home
-    </NavLink>
-  </li>
+      <div className="navbar-right-section">
+        <ul className="navbar-links">
+          <li className="nav-item">
+            <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Home</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/projects" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Projects</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/services" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Services</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Contact</NavLink>
+          </li>
+        </ul>
+        <div className="nav-cta">Hire Me</div>
+        <div className="nav-toggle">
+          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+        </div>
+        <div className="hamburger-menu" onClick={toggleMobileMenu}>
+          <Menu size={28} />
+        </div>
+      </div>
 
-  <li className="nav-item">
-    <NavLink to="/projects" className={({ isActive }) =>
-      isActive ? "active" : ""
-    }>
-      Projects
-    </NavLink>
-  </li>
-
-  <li className="nav-item">
-    <NavLink to="/services" className={({ isActive }) =>
-      isActive ? "active" : ""
-    }>
-      Services
-    </NavLink>
-  </li>
-
-  <li className="nav-item">
-    <NavLink to="/contact" className={({ isActive }) =>
-      isActive ? "active" : ""
-    }>
-      Contact
-    </NavLink>
-  </li>
-
-  <li className="nav-cta">Hire Me</li>
-
-  <li className="nav-toggle">
-    <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-  </li>
-</ul>
-
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <ul className="navbar-menu-overlay">
+          <li className="close-menu-button" onClick={closeMobileMenu}>
+            <X size={32} />
+          </li>
+          {/* Mobile menu links */}
+          <li className="nav-item">
+            <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Home</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/projects" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Projects</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/services" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Services</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Contact</NavLink>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 }

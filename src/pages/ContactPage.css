@@ -1,0 +1,204 @@
+/* =========================
+   Contact Page Layout
+========================= */
+
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 4rem;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 80vh; /* Ensure it takes up significant screen height */
+}
+
+.contact-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Two columns */
+  gap: 4rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* =========================
+   Left Column: Info
+========================= */
+
+.contact-info {
+  text-align: left; /* Ensure all text is left-aligned */
+  padding-right: 2rem; /* Add some padding to the right for visual separation */
+}
+
+.contact-info h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.contact-info p {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.contact-item svg {
+  color: var(--accent-primary);
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all 0.25s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Right Column: Form
+========================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--bg-section); /* Slightly different background for inputs */
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.contact-form .btn.primary {
+  margin-top: 1rem;
+}
+
+/* =========================
+   Button Styles
+========================= */
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn.primary {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent-primary) 35%, transparent);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+/* =========================
+   Responsive Styles
+========================= */
+
+@media (max-width: 900px) {
+  .contact-grid-container {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    gap: 3rem;
+  }
+
+  .contact-info {
+    text-align: center; /* Center align info on mobile */
+    padding-right: 0; /* Remove right padding on mobile */
+  }
+
+  .contact-details {
+    align-items: center; /* Center align items in mobile */
+  }
+  
+  .social-links {
+    justify-content: center; /* Center social links on mobile */
+  }
+
+  .contact-info h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-form {
+    padding: 2rem;
+  }
+}

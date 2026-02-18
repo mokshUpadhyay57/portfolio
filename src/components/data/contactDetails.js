@@ -4,13 +4,28 @@ export const contactDetails = {
   social: [
     {
       name: 'GitHub',
-      url: 'https://github.com/yourusername',
-      icon: 'Github' // Corresponding Lucide React icon name
+      url: 'https://github.com/mokshupadhyay57',
+      icon: 'Github'
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/yourusername',
-      icon: 'Linkedin' // Corresponding Lucide React icon name
+      icon: 'Linkedin'
+    },
+    {
+      name: 'Upwork',
+      url: 'https://www.upwork.com/freelancers/yourusername',
+      icon: 'Briefcase'
+    },
+    {
+      name: 'Fiverr',
+      url: 'https://www.fiverr.com/yourusername',
+      icon: 'CircleDollarSign'
+    },
+    {
+      name: 'Freelancer',
+      url: 'https://yourfreelanceprofile.com',
+      icon: 'Globe'
     }
   ],
   freelancePlatforms: [

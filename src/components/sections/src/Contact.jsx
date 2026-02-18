@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../../sections/styles/Contact.css";
+import { contactDetails } from "../../data/contactDetails";
 
 function Contact() {
   return (
@@ -20,30 +21,17 @@ function Contact() {
         {/* OTHER OPTIONS */}
         <div className="contact-platforms">
           <span>Or find me on:</span>
-          <a
-            href="https://www.upwork.com/freelancers/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="platform-link"
-          >
-            Upwork
-          </a>
-          <a
-            href="https://www.fiverr.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="platform-link"
-          >
-            Fiverr
-          </a>
-          <a
-            href="https://yourfreelanceprofile.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="platform-link"
-          >
-            Freelancer
-          </a>
+          {contactDetails.freelancePlatforms.map((platform, index) => (
+            <a
+              key={index}
+              href={platform.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="platform-link"
+            >
+              {platform.name}
+            </a>
+          ))}
         </div>
       </div>
     </section>

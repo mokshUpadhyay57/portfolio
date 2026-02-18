@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./Navbar.css";
 import ThemeToggle from "../toggles/ThemeToggle";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
-function Navbar({ darkMode, setDarkMode }) {
+function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -37,9 +37,11 @@ function Navbar({ darkMode, setDarkMode }) {
             <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Contact</NavLink>
           </li>
         </ul>
-        <div className="nav-cta">Hire Me</div>
+        <Link to="/contact" className="nav-cta" onClick={closeMobileMenu}>
+          Hire Me
+        </Link>
         <div className="nav-toggle">
-          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+          <ThemeToggle />
         </div>
         <div className="hamburger-menu" onClick={toggleMobileMenu}>
           <Menu size={28} />

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import './App.css'
 import Navbar from './components/layouts/Navbar.jsx'
 import Home from './pages/HomePage.jsx'
@@ -8,19 +7,9 @@ import ContactPage from "./pages/ContactPage.jsx";
 import { Routes, Route } from "react-router-dom";       
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
-
-  useEffect(() => {
-  document.documentElement.setAttribute(
-    "data-theme",
-    darkMode ? "dark" : "light"
-  );
-}, [darkMode]);
-
-
   return (
     <>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

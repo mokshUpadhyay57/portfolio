@@ -1,7 +1,10 @@
 import projects from "../components/data/projectsdata";
 import ProjectCard from "../components/sections/src/ProjectCard";
+import useTitle from "../hooks/useTitle";
 import "./ProjectsPage.css";
+
 const ProjectsPage = () => {
+  useTitle("Projects");
   
   return (
     <div className="projects-page">

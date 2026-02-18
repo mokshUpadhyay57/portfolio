@@ -3,30 +3,52 @@
 /* ===================================================== */
 
 .projects-page {
-  padding: 65px 8%;
+  padding: 6rem 8%;
   min-height: 100vh;
   background: var(--bg-main);
   color: var(--text-primary);
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* ================= HEADER ================= */
 
 .projects-header {
-  text-align: center;
-  margin-bottom: 55px;
+  text-align: left;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .projects-header h1 {
-  font-size: 2.6rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
+  line-height: 1.2; /* Increased from 1.1 to prevent clipping */
+  margin-bottom: 1.5rem;
   color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* Added padding to prevent descender clipping */
+  padding-right: 5px;  /* Added padding to prevent side-bearing clipping */
+}
+
+.projects-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-primary);
+  border-radius: 2px;
 }
 
 .projects-header p {
-  max-width: 650px;
-  margin: 12px auto;
+  max-width: 600px;
+  margin: 1.5rem 0;
   color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 /* ================= STATS ================= */
@@ -34,49 +56,91 @@
 .projects-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .stat-card {
-  background: var(--bg-section);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-  transition: 0.3s ease;
+  background: color-mix(in srgb, var(--bg-section) 70%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--card-shadow);
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 .stat-card:hover {
+  transform: translateY(-5px);
   border-color: var(--accent-primary);
+  box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.3);
+  background: color-mix(in srgb, var(--bg-section) 90%, transparent);
 }
 
 .stat-card h3 {
-  font-size: 1.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
   color: var(--accent-primary);
-  margin-bottom: 6px;
+  margin-bottom: 0.25rem;
 }
 
 .stat-card span {
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 0.85rem;
   color: var(--text-secondary);
-}
-
-/* ================= SECTIONS ================= */
-
-.project-section {
-  margin-bottom: 100px;
-}
-
-.project-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 35px;
-  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* ================= GRID ================= */
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 4rem 1.5rem;
+  }
+
+  .projects-header {
+    text-align: center;
+  }
+
+  .projects-header h1::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }

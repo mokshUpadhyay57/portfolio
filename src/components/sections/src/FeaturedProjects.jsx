@@ -33,6 +33,13 @@ function FeaturedProjects() {
               tech="Flutter · Firebase · Netlify"
               github="https://github.com/mokshUpadhyay57/LockifyFrontend"
             />
+            <ProjectCard
+              title="TextWizard"
+              desc="Lightweight web utility for text manipulation."
+              tech="React · JavaScript · CSS"
+              github="https://github.com/mokshupadhyay57/textwizard"
+              website="https://txtwiz.netlify.app"
+            />
 
             {/* <ProjectCard
               title="Online Bookstore Backend"
@@ -81,7 +88,8 @@ function FeaturedProjects() {
         </div> */}
 
         {/* MINI PROJECTS */}
-        {/* <div className="projects-group mini">
+        {/* <div className="projects-group featured">
+        
           <h3>Mini Projects</h3>
 
           <div className="projects-grid mini">
@@ -122,7 +130,14 @@ function ProjectCard({
       </div>
 
       <p className="project-desc">{desc}</p>
-      <p className="project-tech">{tech}</p>
+      
+      <div className="tech-stack">
+        {tech.split(" · ").map((item, index) => (
+          <span key={index} className="tech-badge">
+            {item}
+          </span>
+        ))}
+      </div>
 
       <div className="project-actions">
         {github && (

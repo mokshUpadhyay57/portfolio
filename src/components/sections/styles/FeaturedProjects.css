@@ -1,6 +1,6 @@
 .projects-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 20px;
 }
 
 .projects.section {
@@ -12,20 +12,43 @@
 
 .projects-title {
   font-family: var(--font-heading);
-  font-size: 2.5rem;      /* ~40px */
+  font-size: clamp(2.2rem, 5vw, 3rem);
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 56px;
+  margin-bottom: 4rem;
   color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+.projects-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
 
 /* GROUPS */
-
-/* .projects-group {
-  margin-bottom: 72px;
-} */
 
 .projects-group h3 {
   font-size: 20px;
@@ -38,7 +61,7 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 20px;
 }
 
 .projects-grid.mini {
@@ -50,15 +73,23 @@
 
 .project-card {
   padding: 24px;
-  background-color: var(--bg-card);
+  background-color: color-mix(in srgb, var(--bg-section) 70%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--card-shadow-hover);
+  background: color-mix(in srgb, var(--bg-section) 95%, transparent);
 }
 
 
@@ -66,18 +97,18 @@
 
 .project-image.default {
   height: 180px;
-  border-radius: 10px;
+  border-radius: 12px;
   background: linear-gradient(
-  135deg,
-  var(--bg-section),
-  var(--bg-card)
-);
+    135deg,
+    color-mix(in srgb, var(--accent-primary) 15%, transparent),
+    color-mix(in srgb, var(--accent-primary) 8%, transparent)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-bottom: 16px;
-  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+  border: 1px solid color-mix(in srgb, var(--border-color) 50%, transparent);
 }
 
 .project-image.default::before {
@@ -120,13 +151,39 @@
   margin-bottom: 8px;
 }
 
+/* TECH BADGES */
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 12px;
+}
+
+.tech-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--text-primary) 5%, transparent);
+  color: var(--text-secondary);
+  border: 1px solid color-mix(in srgb, var(--border-color) 50%, transparent);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .tech-badge {
+  border-color: color-mix(in srgb, var(--accent-primary) 30%, transparent);
+  color: var(--text-primary);
+}
+
 
 /* ACTION BUTTONS */
 
 .project-actions {
   display: flex;
   gap: 14px;
-  margin-top: 16px;
+  margin-top: auto;
+  padding-top: 16px;
   flex-wrap: wrap;
 }
 
@@ -153,7 +210,7 @@
 .project-actions a:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-primary) 25%, transparent);
 }
 
 .project-actions .disabled {

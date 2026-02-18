@@ -2,7 +2,7 @@
 
 export const servicesData = [
  {
-  title: "Backend API Development",
+  title: "Backend Development",
   subtitle: "Secure and scalable backend systems.",
   idealFor: "Startups and growing businesses building scalable apps.",
   included: [
@@ -20,14 +20,14 @@ export const servicesData = [
   cta: "Discuss Backend Project"
 },
   {
-  title: "Android Application Development",
-  subtitle: "Android apps connected to real backend services.",
+  title: "Mobile Development",
+  subtitle: "High-performance Android & iOS applications.",
   idealFor: "Startups & Businesses launching MVPs",
   included: [
-    "Android mobile app",
+    "Native mobile apps",
     "Backend API integration",
     "User authentication",
-    "Play Store ready build"
+    "Store-ready builds"
   ],
   result: [
     "Installable app build",
@@ -41,13 +41,13 @@ export const servicesData = [
 ,
 
  {
-  title: "Web & E-Commerce Development",
+  title: "Web Development",
   subtitle: "Websites, dashboards and e-commerce stores.",
   idealFor: "Businesses needing websites or online platforms",
   included: [
-    "Landing & multi-page websites",
-    "Dashboards with login & roles",
-    "E-commerce stores with payments",
+    "Landing & multi-page sites",
+    "Admin dashboards",
+    "E-commerce & payments",
     "Live deployment"
   ],
   result: [

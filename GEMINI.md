@@ -1,30 +1,31 @@
 # Project Overview
 
-This is a personal portfolio website for Moksh Upadhyay, a Java Backend Engineer and Full Stack Developer. The website showcases his diverse range of projects including backend systems, mobile applications (Flutter/Kotlin), and full-stack web applications.
+This is a personal portfolio website for **Moksh Upadhyay**, a Java Backend Engineer and Full Stack Developer. The website showcases his diverse range of projects including backend systems, mobile applications (Flutter/Kotlin), and full-stack web applications.
 
 **Key Technologies:**
 
-*   **Frontend:** React (v19), Vite, React Router (v7)
-*   **Styling:** Vanilla CSS with CSS Variables for theming (Dark/Light mode)
-*   **State Management:** React `useState` and `useEffect` for basic state and theme persistence.
-*   **Data:** Static data files for projects, services, and contact details.
+*   **Frontend:** React (v19), Vite (v7), React Router (v7)
+*   **Styling:** Vanilla CSS with CSS Variables for theming (Dark/Light mode). Uses `color-mix` for dynamic shadows and highlights.
+*   **State Management:** React `useState` and `useEffect` for basic state; `ThemeContext` for global theme persistence.
+*   **Data:** Static data files for projects, services, and contact details (located in `src/components/data/`).
 
 **Architecture:**
 
 The application is a Single Page Application (SPA) built with React and Vite. It features a component-based architecture organized as follows:
 
-*   **`src/App.jsx`:** The entry point for the React application, handling routing and global theme state.
+*   **`src/App.jsx`:** The main router and layout container.
 *   **`src/pages/`:** Contains the main page components:
-    *   `HomePage.jsx`: Landing page with hero, intro, and featured sections.
-    *   `ProjectsPage.jsx`: Detailed view of all projects.
-    *   `ServicePage.jsx`: Information about services offered.
-    *   `ContactPage.jsx`: Contact form and details.
+    *   `HomePage.jsx`: Landing page with hero (typing animation), intro, and featured sections.
+    *   `ProjectsPage.jsx`: Detailed view of all projects with stats.
+    *   `ServicePage.jsx`: Information about services offered with glassmorphism cards.
+    *   `ContactPage.jsx`: Contact form with success state and dynamic social links.
 *   **`src/components/`:** Reusable components divided into:
     *   `layouts/`: Global layout elements like `Navbar`.
     *   `sections/`: Specific sections used within pages (e.g., `About`, `Skills`, `FeaturedProjects`).
     *   `toggles/`: UI controls like `ThemeToggle`.
     *   `data/`: JavaScript files serving as the "database" for the portfolio's content.
-*   **`src/context/`:** Context providers for global state (e.g., `ThemeContext.jsx`).
+*   **`src/context/`:** Context providers for global state (e.g., `ThemeContext.jsx` for dark/light mode).
+*   **`src/hooks/`:** Custom React hooks (e.g., `useTitle.js` for dynamic document titles).
 
 # Building and Running
 
@@ -64,8 +65,9 @@ Locally previews the production build.
 
 # Development Conventions
 
-*   **Theming:** The application supports dark and light modes using the `data-theme` attribute on the root element and CSS variables defined in `src/index.css`.
-*   **Component Structure:** Each component typically has its own JSX file and an accompanying CSS file (often located in a `styles/` sub-directory or alongside the JSX).
-*   **Data-Driven:** To update projects or services, modify the respective files in `src/components/data/`.
-*   **Routing:** Uses `react-router-dom` for client-side navigation.
-*   **Styling:** Prefers Vanilla CSS for maximum flexibility and performance.
+*   **Theming:** The application supports dark and light modes using the `data-theme` attribute on the root element (`<html>`) and CSS variables defined in `src/index.css`. Theme state is managed globally via `ThemeContext`.
+*   **Component Structure:** Each component typically has its own JSX file and an accompanying CSS file (located in `styles/` sub-directories for sections or alongside the JSX for pages).
+*   **Data-Driven:** To update projects, services, or contact details, modify the respective files in `src/components/data/`.
+*   **Routing:** Uses `react-router-dom` (v7) for client-side navigation.
+*   **Styling:** Prefers Vanilla CSS for maximum flexibility and performance. Modern CSS features like `backdrop-filter` and `color-mix` are used for sophisticated UI effects.
+*   **Dynamic Titles:** Every page component should use the `useTitle` hook to update the browser tab title according to the current view.

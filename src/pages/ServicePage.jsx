@@ -1,11 +1,16 @@
 // src/pages/ServicePage.jsx
 import { Link } from "react-router-dom";
 import { servicesData } from "../components/data/serviceData";
-import useTitle from "../hooks/useTitle";
+import useSEO from "../hooks/useSEO";
 import "./ServicePage.css";
 
 const ServicePage = () => {
-  useTitle("Services");
+  useSEO({
+    title: "Services",
+    description: "Professional software development services by Moksh Upadhyay. Backend development, Mobile app development, and Full Stack solutions.",
+    keywords: "Software Services, Backend Development, Mobile Apps, Full Stack, Hire Java Developer",
+    canonical: "https://moksh.codes/services"
+  });
   // Simple SVG Icons mapping
   const getIcon = (title) => {
     const iconStyle = { width: "28px", height: "28px", color: "var(--accent-primary)" };

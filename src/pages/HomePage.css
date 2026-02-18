@@ -160,6 +160,11 @@
   justify-content: center;
 }
 
+.cta-group {
+  display: flex;
+  gap: 16px;
+}
+
 .btn {
   padding: 12px 24px;
   font-size: 14px;

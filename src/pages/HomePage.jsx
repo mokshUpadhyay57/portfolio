@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
-import useTitle from "../hooks/useTitle";
+import useSEO from "../hooks/useSEO";
 
 import About from "../components/sections/src/About";
 import Skills from "../components/sections/src/Skills";
@@ -28,7 +28,12 @@ const roles = [
 ];
 
 function Home() {
-  useTitle("Home");
+  useSEO({
+    title: "Home",
+    description: "Welcome to the portfolio of Moksh Upadhyay, a Java Backend Engineer and Full Stack Developer. Discover projects, services, and technical expertise.",
+    keywords: "Moksh Upadhyay, Home, Java Backend, Full Stack Developer, Spring Boot, React Portfolio",
+    canonical: "https://moksh.codes/"
+  });
   const [displayText, setDisplayText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -84,10 +89,14 @@ function Home() {
           </p>
 
           <div className="hero-actions">
-              <Link to="/projects"><button className="btn primary">View Projects</button></Link>
-            <Link to="/contact">
-              <button className="btn outline">Hire Me</button>
+            <Link to="/projects">
+              <button className="btn primary">View Projects</button>
             </Link>
+            <div className="cta-group">
+              <Link to="/contact">
+                <button className="btn outline">Hire Me</button>
+              </Link>
+            </div>
           </div>
         </div>
 

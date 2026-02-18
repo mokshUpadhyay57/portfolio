@@ -37,9 +37,14 @@ function Navbar() {
             <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Contact</NavLink>
           </li>
         </ul>
-        <Link to="/contact" className="nav-cta" onClick={closeMobileMenu}>
-          Hire Me
-        </Link>
+        <div className="navbar-cta-group">
+          <Link to="/contact" className="nav-cta" onClick={closeMobileMenu}>
+            Hire Me
+          </Link>
+          <a href="/resume.pdf" download="Moksh_Upadhyay_Resume.pdf" className="nav-cta resume-nav-cta">
+            Resume
+          </a>
+        </div>
         <div className="nav-toggle">
           <ThemeToggle />
         </div>
@@ -71,6 +76,9 @@ function Navbar() {
             <Link to="/contact" className="nav-cta" onClick={closeMobileMenu}>
               Hire Me
             </Link>
+            <a href="/resume.pdf" download="Moksh_Upadhyay_Resume.pdf" className="nav-cta resume-nav-cta" onClick={closeMobileMenu}>
+              Resume
+            </a>
           </li>
         </ul>
       )}

@@ -89,6 +89,12 @@
 }
 
 /* CTA */
+.navbar-cta-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 .nav-cta {
   font-family: var(--font-body);
   font-weight: 600;
@@ -99,12 +105,17 @@
   color: var(--accent-primary);
   cursor: pointer;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .nav-cta:hover {
   background-color: var(--accent-primary);
   color: #ffffff;
   box-shadow: 0 0 18px color-mix(in srgb, var(--accent-primary) 35%, transparent);
+}
+
+.resume-nav-cta {
+  background-color: transparent;
 }
 
 /* Hamburger menu (hidden on desktop) */
@@ -133,7 +144,7 @@
 
   /* Hide desktop links and the main bar CTA on mobile */
   .navbar-links,
-  .navbar-right-section > .nav-cta {
+  .navbar-cta-group {
     display: none;
   }
 
@@ -181,12 +192,18 @@
   /* CTA in mobile menu */
   .mobile-cta-item {
     margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
   }
 
   .mobile-cta-item .nav-cta {
     display: inline-block;
     font-size: 18px;
     padding: 12px 32px;
+    width: 200px;
+    text-align: center;
   }
 
   /* Close button for mobile menu */

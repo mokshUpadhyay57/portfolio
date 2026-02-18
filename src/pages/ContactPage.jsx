@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ContactPage.css';
 import { Github, Linkedin, Mail, Phone, Send, Briefcase, Globe, CircleDollarSign, CheckCircle } from 'lucide-react';
 import { contactDetails } from '../components/data/contactDetails';
-import useTitle from '../hooks/useTitle';
+import useSEO from '../hooks/useSEO';
 
 const IconComponents = {
   Github: Github,
@@ -16,7 +16,12 @@ const IconComponents = {
 };
 
 const ContactPage = () => {
-  useTitle("Contact");
+  useSEO({
+    title: "Contact",
+    description: "Get in touch with Moksh Upadhyay for collaboration, hiring, or technical inquiries. Available for Java Backend and Full Stack roles.",
+    keywords: "Contact Moksh Upadhyay, Hire Java Developer, Backend Engineer, Freelance Developer",
+    canonical: "https://moksh.codes/contact"
+  });
   const [formData, setFormData] = useState({
     name: '',
     email: '',

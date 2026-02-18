@@ -1,10 +1,15 @@
 import projects from "../components/data/projectsdata";
 import ProjectCard from "../components/sections/src/ProjectCard";
-import useTitle from "../hooks/useTitle";
+import useSEO from "../hooks/useSEO";
 import "./ProjectsPage.css";
 
 const ProjectsPage = () => {
-  useTitle("Projects");
+  useSEO({
+    title: "Projects",
+    description: "Explore the portfolio of Moksh Upadhyay. Showcase of Java Backend systems, Spring Boot APIs, React web apps, and Mobile applications.",
+    keywords: "Java Projects, Spring Boot, React, Full Stack, Portfolio, Moksh Upadhyay",
+    canonical: "https://moksh.codes/projects"
+  });
   
   return (
     <div className="projects-page">

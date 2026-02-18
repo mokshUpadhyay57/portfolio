@@ -125,19 +125,29 @@
   }
 
   .navbar-right-section {
-    justify-content: flex-end; /* Push hamburger to the right */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
   }
 
-  /* Hide desktop links, CTA, and toggle on mobile */
+  /* Hide desktop links and the main bar CTA on mobile */
   .navbar-links,
-  .nav-cta,
-  .nav-toggle {
+  .navbar-right-section > .nav-cta {
     display: none;
   }
 
-  /* Show hamburger menu on mobile */
+  /* Keep toggle visible and aligned on mobile bar */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Show hamburger menu on mobile and align it */
   .hamburger-menu {
-    display: block;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     color: var(--text-primary);
   }
 
@@ -166,6 +176,17 @@
 
   .navbar-menu-overlay .nav-item a {
     color: var(--text-primary);
+  }
+
+  /* CTA in mobile menu */
+  .mobile-cta-item {
+    margin-top: 25px;
+  }
+
+  .mobile-cta-item .nav-cta {
+    display: inline-block;
+    font-size: 18px;
+    padding: 12px 32px;
   }
 
   /* Close button for mobile menu */

@@ -15,17 +15,17 @@ The application is a Single Page Application (SPA) built with React and Vite. It
 
 *   **`src/App.jsx`:** The main router and layout container.
 *   **`src/pages/`:** Contains the main page components:
-    *   `HomePage.jsx`: Landing page with hero (typing animation), intro, and featured sections.
+    *   `HomePage.jsx`: Landing page with hero (typing animation), intro, featured sections, and recommendations.
     *   `ProjectsPage.jsx`: Detailed view of all projects with stats.
     *   `ServicePage.jsx`: Information about services offered with glassmorphism cards.
     *   `ContactPage.jsx`: Contact form with success state and dynamic social links.
 *   **`src/components/`:** Reusable components divided into:
     *   `layouts/`: Global layout elements like `Navbar`.
-    *   `sections/`: Specific sections used within pages (e.g., `About`, `Skills`, `FeaturedProjects`).
+    *   `sections/`: Specific sections used within pages (e.g., `About`, `Skills`, `FeaturedProjects`, `Recommendations`).
     *   `toggles/`: UI controls like `ThemeToggle`.
     *   `data/`: JavaScript files serving as the "database" for the portfolio's content.
-*   **`src/context/`:** Context providers for global state (e.g., `ThemeContext.jsx` for dark/light mode).
-*   **`src/hooks/`:** Custom React hooks (e.g., `useTitle.js` for dynamic document titles).
+*   **`src/context/`:** Context providers for global state (split into `ThemeContext.js` for context creation and `ThemeProvider.jsx` for logic).
+*   **`src/hooks/`:** Custom React hooks (e.g., `useSEO.js` for metadata and `useScrollReveal.js` for animations).
 
 # Building and Running
 
@@ -70,4 +70,4 @@ Locally previews the production build.
 *   **Data-Driven:** To update projects, services, or contact details, modify the respective files in `src/components/data/`.
 *   **Routing:** Uses `react-router-dom` (v7) for client-side navigation.
 *   **Styling:** Prefers Vanilla CSS for maximum flexibility and performance. Modern CSS features like `backdrop-filter` and `color-mix` are used for sophisticated UI effects.
-*   **Dynamic Titles:** Every page component should use the `useTitle` hook to update the browser tab title according to the current view.
+*   **Dynamic Titles:** Every page component should use the `useSEO` hook to update the browser tab title and metadata according to the current view.

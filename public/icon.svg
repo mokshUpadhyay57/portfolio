@@ -1,0 +1,6 @@
+<svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Favicon uses solid blue/purple for visibility in all tab styles -->
+  <path d="M35 25 L15 50 L35 75" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M65 25 L85 50 L65 75" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M58 20 L42 80" stroke="#8B5CF6" stroke-width="10" stroke-linecap="round" />
+</svg>

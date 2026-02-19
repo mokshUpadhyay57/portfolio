@@ -1,0 +1,20 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="100" y2="100">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Solid Block / Tag Background -->
+  <rect x="5" y="20" width="90" height="60" rx="12" fill="url(#grad1)" />
+  
+  <!-- "Explicit" Text Content -->
+  <text x="50" y="62" font-family="monospace" font-size="32" font-weight="bold" fill="white" text-anchor="middle" letter-spacing="-1">
+    &lt;MC/&gt;
+  </text>
+  
+  <!-- Optional: Subtle Glitch/Tech Line -->
+  <path d="M10 28 H25" stroke="white" stroke-width="2" opacity="0.3" />
+  <path d="M75 72 H90" stroke="white" stroke-width="2" opacity="0.3" />
+</svg>

@@ -17,10 +17,23 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        <span className="brand-base">moksh</span>
-        <span className="brand-accent">codes</span>
-      </div>
+      <Link to="/" className="navbar-brand" onClick={closeMobileMenu}>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="navbar-logo">
+          <defs>
+            <linearGradient id="logoGradient" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0%" stopColor="var(--accent-primary)" />
+              <stop offset="100%" stopColor="var(--accent-primary)" opacity="0.8" />
+            </linearGradient>
+          </defs>
+          <path d="M35 25 L15 50 L35 75" stroke="url(#logoGradient)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M65 25 L85 50 L65 75" stroke="url(#logoGradient)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M58 20 L42 80" stroke="var(--text-primary)" strokeWidth="6" strokeLinecap="round" />
+        </svg>
+        <div className="brand-text">
+          <span className="brand-base">moksh</span>
+          <span className="brand-accent">codes</span>
+        </div>
+      </Link>
 
       <div className="navbar-right-section">
         <ul className="navbar-links">

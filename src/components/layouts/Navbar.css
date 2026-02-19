@@ -9,11 +9,26 @@
 
 /* BRAND */
 .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: 0.5px;
   color: var(--text-primary);
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
 }
 
 .brand-base {

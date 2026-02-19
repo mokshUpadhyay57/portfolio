@@ -1,0 +1,19 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradShield" x1="0" y1="0" x2="0" y2="100">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shield Shape -->
+  <path d="M50 5 L85 20 V45 C85 70 50 95 50 95 C50 95 15 70 15 45 V20 L50 5 Z" fill="url(#gradShield)" stroke="#3B82F6" stroke-width="3" />
+
+  <!-- The "M" Credential -->
+  <path d="M35 35 L50 55 L65 35" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M35 35 V60" stroke="white" stroke-width="5" stroke-linecap="round" />
+  <path d="M65 35 V60" stroke="white" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Verified Dot -->
+  <circle cx="70" cy="25" r="5" fill="#10B981" stroke="#0F172A" stroke-width="2"/>
+</svg>

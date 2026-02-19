@@ -9,7 +9,7 @@ function Contact() {
   return (
     <section 
       ref={ref} 
-      className={`contact section ${isVisible ? "animate-in" : "animate-hidden"}`} 
+      className={`contact section light ${isVisible ? "animate-in" : "animate-hidden"}`} 
       id="contact"
     >
       <div className="contact-container">

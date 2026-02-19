@@ -13,6 +13,7 @@ function ThemeToggle() {
         type="checkbox"
         checked={isDark}
         onChange={toggleTheme}
+        aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       />
       <span className="slider round">
         <Sun size={16} strokeWidth={2} className="slider-icon sun-to-light-icon" />

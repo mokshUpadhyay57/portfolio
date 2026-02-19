@@ -4,20 +4,90 @@
   text-align: center;
 }
 
+/* Ensure section has bottom padding */
+.contact.section {
+  margin-bottom: 120px;
+}
+
 /* TITLE */
 
 .contact-title {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: var(--text-primary); /* Ensure text color follows theme */
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.contact-title .accent {
+  color: var(--accent-primary);
 }
 
 /* INTRO */
 
 .contact-intro {
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  margin-bottom: 32px; /* Increased margin */
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* REDIRECT BUTTON */
+
+.contact-redirect-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--accent-primary);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-primary) 25%, transparent);
+}
+
+.contact-redirect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-primary) 40%, transparent);
+  filter: brightness(1.1);
+}
+
+/* PLATFORMS */
+
+.contact-platforms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.platform-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: color-mix(in srgb, var(--bg-card) 40%, transparent);
+  color: var(--text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.platform-link:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background-color: color-mix(in srgb, var(--accent-primary) 8%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ANIMATIONS */
@@ -46,48 +116,16 @@
   }
 }
 
-/* New redirect button style */
-.contact-redirect-btn {
-  margin-bottom: 40px; /* Space between button and platforms */
-}
-
-/* PLATFORMS */
-
-.contact-platforms {
-  font-size: 14px;
-  color: var(--text-secondary);
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Align items vertically */
-  gap: 14px;
-  flex-wrap: wrap;
-  border-top: 1px solid var(--border-color); /* Add a separator */
-  padding-top: 32px; /* Space above platforms */
-  margin-top: 40px; /* Space below button */
-}
-
-.platform-link {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-card);
-  color: var(--text-secondary);
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.platform-link:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  transform: translateY(-1px);
-}
-
 /* RESPONSIVE */
 
 @media (max-width: 640px) {
-  .contact-title {
-    font-size: 30px;
+  .contact-platforms {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .platform-link {
+    width: 100%;
+    max-width: 200px;
   }
 }

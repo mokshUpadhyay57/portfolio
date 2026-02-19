@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-brand" onClick={closeMobileMenu}>
+      <Link to="/" className="navbar-brand" onClick={closeMobileMenu} aria-label="Moksh Codes Home">
         <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="navbar-logo">
           <defs>
             <linearGradient id="logoGradient" x1="0" y1="0" x2="100" y2="100">
@@ -61,7 +61,14 @@ function Navbar() {
         <div className="nav-toggle">
           <ThemeToggle />
         </div>
-        <div className="hamburger-menu" onClick={toggleMobileMenu}>
+        <div 
+          className="hamburger-menu" 
+          onClick={toggleMobileMenu} 
+          role="button" 
+          aria-label="Open mobile menu"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && toggleMobileMenu()}
+        >
           <Menu size={28} />
         </div>
       </div>
@@ -69,7 +76,14 @@ function Navbar() {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <ul className="navbar-menu-overlay">
-          <li className="close-menu-button" onClick={closeMobileMenu}>
+          <li 
+            className="close-menu-button" 
+            onClick={closeMobileMenu} 
+            role="button" 
+            aria-label="Close mobile menu"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && closeMobileMenu()}
+          >
             <X size={32} />
           </li>
           {/* Mobile menu links */}

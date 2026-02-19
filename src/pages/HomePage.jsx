@@ -6,6 +6,7 @@ import useSEO from "../hooks/useSEO";
 import About from "../components/sections/src/About";
 import Skills from "../components/sections/src/Skills";
 import FeaturedProjects from "../components/sections/src/FeaturedProjects";
+import Recommendations from "../components/sections/src/Recommendations";
 import Contact from "../components/sections/src/Contact";
 
 const roles = [
@@ -23,7 +24,7 @@ const roles = [
   {
     title: "Android Developer",
     subtitle: "Developing mobile apps with Flutter & Kotlin",
-    stack: "Kotlin | FLutter | Firebase | React Native",
+    stack: "Kotlin | Flutter | Firebase | React Native",
   },
 ];
 
@@ -32,7 +33,7 @@ function Home() {
     title: "Home",
     description: "Welcome to the portfolio of Moksh Upadhyay, a Java Backend Engineer and Full Stack Developer. Discover projects, services, and technical expertise.",
     keywords: "Moksh Upadhyay, Home, Java Backend, Full Stack Developer, Spring Boot, React Portfolio",
-    canonical: "https://moksh.codes/"
+    canonical: "https://mokshcodes.netlify.app/"
   });
   const [displayText, setDisplayText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
@@ -113,6 +114,8 @@ function Home() {
       <Skills />
 
       <FeaturedProjects />
+
+      <Recommendations />
 
       <Contact />
     </div>

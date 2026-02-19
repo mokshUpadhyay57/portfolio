@@ -8,17 +8,19 @@ export const useScrollReveal = (options = { threshold: 0.1, triggerOnce: true })
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
+  const { threshold, triggerOnce } = options;
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
-        if (options.triggerOnce && ref.current) {
+        if (triggerOnce && ref.current) {
           observer.unobserve(ref.current);
         }
-      } else if (!options.triggerOnce) {
+      } else if (!triggerOnce) {
         setIsVisible(false);
       }
-    }, options);
+    }, { threshold });
 
     const currentRef = ref.current;
     if (currentRef) {
@@ -30,7 +32,7 @@ export const useScrollReveal = (options = { threshold: 0.1, triggerOnce: true })
         observer.unobserve(currentRef);
       }
     };
-  }, [options]);
+  }, [threshold, triggerOnce]);
 
   return [ref, isVisible];
 };

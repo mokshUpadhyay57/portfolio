@@ -1,9 +1,16 @@
 import "../../sections/styles/Skills.css";
+import { useScrollReveal } from "../../../hooks/useScrollReveal";
 
 
 function Skills() {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
-    <section className="skills section" id="skills">
+    <section 
+      ref={ref} 
+      className={`skills section ${isVisible ? "animate-in" : "animate-hidden"}`} 
+      id="skills"
+    >
       <div className="skills-container">
         <h2 className="skills-title">
           Skills <span className="accent">& Technologies</span>

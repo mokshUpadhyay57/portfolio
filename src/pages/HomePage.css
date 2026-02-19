@@ -108,13 +108,13 @@
 .hero-left {
   display: flex;
   flex-direction: column;
-  animation: fadeInLeft 0.8s ease-out forwards;
+  animation: fadeInLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .hero-right {
   display: flex;
   justify-content: center;
-  animation: scaleIn 0.8s ease-out 0.2s forwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
   opacity: 0;
 }
 

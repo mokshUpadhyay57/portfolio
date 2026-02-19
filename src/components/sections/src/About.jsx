@@ -1,8 +1,15 @@
 import "../../sections/styles/About.css";
+import { useScrollReveal } from "../../../hooks/useScrollReveal";
 
 function About() {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
-    <section className="about section light" id="about">
+    <section 
+      ref={ref} 
+      className={`about section light ${isVisible ? "animate-in" : "animate-hidden"}`} 
+      id="about"
+    >
       <div className="about-container">
         <h2 className="about-title">
           About <span className="accent">Me</span>

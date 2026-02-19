@@ -16,7 +16,7 @@
 .projects-header {
   text-align: left;
   margin-bottom: 4rem;
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .projects-header h1 {
@@ -74,7 +74,7 @@
   text-align: left;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--card-shadow);
-  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
 }
 
 .stat-card:hover {
@@ -107,7 +107,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 3rem;
-  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards;
 }
 
 /* ================= ANIMATIONS ================= */

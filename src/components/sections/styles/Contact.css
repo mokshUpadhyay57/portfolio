@@ -20,6 +20,32 @@
   margin-bottom: 32px; /* Increased margin */
 }
 
+/* ANIMATIONS */
+
+.animate-hidden .contact-title,
+.animate-hidden .contact-intro,
+.animate-hidden .contact-redirect-btn,
+.animate-hidden .contact-platforms {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animate-in .contact-title { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-in .contact-intro { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards; }
+.animate-in .contact-redirect-btn { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards; }
+.animate-in .contact-platforms { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* New redirect button style */
 .contact-redirect-btn {
   margin-bottom: 40px; /* Space between button and platforms */

@@ -1,9 +1,16 @@
 import "../../sections/styles/FeaturedProjects.css";
 import { Link } from "react-router-dom";
+import { useScrollReveal } from "../../../hooks/useScrollReveal";
 
 function FeaturedProjects() {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
-    <section className="projects section light" id="projects">
+    <section 
+      ref={ref} 
+      className={`projects section light ${isVisible ? "animate-in" : "animate-hidden"}`} 
+      id="projects"
+    >
       <div className="projects-container">
         <h2 className="projects-title">
           Projects <span className="accent">& Work</span>
@@ -40,68 +47,8 @@ function FeaturedProjects() {
               github="https://github.com/mokshupadhyay57/textwizard"
               website="https://txtwiz.netlify.app"
             />
-
-            {/* <ProjectCard
-              title="Online Bookstore Backend"
-              desc="Backend system focused on APIs, data handling, and backend architecture."
-              tech="Spring · REST APIs · SQL"
-              comingSoon
-            /> */}
-
-            {/* <ProjectCard
-              title="Payroll Batch Processor"
-              desc="Batch processing application for payroll calculation and scheduled jobs."
-              tech="Spring Boot · Spring Batch · SQL"
-              comingSoon
-            /> */}
           </div>
         </div>
-
-        {/* ADDITIONAL PROJECTS */}
-        {/* <div className="projects-group">
-          <h3>Additional Projects</h3>
-
-          <div className="projects-grid">
-            <ProjectCard
-              title="XCom E-commerce (Internship)"
-              desc="Worked on backend logic and UI improvements during internship."
-              tech="Django · JavaScript · SQLite"
-              github="https://github.com/yourusername/xcom"
-            />
-
-            <ProjectCard
-              title="Lockify"
-              desc="Mobile application focused on authentication workflows."
-              tech="Flutter · Firebase · Netlify"
-              github="https://github.com/yourusername/lockify"
-              android="https://play.google.com/store/apps/details?id=lockify"
-            />
-
-            <ProjectCard
-              title="Esports Tournament App"
-              desc="Android application for managing tournaments and matches."
-              tech="Kotlin · Firebase"
-              github="https://github.com/yourusername/esports"
-              android="https://play.google.com/store/apps/details?id=esports"
-            />
-          </div>
-        </div> */}
-
-        {/* MINI PROJECTS */}
-        {/* <div className="projects-group featured">
-        
-          <h3>Mini Projects</h3>
-
-          <div className="projects-grid mini">
-            <ProjectCard
-              title="TextWizard"
-              desc="Lightweight web utility for text manipulation."
-              tech="React · JavaScript · CSS"
-              github="https://github.com/yourusername/textwizard"
-              website="https://textwizard.netlify.app"
-            />
-          </div>
-        </div> */}
       </div>
       <div className="projects-more">
         <Link to="/projects" className="projects-more-link">

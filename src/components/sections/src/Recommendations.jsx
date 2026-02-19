@@ -51,7 +51,7 @@ function Recommendations() {
                   <div className="recommender-header">
                     <div className="recommender-profile-main">
                       <div className="avatar-wrapper">
-                        <img src={rec.avatar} alt={rec.name} className="recommender-avatar" />
+                        <img src={rec.image || rec.avatar} alt={rec.name} className="recommender-avatar" />
                       </div>
                       <div className="recommender-info">
                         <h4 className="recommender-name">{rec.name}</h4>

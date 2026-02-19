@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mokshcodes.netlify.app/sitemap.xml

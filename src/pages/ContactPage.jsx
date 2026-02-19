@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ContactPage.css';
-import { Github, Linkedin, Mail, Phone, Send, Briefcase, Globe, CircleDollarSign, CheckCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Send, Briefcase, Globe, CircleDollarSign, CheckCircle } from 'lucide-react';
 import { contactDetails } from '../components/data/contactDetails';
 import useSEO from '../hooks/useSEO';
 
@@ -8,7 +8,6 @@ const IconComponents = {
   Github: Github,
   Linkedin: Linkedin,
   Mail: Mail,
-  Phone: Phone,
   Send: Send,
   Briefcase: Briefcase,
   Globe: Globe,
@@ -25,7 +24,8 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    projectType: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -42,7 +42,7 @@ const ContactPage = () => {
     // Handle form submission logic here
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', message: '', projectType: '' });
     
     // Reset success message after 5 seconds
     setTimeout(() => setIsSubmitted(false), 5000);
@@ -59,13 +59,9 @@ const ContactPage = () => {
             Feel free to reach out through the form or any of the channels below.
           </p>
           <div className="contact-details">
-            <div className="contact-item">
+             <div className="contact-item">
               {React.createElement(IconComponents.Mail, { size: 20 })}
               <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
-            </div>
-            <div className="contact-item">
-              {React.createElement(IconComponents.Phone, { size: 20 })}
-              <span>{contactDetails.phone}</span>
             </div>
           </div>
           <div className="social-links">
@@ -120,6 +116,23 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                 />
+              </div>
+              <div className="form-group">
+                <label htmlFor="projectType">Project Type</label>
+                <select
+                  id="projectType"
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Select Project Type</option>
+                  <option value="Website (Single / Multi Page)">Website (Single / Multi Page)</option>
+                  <option value="Backend API / Server Development">Backend API Development</option>
+                  <option value="Mobile App (Simple / Hybrid)">Mobile App (Simple / Hybrid)</option>
+                  <option value="Full App / Product Development">Full App / Product Development</option>
+                  <option value="Not Sure (Need Help Deciding)">Not Sure (Need Help Deciding)</option>
+                </select>
               </div>
               <div className="form-group">
                 <label htmlFor="message">Your Message</label>

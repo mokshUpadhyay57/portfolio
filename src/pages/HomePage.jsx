@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 import useSEO from "../hooks/useSEO";
-
 import About from "../components/sections/src/About";
 import Skills from "../components/sections/src/Skills";
 import FeaturedProjects from "../components/sections/src/FeaturedProjects";
@@ -109,15 +108,12 @@ function Home() {
         </div>
       </section>
 
-      <About />
-
+      <About/>
       <Skills />
-
       <FeaturedProjects />
-
       <Recommendations />
-
       <Contact />
+
     </div>
   );
 }

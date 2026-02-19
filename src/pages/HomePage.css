@@ -91,7 +91,7 @@
 /* ACCENT */
 
 .accent {
-  color: var(--accent-primary);
+  color: var(--accent-primary) !important;
 }
 
 .hero-left {

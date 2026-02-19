@@ -48,26 +48,21 @@
 
 .contact-info {
   animation: fadeInLeft 0.6s ease-out forwards;
-}
-
-.contact-form {
-  animation: fadeInUp 0.6s ease-out 0.2s forwards;
-  opacity: 0; /* Initial state for animation */
+  padding: 2.5rem; /* Consistent with form padding */
+  text-align: left; 
+  display: flex;
+  flex-direction: column; 
 }
 
 /* =========================
-   Left Column: Info
+   Left Column: Info Section
 ========================= */
-
-.contact-info {
-  text-align: left;
-}
 
 .contact-info h1 {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
-  margin-bottom: 2.5rem; /* Increased margin to accommodate underline */
+  margin-bottom: 2rem; /* Adjusted margin */
   line-height: 1.1;
   color: var(--text-primary);
   position: relative;
@@ -77,7 +72,7 @@
 .contact-info p {
   font-family: var(--font-body);
   color: var(--text-secondary);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem; /* Adjusted margin */
   font-size: 1.125rem;
   max-width: 500px;
   line-height: 1.7;
@@ -86,14 +81,14 @@
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem; /* Adjusted gap */
+  margin-bottom: 2.5rem; /* Adjusted margin */
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem; /* Adjusted gap */
   font-size: 1.1rem;
   color: var(--text-primary);
   transition: transform 0.3s ease;
@@ -101,6 +96,7 @@
 
 .contact-item:hover {
   transform: translateX(5px);
+  color: var(--accent-primary); /* Add color change on hover */
 }
 
 .contact-item a {
@@ -123,7 +119,7 @@
 
 .social-links {
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem; /* Adjusted gap */
   flex-wrap: wrap;
 }
 
@@ -134,26 +130,27 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background-color: var(--bg-section);
+  background-color: var(--bg-main); /* Use bg-main for subtle contrast */
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  transition: all 0.4s ease;
+  transition: all 0.3s ease; /* Smoother transition */
 }
 
 .social-links a:hover {
   background-color: var(--accent-primary);
   color: #ffffff;
   border-color: var(--accent-primary);
-  transform: translateY(-5px) rotate(5deg);
-  box-shadow: 0 10px 20px -10px var(--accent-primary);
+  transform: translateY(-3px) rotate(2deg); /* Softer hover effect */
+  box-shadow: 0 8px 15px -8px var(--accent-primary); /* Softer shadow */
 }
+
 
 /* =========================
    Right Column: Form & Success
 ========================= */
 
 .contact-form-container {
-  min-height: 500px;
+  /* Removed min-height: 500px; - Removed to allow natural grid stretching */
   display: flex;
   flex-direction: column;
 }
@@ -161,15 +158,14 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  background: color-mix(in srgb, var(--bg-section) 70%, transparent);
+  gap: 1.25rem; /* Adjusted gap for tighter form fields */
+  background: var(--bg-section); /* Consistent background */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 2.5rem;
   border-radius: 25px;
-  box-shadow: 
-    0 20px 40px -15px rgba(0, 0, 0, 0.3),
-    inset 0 1px 1px color-mix(in srgb, var(--text-primary) 5%, transparent);
+  border: 1px solid var(--border-color); 
+  box-shadow: var(--card-shadow); /* Leverage global card shadow */
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
   opacity: 0;
 }
@@ -181,17 +177,18 @@
   justify-content: center;
   text-align: center;
   gap: 1.5rem;
-  background: color-mix(in srgb, var(--bg-section) 70%, transparent);
+  background: var(--bg-section); /* Consistent background */
   backdrop-filter: blur(16px);
   padding: 4rem 2.5rem;
   border-radius: 25px;
   border: 2px solid color-mix(in srgb, var(--accent-primary) 20%, transparent);
   animation: fadeInUp 0.5s ease-out forwards;
   height: 100%;
+  box-shadow: var(--card-shadow); /* Consistent card shadow */
 }
 
 .success-icon {
-  color: #10b981; /* Success green */
+  color: #10b981; /* Success green - keep as it's a specific status color */
   animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
@@ -203,6 +200,7 @@
 .success-message h2 {
   font-size: 2rem;
   color: var(--text-primary);
+  font-family: var(--font-heading); /* Use global heading font */
 }
 
 .success-message p {
@@ -210,6 +208,7 @@
   font-size: 1.1rem;
   max-width: 300px;
   margin: 0 auto;
+  font-family: var(--font-body); /* Use global body font */
 }
 
 .success-message .btn.outline {
@@ -222,6 +221,7 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
+  font-family: var(--font-body); /* Use global body font */
 }
 
 .success-message .btn.outline:hover {
@@ -230,65 +230,104 @@
   color: var(--accent-primary);
 }
 
-/* Light theme adjustment for better contrast */
-[data-theme="light"] .contact-form {
-  background: color-mix(in srgb, var(--bg-section) 90%, transparent);
-  box-shadow: 
-    0 20px 40px -20px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-}
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.7rem; /* Adjusted gap */
 }
 
 .form-group label {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 700; /* Bolder label */
+  font-size: 0.88rem; /* Slightly adjusted size */
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-left: 0.5rem;
+  letter-spacing: 0.07em; /* Slightly adjusted letter spacing */
+  margin-left: 0.25rem; /* Reduced margin */
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
-  padding: 1.1rem 1.4rem;
-  background-color: color-mix(in srgb, var(--bg-main) 60%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border-color) 60%, transparent);
-  border-radius: 16px;
+  padding: 1rem 1.2rem; /* Adjusted padding */
+  background-color: var(--bg-main); 
+  border: 1px solid var(--border-color); 
+  border-radius: 12px; /* Slightly smaller border-radius for inputs */
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 1rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Faster transition */
+  /* Force consistent autofill styling */
+  box-shadow: 0 0 0px 1000px var(--bg-main) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-main) inset;
+  -webkit-text-fill-color: var(--text-primary);
 }
 
+/* Ensure background and text color remain consistent on hover/focus/active for autofilled fields */
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group input:-webkit-autofill:active,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill:active,
+.form-group select:-webkit-autofill:hover,
+.form-group select:-webkit-autofill:focus,
+.form-group select:-webkit-autofill:active {
+  box-shadow: 0 0 0px 1000px var(--bg-main) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-main) inset;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+
 .form-group input:hover,
-.form-group textarea:hover {
-  background-color: color-mix(in srgb, var(--bg-main) 80%, transparent);
-  border-color: color-mix(in srgb, var(--border-color) 100%, transparent);
+.form-group textarea:hover,
+.form-group select:hover {
+  background-color: color-mix(in srgb, var(--bg-main) 95%, transparent); /* More subtle hover background */
+  border-color: color-mix(in srgb, var(--border-color) 120%, transparent); 
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
   background-color: var(--bg-main);
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-primary) 12%, transparent);
-  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 25%, transparent); /* Slightly softer focus shadow */
+  transform: translateY(-1px); 
+}
+
+/* Specific styles for select to remove default appearance and add custom arrow */
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFFFFF" width="20px" height="20px"><path d="M7 10l5 5 5-5z"/></svg>'); /* Basic arrow */
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center; /* Adjusted position */
+  background-size: 20px;
+  cursor: pointer;
+  padding-right: 3.2rem; /* Adjusted space for the arrow */
+}
+
+/* Fallback for older browsers or if SVG fails - basic arrow */
+select::-ms-expand {
+    display: none;
+}
+
+.form-group select option {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
 }
 
 .contact-form .btn.primary {
-  margin-top: 1rem;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
+  margin-top: 1.25rem; /* Adjusted margin */
+  padding: 1rem 2rem; 
+  font-size: 1.1rem; 
   font-weight: 700;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent-primary) 0%, color-mix(in srgb, var(--accent-primary), #000 20%) 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, color-mix(in srgb, var(--accent-primary), #000 15%) 100%); 
   color: white;
   cursor: pointer;
   border: none;
@@ -296,18 +335,71 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5rem; 
+  box-shadow: 0 4px 12px -4px color-mix(in srgb, var(--accent-primary) 60%, transparent); /* Softer initial shadow */
 }
 
 .contact-form .btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -10px var(--accent-primary);
-  filter: brightness(1.1);
+  transform: translateY(-2px); /* Softer lift */
+  box-shadow: 0 8px 20px -6px color-mix(in srgb, var(--accent-primary) 70%, transparent); /* Softer hover shadow */
+  filter: brightness(1.1); /* Softer brightness */
 }
 
 .contact-form .btn.primary:active {
-  transform: translateY(0);
+  transform: translateY(0); 
+  box-shadow: 0 2px 6px -2px color-mix(in srgb, var(--accent-primary) 50%, transparent); /* Softer active shadow */
+  filter: brightness(1.05);
 }
+
+
+/* Add these new styles for info-details */
+.dropdown-with-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between dropdown and button */
+}
+
+.dropdown-with-info select {
+  flex-grow: 1; /* Allow select to take available space */
+}
+
+.info-toggle-btn {
+  background: var(--bg-section);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* Prevent text wrap */
+}
+
+.info-toggle-btn:hover {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.info-details-box {
+  background: color-mix(in srgb, var(--bg-main) 70%, transparent);
+  border: 1px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.info-details-box p {
+  margin-bottom: 0.5rem;
+}
+
+.info-details-box p:last-child {
+  margin-bottom: 0;
+}
+
 
 /* =========================
    Responsive Styles

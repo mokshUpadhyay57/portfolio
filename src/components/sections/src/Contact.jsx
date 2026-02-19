@@ -7,9 +7,9 @@ function Contact() {
   const [ref, isVisible] = useScrollReveal();
 
   return (
-    <section 
-      ref={ref} 
-      className={`contact section light ${isVisible ? "animate-in" : "animate-hidden"}`} 
+    <section
+      ref={ref}
+      className={`contact section light ${isVisible ? "animate-in" : "animate-hidden"}`}
       id="contact"
     >
       <div className="contact-container">
@@ -46,3 +46,4 @@ function Contact() {
 }
 
 export default Contact;
+

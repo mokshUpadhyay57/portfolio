@@ -45,18 +45,6 @@
   padding-right: 5px;
 }
 
-.hero-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 32px;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: var(--accent-primary);
-  border-radius: 2px;
-}
-
 .hero-role {
   font-family: var(--font-heading);
   font-weight: 600;

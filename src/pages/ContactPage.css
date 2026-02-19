@@ -74,17 +74,6 @@
   display: inline-block;
 }
 
-.contact-info h1::after {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--accent-primary);
-  border-radius: 2px;
-}
-
 .contact-info p {
   font-family: var(--font-body);
   color: var(--text-secondary);

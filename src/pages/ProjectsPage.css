@@ -3,7 +3,7 @@
 /* ===================================================== */
 
 .projects-page {
-  padding: 6rem 8%;
+  padding: 4rem 8%;
   min-height: 100vh;
   background: var(--bg-main);
   color: var(--text-primary);
@@ -14,9 +14,21 @@
 /* ================= HEADER ================= */
 
 .projects-header {
-  text-align: left;
+  text-align: center;
   margin-bottom: 4rem;
-  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: projectHeaderReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes projectHeaderReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .projects-header h1 {
@@ -24,28 +36,15 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.2; /* Increased from 1.1 to prevent clipping */
-  margin-bottom: 1.5rem;
   color: var(--text-primary);
   position: relative;
   display: inline-block;
-  padding-bottom: 5px; /* Added padding to prevent descender clipping */
   padding-right: 5px;  /* Added padding to prevent side-bearing clipping */
-}
-
-.projects-header h1::after {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--accent-primary);
-  border-radius: 2px;
 }
 
 .projects-header p {
   max-width: 600px;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
   color: var(--text-secondary);
   font-size: 1.1rem;
   line-height: 1.7;
@@ -72,9 +71,20 @@
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: var(--card-shadow);
-  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+  animation: projectItemReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
+}
+
+@keyframes projectItemReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .stat-card:hover {
@@ -107,7 +117,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 3rem;
-  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards;
+  animation: projectItemReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s backwards;
 }
 
 /* ================= ANIMATIONS ================= */
@@ -132,11 +142,6 @@
 
   .projects-header {
     text-align: center;
-  }
-
-  .projects-header h1::after {
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   .projects-grid {

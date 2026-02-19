@@ -16,9 +16,13 @@
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
   color: var(--text-primary);
   text-align: center;
+  position: relative;
+  display: block;
+  width: fit-content;
+  padding-bottom: 15px;
 }
 
 .recommendations-intro {

@@ -1,6 +1,7 @@
 import "../../sections/styles/FeaturedProjects.css";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "../../../hooks/useScrollReveal";
+import { Github, ExternalLink, Globe, Smartphone } from "lucide-react";
 
 function FeaturedProjects() {
   const [ref, isVisible] = useScrollReveal();
@@ -89,19 +90,22 @@ function ProjectCard({
       <div className="project-actions">
         {github && (
           <a href={github} target="_blank" rel="noopener noreferrer">
-            GitHub
+            <Github size={18} />
+            Code
           </a>
         )}
 
         {website && !comingSoon && (
           <a href={website} target="_blank" rel="noopener noreferrer">
-            Website
+            <Globe size={18} />
+            Live Demo
           </a>
         )}
 
         {android && !comingSoon && (
           <a href={android} target="_blank" rel="noopener noreferrer">
-            Android App
+            <Smartphone size={18} />
+            App
           </a>
         )}
 

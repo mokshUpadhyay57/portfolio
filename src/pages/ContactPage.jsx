@@ -13,6 +13,7 @@ const IconComponents = {
   Briefcase: Briefcase,
   Globe: Globe,
   CircleDollarSign: CircleDollarSign,
+  CheckCircle: CheckCircle,
 };
 
 const ContactPage = () => {
@@ -42,6 +43,12 @@ const ContactPage = () => {
     }));
   };
 
+  const resetForm = () => {
+    setFormData({ name: '', email: '', message: '', projectType: '' });
+    setIsSubmitted(false);
+    setSendError(null);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSending(true);
@@ -56,8 +63,7 @@ const ContactPage = () => {
     .then((result) => {
       console.log('Email successfully sent!', result.text);
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '', projectType: '' });
-      setTimeout(() => setIsSubmitted(false), 5000);
+      setFormData({ name: '', email: '', message: '', projectType: '' }); // Clear form immediately
     }, (error) => {
       console.error('Failed to send email:', error.text);
       setSendError('Failed to send message. Please try again or contact me directly.');
@@ -102,10 +108,10 @@ const ContactPage = () => {
         <div className="contact-form-container">
           {isSubmitted ? (
             <div className="success-message">
-              {React.createElement(IconComponents.CheckCircle, { size: 60, className: "success-icon" })}
+              {React.createElement(IconComponents.CheckCircle, { size: 60, className: "success-icon" })} {/* Reverted CheckCircle icon */}
               <h2>Message Sent!</h2>
               <p>Thank you for reaching out. I'll get back to you shortly.</p>
-              <button className="btn outline" onClick={() => setIsSubmitted(false)}>Send Another Message</button>
+              <button className="btn outline" onClick={resetForm}>Send Another Message</button> {/* Use resetForm */}
             </div>
           ) : (
             <form ref={form} onSubmit={handleSubmit} className="contact-form">
@@ -151,7 +157,7 @@ const ContactPage = () => {
                 </select>
               </div>
               <div className="form-group">
-                <label htmlFor="message">Your Message</label>
+                <label htmlFor="message">Your Requirement</label>
                 <textarea
                   id="message"
                   name="message"

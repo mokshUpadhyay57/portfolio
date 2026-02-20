@@ -83,11 +83,3 @@ Runs tests and generates a coverage report using `@vitest/coverage-v8`.
 *   **Testing:** Uses Vitest for unit testing.
 *   **Linting:** Uses ESLint for code quality and adherence to best practices.
 
-# Recent Updates (from last session)
-
-*   **About Page Styling Refactor:**
-    *   Moved all specific styling rules (including animations and spacing adjustments) from `src/components/sections/styles/About.css` to `src/pages/AboutPage.css` for better page-level control and future component refactoring.
-    *   Removed the CSS import from `src/components/sections/src/About.jsx` as its styles are now managed by `src/pages/AboutPage.css`.
-    *   Adjusted padding and max-width in `src/pages/AboutPage.css` to ensure proper content spacing and centering on the About page.
-*   **About Page Layout Enhancement:**
-    *   Enabled a two-column grid layout on `src/pages/AboutPage.jsx` by uncommenting the profile image section, allowing for a clearer text and image presentation.

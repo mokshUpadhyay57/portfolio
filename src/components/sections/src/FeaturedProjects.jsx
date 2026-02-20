@@ -1,17 +1,10 @@
 import "../../sections/styles/FeaturedProjects.css";
 import { Link } from "react-router-dom";
-import { useScrollReveal } from "../../../hooks/useScrollReveal";
 import { Github, ExternalLink, Globe, Smartphone } from "lucide-react";
 
 function FeaturedProjects() {
-  const [ref, isVisible] = useScrollReveal();
-
   return (
-    <section 
-      ref={ref} 
-      className={`projects section light ${isVisible ? "animate-in" : "animate-hidden"}`} 
-      id="projects"
-    >
+    <section className="projects section light" id="projects">
       <div className="projects-container">
         <h2 className="projects-title">
           Projects <span className="accent">& Work</span>

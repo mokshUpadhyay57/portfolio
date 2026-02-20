@@ -1,6 +1,5 @@
 export const contactDetails = {
   email: 'mokshupadhyay.cs57@gmail.com',
-  phone: '+91 8585238995',
   social: [
     {
       name: 'GitHub',

@@ -2,11 +2,9 @@
 import { useState, useEffect } from "react";
 import "../../sections/styles/Recommendations.css";
 import { recommendationsData } from "../../data/recommendationsData";
-import { useScrollReveal } from "../../../hooks/useScrollReveal";
 import { Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 
 function Recommendations() {
-  const [ref, isVisible] = useScrollReveal();
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -27,8 +25,7 @@ function Recommendations() {
 
   return (
     <section 
-      ref={ref} 
-      className={`recommendations section ${isVisible ? "animate-in" : "animate-hidden"}`} 
+      className="recommendations section" 
       id="recommendations"
     >
       <div className="recommendations-container">

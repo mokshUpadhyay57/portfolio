@@ -12,7 +12,7 @@
 /* SECTION BASE */
 
 .section {
-  padding: 80px 32px;
+  padding: 120px 32px;
   max-width: 1200px;
   margin: auto;
 }
@@ -100,25 +100,16 @@
   align-items: center;
   text-align: center;
   animation: fadeInLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  backface-visibility: hidden;
 }
 
 .hero-right {
   display: flex;
   justify-content: center;
-  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+
 
 @keyframes scaleIn {
   from {
@@ -131,16 +122,7 @@
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 /* ACTION BUTTONS */
 

@@ -7,7 +7,7 @@
 }
 
 .recommendations.section {
-  padding: 80px 20px;
+  padding: 120px 32px;
 }
 
 .recommendations-title {
@@ -220,16 +220,6 @@
 }
 
 /* ANIMATIONS */
-.animate-hidden .recommendations-title,
-.animate-hidden .recommendations-intro,
-.animate-hidden .recommendations-slider {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.animate-in .recommendations-title { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-.animate-in .recommendations-intro { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards; }
-.animate-in .recommendations-slider { animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards; }
 
 @keyframes fadeInUp {
   from {
@@ -262,3 +252,5 @@
     display: none; 
   }
 }
+
+

@@ -1,31 +1,25 @@
 # Project Overview
 
-This is a personal portfolio website for **Moksh Upadhyay**, a Java Backend Engineer and Full Stack Developer. The website showcases his diverse range of projects including backend systems, mobile applications (Flutter/Kotlin), and full-stack web applications.
-
-**Key Technologies:**
-
-*   **Frontend:** React (v19), Vite (v7), React Router (v7)
-*   **Styling:** Vanilla CSS with CSS Variables for theming (Dark/Light mode). Uses `color-mix` for dynamic shadows and highlights.
-*   **State Management:** React `useState` and `useEffect` for basic state; `ThemeContext` for global theme persistence.
-*   **Data:** Static data files for projects, services, and contact details (located in `src/components/data/`).
-
-**Architecture:**
-
-The application is a Single Page Application (SPA) built with React and Vite. It features a component-based architecture organized as follows:
-
-*   **`src/App.jsx`:** The main router and layout container.
-*   **`src/pages/`:** Contains the main page components:
-    *   `HomePage.jsx`: Landing page with hero (typing animation), intro, featured sections, and recommendations.
-    *   `ProjectsPage.jsx`: Detailed view of all projects with stats.
-    *   `ServicePage.jsx`: Information about services offered with glassmorphism cards.
-    *   `ContactPage.jsx`: Contact form with success state and dynamic social links.
-*   **`src/components/`:** Reusable components divided into:
-    *   `layouts/`: Global layout elements like `Navbar`.
-    *   `sections/`: Specific sections used within pages (e.g., `About`, `Skills`, `FeaturedProjects`, `Recommendations`).
-    *   `toggles/`: UI controls like `ThemeToggle`.
-    *   `data/`: JavaScript files serving as the "database" for the portfolio's content.
-*   **`src/context/`:** Context providers for global state (split into `ThemeContext.js` for context creation and `ThemeProvider.jsx` for logic).
-*   **`src/hooks/`:** Custom React hooks (e.g., `useSEO.js` for metadata and `useScrollReveal.js` for animations).
+*   **Project Name:** portfolio-frontend
+*   **Description:** A personal portfolio website for Moksh Upadhyay, showcasing his diverse range of projects including backend systems, mobile applications (Flutter/Kotlin), and full-stack web applications.
+*   **Key Technologies:**
+    *   **Frontend:** React (v19.2.0), Vite (v7.3.1), React Router (v7.13.0)
+    *   **Styling:** Vanilla CSS with CSS Variables for theming (Dark/Light mode), `color-mix` for dynamic shadows and highlights.
+    *   **State Management:** React `useState` and `useEffect` for basic state; `ThemeContext` for global theme persistence.
+    *   **Data:** Static data files for projects, services, and contact details (located in `src/components/data/`).
+    *   **Other:** EmailJS for contact forms.
+*   **Architecture:**
+    *   Single Page Application (SPA) built with React and Vite.
+    *   Component-based architecture:
+        *   `src/App.jsx`: Main router and layout container.
+        *   `src/pages/`: Main page components (`HomePage`, `ProjectsPage`, `ServicePage`, `ContactPage`, `AboutPage`, `NotFound`).
+        *   `src/components/`: Reusable components (`layouts`, `sections`, `toggles`, `data`).
+        *   `src/context/`: Context providers for global state (`ThemeContext`, `ThemeProvider`).
+        *   `src/hooks/`: Custom React hooks (`useSEO`, `useScrollReveal`).
+*   **Entry Points:**
+    *   `index.html`: Main HTML file.
+    *   `src/main.jsx`: React entry point, sets up `StrictMode`, `BrowserRouter`, `ThemeProvider`, and renders `App`.
+    *   `src/App.jsx`: Main application component, defines routing using `react-router-dom`.
 
 # Building and Running
 
@@ -60,14 +54,40 @@ Runs ESLint to ensure code quality and adherence to React best practices.
 
 ```bash
 npm run preview
-```
+```origin/MASTER_BRANCH_HOLIDAY_HOTEL_ROH
+
 Locally previews the production build.
+
+**6. Run Tests:**
+
+```bash
+npm test
+```
+Runs tests using Vitest. Configuration includes `jsdom` environment and `src/setupTests.js`.
+
+**7. Test Coverage:**
+
+```bash
+npm run coverage
+```
+Runs tests and generates a coverage report using `@vitest/coverage-v8`.
 
 # Development Conventions
 
-*   **Theming:** The application supports dark and light modes using the `data-theme` attribute on the root element (`<html>`) and CSS variables defined in `src/index.css`. Theme state is managed globally via `ThemeContext`.
-*   **Component Structure:** Each component typically has its own JSX file and an accompanying CSS file (located in `styles/` sub-directories for sections or alongside the JSX for pages).
-*   **Data-Driven:** To update projects, services, or contact details, modify the respective files in `src/components/data/`.
+*   **Theming:** Supports dark and light modes using the `data-theme` attribute on the root `<html>` element and CSS variables defined in `src/index.css`. Theme state managed globally via `ThemeContext`.
+*   **Component Structure:** Components typically have their own JSX file and an accompanying CSS file (either in `styles/` sub-directories for sections or alongside the JSX for pages).
+*   **Data-Driven:** Update project, service, or contact details by modifying respective files in `src/components/data/`.
 *   **Routing:** Uses `react-router-dom` (v7) for client-side navigation.
-*   **Styling:** Prefers Vanilla CSS for maximum flexibility and performance. Modern CSS features like `backdrop-filter` and `color-mix` are used for sophisticated UI effects.
-*   **Dynamic Titles:** Every page component should use the `useSEO` hook to update the browser tab title and metadata according to the current view.
+*   **Styling:** Prefers Vanilla CSS for flexibility and performance. Modern CSS features like `backdrop-filter` and `color-mix` are used.
+*   **Dynamic Titles:** Page components use the `useSEO` hook to update browser tab titles and metadata.
+*   **Testing:** Uses Vitest for unit testing.
+*   **Linting:** Uses ESLint for code quality and adherence to best practices.
+
+# Recent Updates (from last session)
+
+*   **About Page Styling Refactor:**
+    *   Moved all specific styling rules (including animations and spacing adjustments) from `src/components/sections/styles/About.css` to `src/pages/AboutPage.css` for better page-level control and future component refactoring.
+    *   Removed the CSS import from `src/components/sections/src/About.jsx` as its styles are now managed by `src/pages/AboutPage.css`.
+    *   Adjusted padding and max-width in `src/pages/AboutPage.css` to ensure proper content spacing and centering on the About page.
+*   **About Page Layout Enhancement:**
+    *   Enabled a two-column grid layout on `src/pages/AboutPage.jsx` by uncommenting the profile image section, allowing for a clearer text and image presentation.

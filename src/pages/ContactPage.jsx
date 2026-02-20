@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './ContactPage.css';
 import { Github, Linkedin, Mail, Send, Briefcase, Globe, CircleDollarSign, CheckCircle } from 'lucide-react';
 import { contactDetails } from '../components/data/contactDetails';
 import useSEO from '../hooks/useSEO';
+import emailjs from '@emailjs/browser';
 
 const IconComponents = {
   Github: Github,
@@ -21,6 +22,8 @@ const ContactPage = () => {
     keywords: "Contact Moksh Upadhyay, Hire Java Developer, Backend Engineer, Freelance Developer",
     canonical: "https://moksh.codes/contact"
   });
+
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,6 +31,8 @@ const ContactPage = () => {
     projectType: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,23 +44,35 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '', projectType: '' });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    setIsSending(true);
+    setSendError(null);
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then((result) => {
+      console.log('Email successfully sent!', result.text);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '', projectType: '' });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }, (error) => {
+      console.error('Failed to send email:', error.text);
+      setSendError('Failed to send message. Please try again or contact me directly.');
+    })
+    .finally(() => {
+      setIsSending(false);
+    });
   };
 
   return (
-    <div className="contact-page">
+    <section id="contact" className="contact-page">
       <div className="contact-grid-container">
-        {/* Left Column */}
         <div className="contact-info">
-          <h1>Get in Touch</h1>
+          <h1>Let's Connect</h1>
           <p>
-            I'm open to discussing new projects, freelance opportunities, or any questions you may have.
             Feel free to reach out through the form or any of the channels below.
           </p>
           <div className="contact-details">
@@ -66,35 +83,32 @@ const ContactPage = () => {
           </div>
           <div className="social-links">
             {contactDetails.social.map((platform, index) => {
-              const IconComponent = IconComponents[platform.icon];
-              return (
+              const Icon = IconComponents[platform.icon];
+              return Icon ? (
                 <a 
                   key={index} 
                   href={platform.url} 
                   target="_blank" 
-                  rel="noopener noreferrer" 
-                  title={platform.name}
+                  rel="noopener noreferrer"
+                  aria-label={`Link to my ${platform.name} profile`}
                 >
-                  {IconComponent && React.createElement(IconComponent, { size: 24 })}
+                  {React.createElement(Icon, { size: 24 })}
                 </a>
-              );
+              ) : null;
             })}
           </div>
         </div>
 
-        {/* Right Column */}
         <div className="contact-form-container">
           {isSubmitted ? (
             <div className="success-message">
-              <CheckCircle size={48} className="success-icon" />
+              {React.createElement(IconComponents.CheckCircle, { size: 60, className: "success-icon" })}
               <h2>Message Sent!</h2>
-              <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
-              <button onClick={() => setIsSubmitted(false)} className="btn outline">
-                Send another message
-              </button>
+              <p>Thank you for reaching out. I'll get back to you shortly.</p>
+              <button className="btn outline" onClick={() => setIsSubmitted(false)}>Send Another Message</button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form ref={form} onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
                 <input
@@ -103,6 +117,7 @@ const ContactPage = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  placeholder="John Doe"
                   required
                 />
               </div>
@@ -114,6 +129,7 @@ const ContactPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="john.doe@example.com"
                   required
                 />
               </div>
@@ -141,19 +157,30 @@ const ContactPage = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="5"
+                  placeholder="Hi Moksh, I'd like to discuss a project..."
+                  rows="6"
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn primary">
-                Send Message
-                <Send size={18} />
+              {sendError && <p className="error-message">{sendError}</p>}
+              <button type="submit" className="btn primary" disabled={isSending}>
+                {isSending ? (
+                  <>
+                    Sending...
+                    <span className="spinner"></span>
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    {React.createElement(IconComponents.Send, { size: 20 })}
+                  </>
+                )}
               </button>
             </form>
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

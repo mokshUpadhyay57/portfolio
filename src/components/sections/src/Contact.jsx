@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
 import "../../sections/styles/Contact.css";
 import { contactDetails } from "../../data/contactDetails";
-import { useScrollReveal } from "../../../hooks/useScrollReveal";
 
 function Contact() {
-  const [ref, isVisible] = useScrollReveal();
-
   return (
     <section
-      ref={ref}
-      className={`contact section light ${isVisible ? "animate-in" : "animate-hidden"}`}
+      className="contact section light"
       id="contact"
     >
       <div className="contact-container">

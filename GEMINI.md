@@ -54,7 +54,7 @@ Runs ESLint to ensure code quality and adherence to React best practices.
 
 ```bash
 npm run preview
-```origin/MASTER_BRANCH_HOLIDAY_HOTEL_ROH
+```
 
 Locally previews the production build.
 

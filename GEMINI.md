@@ -56,5 +56,22 @@ Update the following files to modify site content:
 *   **Enhanced SEO:** Improved metadata management and dynamic titles for better indexability.
 *   **Refined Mobile UX:** Optimized grid layouts and navigation for mobile devices.
 
+## 🔮 Future Roadmap (v6.0)
+
+### 🛡️ Security & Robustness
+*   **Backend Migration (Serverless):** Move email sending logic to **Netlify Functions** to keep API keys hidden from the client-side.
+*   **Rate Limiting:** Implement IP-based rate limiting in serverless functions to prevent bot spam.
+*   **Bot Protection:** Integrate **hCaptcha** or **reCAPTCHA** for verified form submissions.
+
+### 📧 Professional Communication
+*   **Service Transition:** Switch from EmailJS to **Resend.com** for professional-grade transactional email.
+*   **Rich HTML Templates:** Implement beautiful, responsive email templates using **React Email**.
+*   **Custom Domain Branding:** Configure emails to be sent from a branded custom domain (e.g., `inquiry@moksh.codes`).
+
+### ⚙️ Automation & CRM
+*   **Lead Management:** Integrate with **Notion API** to automatically log all inquiries into a project management dashboard.
+*   **Instant Notifications:** Set up Discord/Slack webhooks for real-time inquiry alerts.
+*   **Booking Integration:** Add automated meeting scheduling via **Calendly**.
+
 ---
 *Maintained by Moksh Upadhyay*

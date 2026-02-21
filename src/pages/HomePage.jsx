@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 import useSEO from "../hooks/useSEO";
-import About from "../components/sections/src/About";
+import Timeline from "../components/sections/src/Timeline";
 import Skills from "../components/sections/src/Skills";
 import FeaturedProjects from "../components/sections/src/FeaturedProjects";
 import Recommendations from "../components/sections/src/Recommendations";
@@ -90,11 +90,11 @@ function Home() {
 
           <div className="hero-actions">
             <Link to="/projects">
-              <button className="btn primary">View Projects</button>
+              <button className="btn btn-primary">View Projects</button>
             </Link>
             <div className="cta-group">
               <Link to="/contact">
-                <button className="btn outline">Hire Me</button>
+                <button className="btn btn-outline">Hire Me</button>
               </Link>
             </div>
           </div>
@@ -108,7 +108,7 @@ function Home() {
         </div>
       </section>
 
-      <About/>
+      <Timeline />
       <Skills />
       <FeaturedProjects />
       <Recommendations />

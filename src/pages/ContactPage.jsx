@@ -77,7 +77,7 @@ const ContactPage = () => {
     <section id="contact" className="contact-page">
       <div className="contact-grid-container">
         <div className="contact-info">
-          <h1>Let's Connect</h1>
+          <h1>Let's <span className="accent">Connect</span></h1>
           <p>
             Feel free to reach out through the form or any of the channels below.
           </p>
@@ -111,7 +111,7 @@ const ContactPage = () => {
               {React.createElement(IconComponents.CheckCircle, { size: 60, className: "success-icon" })} {/* Reverted CheckCircle icon */}
               <h2>Message Sent!</h2>
               <p>Thank you for reaching out. I'll get back to you shortly.</p>
-              <button className="btn outline" onClick={resetForm}>Send Another Message</button> {/* Use resetForm */}
+              <button className="btn btn-outline" onClick={resetForm}>Send Another Message</button> {/* Use resetForm */}
             </div>
           ) : (
             <form ref={form} onSubmit={handleSubmit} className="contact-form">
@@ -146,6 +146,7 @@ const ContactPage = () => {
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleChange}
+                  className={formData.projectType === '' ? 'placeholder-selected' : ''}
                   required
                 >
                   <option value="">Select Project Type</option>
@@ -169,7 +170,7 @@ const ContactPage = () => {
                 ></textarea>
               </div>
               {sendError && <p className="error-message">{sendError}</p>}
-              <button type="submit" className="btn primary" disabled={isSending}>
+              <button type="submit" className="btn btn-primary" disabled={isSending}>
                 {isSending ? (
                   <>
                     Sending...

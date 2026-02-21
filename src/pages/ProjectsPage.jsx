@@ -14,7 +14,7 @@ const ProjectsPage = () => {
   return (
     <div className="projects-page">
       <div className="projects-header">
-        <h1>Projects Dashboard</h1>
+        <h1>Projects <span className="accent">Dashboard</span></h1>
         <p>Backend systems, mobile applications and full-stack platforms.</p>
       </div>
 

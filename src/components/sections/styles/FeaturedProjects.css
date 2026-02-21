@@ -5,7 +5,7 @@
 }
 
 .projects.section {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 
@@ -13,8 +13,6 @@
 
 .projects-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3rem);
-  font-weight: 800;
   line-height: 1.2;
   margin: 0 auto 4rem;
   color: var(--text-primary);
@@ -28,7 +26,6 @@
 /* GROUPS */
 
 .projects-group h3 {
-  font-size: 22px;
   margin-bottom: 28px;
   color: var(--text-primary);
 }
@@ -142,7 +139,7 @@
 
 .project-desc {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-secondary);

@@ -1,5 +1,6 @@
 import "./AboutPage.css";
-// import profileImg from "../../assets/profile.jpg"; // add your image here
+import profileImg from "../assets/profile.jpg";
+import resumePdf from "../assets/Moksh_Upadhyay_1.7_Experience.pdf";
 
 function AboutPage() {
   return (
@@ -9,44 +10,33 @@ function AboutPage() {
         <div className="about-grid">
 
           {/* Left Side – Image */}
-          {/* <div className="about-image">
-            <img src={profileImg} alt="Profile" />
-          </div> */}
+          <div className="about-image">
+            <img src={profileImg} alt="Moksh Upadhyay" />
+          </div>
 
           {/* Right Side – Content */}
           <div className="about-content">
-            <h2 className="about-title">
+            <h1 className="about-title">
               About <span className="accent">Me</span>
-            </h2>
+            </h1>
 
             <p>
-              I am a Backend-Focused Software Development Engineer with 1.5+ years 
-              of professional experience working on production-grade systems. 
-              My primary focus is building scalable REST APIs and strengthening 
-              backend architectures that operate reliably under real-world load. 
-              I regularly debug live production issues, analyze system behavior, 
-              and optimize performance to ensure stability and fast response times.
+              <strong>Software Developer</strong> with <strong>1.7+ years</strong> of professional experience working on production-grade backend systems. I primarily build and maintain scalable <strong>REST APIs using Java and Spring Boot</strong>, while debugging live production issues, analyzing system behavior, and optimizing performance for stability and low response times.
             </p>
 
             <p>
-              My core stack includes Java and Spring Boot, along with Spring MVC, 
-              Spring Data JPA, Hibernate, and JDBC for building clean and 
-              maintainable service layers. I work extensively with MySQL and 
-              PostgreSQL, focusing on query optimization, indexing strategies, 
-              transaction handling, and database performance tuning. I implement 
-              secure authentication flows using Spring Security and JWT, design 
-              structured exception handling, and manage third-party integrations 
-              in high-impact environments.
+              My experience includes <strong>Spring MVC, Spring Boot, Hibernate, and JDBC</strong>, along with <strong>MySQL and PostgreSQL</strong> for query optimization, indexing, and transaction management. I implement authentication and authorization using <strong>Spring Security and JWT</strong>, handle structured exception management, and manage third-party API integrations in production environments.
             </p>
 
             <p>
-              Beyond backend systems, I have exposure to Android and web 
-              application development, which helps me design APIs aligned with 
-              real frontend workflows. I work in Linux-based environments using 
-              Git, Maven, Gradle, Docker (basic), and JUnit/Mockito for testing. 
-              My approach is practical and impact-driven — build systems that are 
-              scalable, secure, and resilient in production.
+              I also have exposure to building <strong>native and hybrid applications</strong>, as well as web applications and websites with admin panels. Familiar with <strong>Linux environments</strong>, with working knowledge of <strong>Git and Docker</strong>, focused on writing clean and reliable backend code.
             </p>
+
+            <div className="about-cta">
+              <a href={resumePdf} download="Moksh_Upadhyay_Resume.pdf" className="btn btn-primary">
+                Download Resume
+              </a>
+            </div>
 
           </div>
 

@@ -3,6 +3,7 @@ import "./Navbar.css";
 import ThemeToggle from "../toggles/ThemeToggle";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import resumePdf from "../../assets/Moksh_Upadhyay_1.7_Experience.pdf";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -57,7 +58,7 @@ function Navbar() {
           <Link to="/contact" className="nav-cta" onClick={closeMobileMenu}>
             Hire Me
           </Link>
-          <a href="/resume.pdf" download="Moksh_Upadhyay_Resume.pdf" className="nav-cta resume-nav-cta">
+          <a href={resumePdf} download="Moksh_Upadhyay_Resume.pdf" className="nav-cta resume-nav-cta">
             Resume
           </a>
         </div>
@@ -94,6 +95,9 @@ function Navbar() {
             <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Home</NavLink>
           </li>
           <li className="nav-item">
+            <NavLink to="/about" end className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>About</NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink to="/projects" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMobileMenu}>Projects</NavLink>
           </li>
           <li className="nav-item">
@@ -106,7 +110,7 @@ function Navbar() {
             <Link to="/contact" className="nav-cta" onClick={closeMobileMenu}>
               Hire Me
             </Link>
-            <a href="/resume.pdf" download="Moksh_Upadhyay_Resume.pdf" className="nav-cta resume-nav-cta" onClick={closeMobileMenu}>
+            <a href={resumePdf} download="Moksh_Upadhyay_Resume.pdf" className="nav-cta resume-nav-cta" onClick={closeMobileMenu}>
               Resume
             </a>
           </li>

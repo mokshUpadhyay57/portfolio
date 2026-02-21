@@ -4,7 +4,7 @@
 }
 
 .skills.section {
-  padding: 100px 24px;
+  padding: 80px 24px;
 }
 
 
@@ -12,8 +12,6 @@
 
 .skills-title {
   font-family: var(--font-heading);
-  font-size: 2.5rem;       /* ~40px */
-  font-weight: 800;
   line-height: 1.2;
   margin: 0 auto 56px;
   color: var(--text-primary);
@@ -72,7 +70,7 @@
 
 .skill-card .desc {
   font-family: var(--font-body);
-  font-size: 0.95rem;      /* ~15px */
+  font-size: 1rem;
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.7;
@@ -102,7 +100,7 @@
 
 @media (max-width: 640px) {
   .skills-title {
-    font-size: 30px;
+    font-size: 1.8rem;
   }
 
   .skill-card h4 {

@@ -1,26 +1,26 @@
 export const timelineData = [
   {
-    year: "2023 - Present",
-    title: "Java Backend Engineer",
-    company: "Fintech Solutions",
-    description: "Backend-focused Software Development Engineer with 1.5+ years of experience building and optimizing production-grade systems and API-driven applications. Regularly resolve real-world production issues, enhance API behavior, and contribute to strengthening overall system robustness in live environments.",
-    tags: ["Java", "Spring Boot", "Microservices", "REST APIs", "SQL"],
+    year: "Jul 2024 - Present",
+    title: "Software Development Engineer",
+    company: "Via (Ebix Technologies)",
+    description: "Engineered scalable backend solutions for Atlas and FlightRoutes24, resolving over 100 critical production defects and enhancing system stability by 15%. Optimized high-traffic REST APIs, achieving a 25% reduction in latency. Spearheaded the integration of global hotel inventory APIs (HotelBeds, Paximum) and DST Searcher to streamline real-time booking workflows.",
+    tags: ["Java 8+", "Spring Boot", "REST APIs", "MySQL", "PostgreSQL", "Git"],
     type: "work"
   },
   {
-    year: "Key Responsibilities",
-    title: "System Architecture & Optimization",
-    company: "Across Projects",
-    description: "Designing and maintaining scalable RESTful services, optimizing database queries, handling third-party integrations, and strengthening backend architecture in high-impact environments. Debugging real-world production scenarios where precision and fast resolution are critical.",
-    tags: ["System Design", "Database Optimization", "API Integration", "Troubleshooting"],
-    type: "skill"
+    year: "Feb 2024 - Jun 2024",
+    title: "Internship",
+    company: "CDAC Noida",
+    description: "Optimized Tesseract OCR performance for archival Hindi documents, significantly enhancing recognition accuracy of degraded text. Developed robust data preprocessing pipelines to automate noise reduction and normalization for historical datasets. Curated large-scale labeled datasets for YOLO-based signature verification, improving object detection precision.",
+    tags: ["Python", "Tesseract OCR", "YOLO", "OpenCV"],
+    type: "internship"
   },
   {
-    year: "2021 - 2023",
-    title: "Internship & Full Stack Exposure",
-    company: "Research Lab / WebScale",
-    description: "Worked on OCR system improvement by preparing structured training datasets and refining Tesseract-based text recognition workflows. Collaborated on creating image datasets for YOLO model training. Also build Android and web applications, enabling delivery of complete, end-to-end solutions.",
-    tags: ["Python", "YOLO", "OCR", "React", "Android", "Flutter"],
-    type: "experience"
+    year: "May 2021 - Jun 2021",
+    title: "Summer Training",
+    company: "Tech Access Learning Pvt. Ltd.",
+    description: "Developed and deployed 'X-Com,' a full-stack e-commerce platform using Django, focusing on scalable architecture and secure transaction handling. Mastered Python-based backend development and relational database management to deliver high-performance web applications.",
+    tags: ["Html", "Css", "Javascript", "Django"],
+    type: "training"
   }
 ];

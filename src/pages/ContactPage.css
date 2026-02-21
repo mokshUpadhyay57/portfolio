@@ -60,7 +60,6 @@
 
 .contact-info h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 2rem; /* Adjusted margin */
   line-height: 1.1;
@@ -73,7 +72,6 @@
   font-family: var(--font-body);
   color: var(--text-secondary);
   margin-bottom: 2.5rem; /* Adjusted margin */
-  font-size: 1.125rem;
   max-width: 500px;
   line-height: 1.7;
 }
@@ -239,12 +237,13 @@
 
 .form-group label {
   font-family: var(--font-body);
-  font-weight: 700; /* Bolder label */
-  font-size: 0.88rem; /* Slightly adjusted size */
-  color: var(--text-secondary);
+  font-weight: 600; 
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  opacity: 0.8; /* Prominent but subtle */
   text-transform: uppercase;
-  letter-spacing: 0.07em; /* Slightly adjusted letter spacing */
-  margin-left: 0.25rem; /* Reduced margin */
+  letter-spacing: 0.06em;
+  margin-left: 0.2rem;
 }
 
 .form-group input,
@@ -284,8 +283,7 @@
 .form-group input:hover,
 .form-group textarea:hover,
 .form-group select:hover {
-  background-color: color-mix(in srgb, var(--bg-main) 95%, transparent); /* More subtle hover background */
-  border-color: color-mix(in srgb, var(--border-color) 120%, transparent); 
+  background-color: color-mix(in srgb, var(--bg-main) 95%, transparent); 
 }
 
 .form-group input:focus,
@@ -293,9 +291,27 @@
 .form-group select:focus {
   outline: none;
   background-color: var(--bg-main);
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 25%, transparent); /* Slightly softer focus shadow */
+  border-color: var(--accent-primary); /* Blue/Indigo accent */
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-primary) 15%, transparent);
   transform: translateY(-1px); 
+}
+
+.form-group select {
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.form-group select.placeholder-selected {
+  color: var(--text-secondary);
+  opacity: 0.6;
 }
 
 /* Specific styles for select to remove default appearance and add custom arrow */

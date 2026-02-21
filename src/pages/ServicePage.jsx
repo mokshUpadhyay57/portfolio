@@ -38,7 +38,7 @@ const ServicePage = () => {
 
   return (
     <div className="service-page">
-      <h1>Services I Offer</h1>
+      <h1>Services <span className="accent">I Offer</span></h1>
       <div className="service-cards">
         {servicesData.map((service, index) => (
           <div className={`service-card ${service.featured ? "featured" : ""}`} key={index}>
@@ -95,7 +95,7 @@ const ServicePage = () => {
             </div>
             
             <Link to="/contact" className="cta-wrapper"> 
-              <button className="btn primary">
+              <button className="btn btn-primary">
                 {service.cta}
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

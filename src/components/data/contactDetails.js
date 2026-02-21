@@ -18,7 +18,7 @@ export const contactDetails = {
     },
     {
       name: 'Fiverr',
-      url: 'https://www.fiverr.com/ mokshupadhyay',
+      url: 'https://www.fiverr.com/mokshupadhyay',
       icon: 'CircleDollarSign'
     },
     {

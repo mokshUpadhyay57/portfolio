@@ -7,7 +7,7 @@ const NotFound = () => {
     title: "404 - Page Not Found",
     description: "The page you're looking for doesn't exist. Return to Moksh Upadhyay's portfolio home page.",
     keywords: "404, page not found, Moksh Upadhyay portfolio",
-    canonical: "https://moksh.codes/404"
+    canonical: "https://mokshcodes.netlify.app/404"
   });
 
   return (

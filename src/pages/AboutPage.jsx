@@ -1,8 +1,15 @@
 import "./AboutPage.css";
 import profileImg from "../assets/profile.jpg";
 import resumePdf from "../assets/Moksh_Upadhyay_1.7_Experience.pdf";
+import useSEO from "../hooks/useSEO";
 
 function AboutPage() {
+  useSEO({
+    title: "About Me",
+    description: "Welcome to the portfolio of Moksh Upadhyay, a Java Backend Engineer and Full Stack Developer. Discover projects, services, and technical expertise.",
+    keywords: "Moksh Upadhyay, About, Java Backend, Full Stack Developer, Spring Boot, React Portfolio",
+    canonical: "https://mokshcodes.netlify.app/about"
+  });
   return (
     <section className="about section light" id="about">
       <div className="about-container">

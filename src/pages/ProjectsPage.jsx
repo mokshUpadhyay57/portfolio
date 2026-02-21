@@ -8,7 +8,7 @@ const ProjectsPage = () => {
     title: "Projects",
     description: "Explore the portfolio of Moksh Upadhyay. Showcase of Java Backend systems, Spring Boot APIs, React web apps, and Mobile applications.",
     keywords: "Java Projects, Spring Boot, React, Full Stack, Portfolio, Moksh Upadhyay",
-    canonical: "https://moksh.codes/projects"
+    canonical: "https://mokshcodes.netlify.app/projects"
   });
   
   return (

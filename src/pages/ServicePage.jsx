@@ -9,7 +9,7 @@ const ServicePage = () => {
     title: "Services",
     description: "Professional software development services by Moksh Upadhyay. Backend development, Mobile app development, and Full Stack solutions.",
     keywords: "Software Services, Backend Development, Mobile Apps, Full Stack, Hire Java Developer",
-    canonical: "https://moksh.codes/services"
+    canonical: "https://mokshcodes.netlify.app/services"
   });
   // Simple SVG Icons mapping
   const getIcon = (title) => {

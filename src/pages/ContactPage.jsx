@@ -21,7 +21,7 @@ const ContactPage = () => {
     title: "Contact",
     description: "Get in touch with Moksh Upadhyay for collaboration, hiring, or technical inquiries. Available for Java Backend and Full Stack roles.",
     keywords: "Contact Moksh Upadhyay, Hire Java Developer, Backend Engineer, Freelance Developer",
-    canonical: "https://moksh.codes/contact"
+    canonical: "https://mokshcodes.netlify.app/contact"
   });
 
   const form = useRef();
@@ -65,14 +65,13 @@ const ContactPage = () => {
     }
 
     const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      reply_to: formData.email,
-      title: formData.projectType,
-      message: formData.message,
+      name: formData.name,       // {{name}}
+      reply_to: formData.email,   // {{reply_to}}
+      title: formData.projectType,// {{title}}
+      message: formData.message,  // {{message}}
     };
 
-    console.log('Attempting to send email...', templateParams);
+    console.log('Sending inquiry notification...', templateParams);
 
     emailjs.send(serviceId, templateId, templateParams, publicKey)
       .then((result) => {
@@ -165,11 +164,10 @@ const ContactPage = () => {
                   required
                 >
                   <option value="">Select Project Type</option>
-                  <option value="Website (Single / Multi Page)">Website (Single / Multi Page)</option>
-                  <option value="Backend API / Server Development">Backend API Development</option>
-                  <option value="Mobile App (Simple / Hybrid)">Mobile App (Simple / Hybrid)</option>
-                  <option value="Full App / Product Development">Full App / Product Development</option>
-                  <option value="Not Sure (Need Help Deciding)">Not Sure (Need Help Deciding)</option>
+                  <option value="Website - Single or Multi Page">Website (Single / Multi Page)</option>
+                  <option value="Backend API Development">Backend API Development</option>
+                  <option value="Mobile App - Simple or Hybrid">Mobile App (Simple / Hybrid)</option>
+                  <option value="Full App Development with Website">Full App Development with Website</option>
                 </select>
               </div>
               <div className="form-group">

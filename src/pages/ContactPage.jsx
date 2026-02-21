@@ -54,23 +54,38 @@ const ContactPage = () => {
     setIsSending(true);
     setSendError(null);
 
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      form.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-    .then((result) => {
-      console.log('Email successfully sent!', result.text);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '', projectType: '' }); // Clear form immediately
-    }, (error) => {
-      console.error('Failed to send email:', error.text);
-      setSendError('Failed to send message. Please try again or contact me directly.');
-    })
-    .finally(() => {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setSendError('Config error: Missing EmailJS keys in .env');
       setIsSending(false);
-    });
+      return;
+    }
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      reply_to: formData.email,
+      title: formData.projectType,
+      message: formData.message,
+    };
+
+    console.log('Attempting to send email...', templateParams);
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((result) => {
+        console.log('Email successfully sent!', result.status, result.text);
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '', projectType: '' });
+      }, (error) => {
+        console.error('EmailJS Error:', error);
+        setSendError(`Send failed: ${error.text || 'Check console'}`);
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
   return (
@@ -108,10 +123,10 @@ const ContactPage = () => {
         <div className="contact-form-container">
           {isSubmitted ? (
             <div className="success-message">
-              {React.createElement(IconComponents.CheckCircle, { size: 60, className: "success-icon" })} {/* Reverted CheckCircle icon */}
+              {React.createElement(IconComponents.CheckCircle, { size: 60, className: "success-icon" })}
               <h2>Message Sent!</h2>
               <p>Thank you for reaching out. I'll get back to you shortly.</p>
-              <button className="btn btn-outline" onClick={resetForm}>Send Another Message</button> {/* Use resetForm */}
+              <button className="btn btn-outline" onClick={resetForm}>Send Another Message</button>
             </div>
           ) : (
             <form ref={form} onSubmit={handleSubmit} className="contact-form">

@@ -1,4 +1,4 @@
-import projects from "../components/data/projectsdata";
+import projects from "../components/data/projectsData";
 import ProjectCard from "../components/sections/src/ProjectCard";
 import useSEO from "../hooks/useSEO";
 import "./ProjectsPage.css";

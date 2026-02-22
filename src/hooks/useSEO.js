@@ -7,7 +7,7 @@ const useSEO = ({
   canonical, 
   ogTitle, 
   ogDescription, 
-  ogImage, 
+  ogImage = 'https://mokshcodes.netlify.app/og-image.png', 
   twitterCard = 'summary_large_image' 
 }) => {
   useEffect(() => {

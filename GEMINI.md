@@ -27,7 +27,6 @@ A high-performance, responsive personal portfolio built for Moksh Upadhyay, a So
     *   `ThemeContext`: Manages Dark/Light mode persistence via local storage.
 *   **Custom Hooks:**
     *   `useSEO`: Dynamic document title and meta tag management.
-    *   `useScrollReveal`: Intersection Observer based animations for section entries.
 
 ## 🛠️ Development Workflow
 

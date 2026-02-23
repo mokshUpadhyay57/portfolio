@@ -29,7 +29,8 @@ const ContactPage = () => {
     name: '',
     email: '',
     message: '',
-    projectType: ''
+    projectType: '',
+    honeypot: '' // Hidden field for bots
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -44,13 +45,22 @@ const ContactPage = () => {
   };
 
   const resetForm = () => {
-    setFormData({ name: '', email: '', message: '', projectType: '' });
+    setFormData({ name: '', email: '', message: '', projectType: '', honeypot: '' });
     setIsSubmitted(false);
     setSendError(null);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Honeypot check: If the hidden field is filled, it's likely a bot.
+    // We simulate success without actually sending the email.
+    if (formData.honeypot) {
+      console.warn('Bot detected via honeypot.');
+      setIsSubmitted(true);
+      return;
+    }
+
     setIsSending(true);
     setSendError(null);
 
@@ -129,6 +139,20 @@ const ContactPage = () => {
             </div>
           ) : (
             <form ref={form} onSubmit={handleSubmit} className="contact-form">
+              {/* Honeypot field - Hidden from users, used to catch bots */}
+              <div className="form-group-hp" aria-hidden="true">
+                <label htmlFor="honeypot">Leave this field empty</label>
+                <input
+                  type="text"
+                  id="honeypot"
+                  name="honeypot"
+                  value={formData.honeypot}
+                  onChange={handleChange}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
                 <input

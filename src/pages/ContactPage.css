@@ -235,6 +235,16 @@
   gap: 0.7rem; /* Adjusted gap */
 }
 
+/* Honeypot field - Hidden from humans, visible to bots */
+.form-group-hp {
+  position: absolute;
+  left: -5000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-group label {
   font-family: var(--font-body);
   font-weight: 600; 

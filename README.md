@@ -82,4 +82,4 @@ npm run test
 ### 👨‍💻 Maintained by
 **Moksh Upadhyay**  
 *Java Backend Engineer | Full Stack Developer*  
-[GitHub](https://github.com/mokshUpadhyay57) | [LinkedIn](https://www.linkedin.com/in/moksh-upadhyay/)
+[GitHub](https://github.com/mokshUpadhyay57) | [LinkedIn](https://www.linkedin.com/in/mokshupadhyay57)

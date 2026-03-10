@@ -27,16 +27,16 @@
   {
     "id": 6,
     "title": "Bizzare E-commerce Engine",
-    "category": "Full Stack"
+    "category": "Web"
   },
   {
     "id": 7,
-    "title": "XCom Scalable E-commerce Platform",
-    "category": "Backend"
+    "title": "XCom E-commerce Platform",
+    "category": "Web"
   },
   {
     "id": 8,
     "title": "TextWizard (Text Utility)",
-    "category": "Frontend"
+    "category": "Web"
   }
 ]

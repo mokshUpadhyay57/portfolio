@@ -12,14 +12,20 @@ export default async (request, context) => {
   }
 
   const response = await context.next();
-  const html = await response.text();
+  let html = await response.text();
 
   // Construct dynamic OG image URL
   const ogImageUrl = `${url.origin}/.netlify/functions/og-image?title=${encodeURIComponent(
     project.title
   )}&category=${encodeURIComponent(project.category)}`;
 
-  // Inject meta tags into the head
+  // 1. Remove existing static tags to avoid confusion for crawlers
+  html = html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/gi, "");
+  html = html.replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/gi, "");
+  html = html.replace(/<meta property="og:title" content="[^"]*"\s*\/?>/gi, "");
+  html = html.replace(/<meta name="twitter:title" content="[^"]*"\s*\/?>/gi, "");
+
+  // 2. Inject fresh dynamic tags
   const headInjection = `
     <meta property="og:title" content="${project.title} | Moksh Codes">
     <meta property="og:image" content="${ogImageUrl}">

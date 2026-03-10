@@ -59,8 +59,11 @@ npm install
 # Run development server (HMR enabled)
 npm run dev
 
-# Build for production
+# Build for production (also regenerates dist/sitemap.xml with current lastmod values)
 npm run build
+
+# Refresh dist sitemap metadata manually (after a build)
+npm run seo:refresh
 
 # Run linting
 npm run lint

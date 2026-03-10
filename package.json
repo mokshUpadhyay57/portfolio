@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run seo:refresh",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "seo:refresh": "node scripts/refresh-seo-metadata.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

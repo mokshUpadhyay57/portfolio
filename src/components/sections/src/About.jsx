@@ -29,11 +29,13 @@ function About() {
           </p>
 
           <p>
-            During my internship, I worked on OCR system improvement by
-            preparing structured training datasets and refining Tesseract-based
-            text recognition workflows. I also collaborated on creating image
-            datasets for YOLO model training, contributing to better detection
-            accuracy and document digitization performance.
+            In a research and development capacity at CDAC, I specialized in OCR
+            system optimization for archival documents. I engineered structured
+            data preprocessing pipelines that significantly enhanced text
+            recognition accuracy and automated historical document digitization.
+            Additionally, I curated high-precision datasets for YOLO-based
+            object detection, directly improving verification performance and
+            recognition reliability.
           </p>
 
           <p>

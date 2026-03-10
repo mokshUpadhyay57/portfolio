@@ -52,7 +52,7 @@ Update the following files to modify site content:
     *   Fluid typography using CSS `clamp()`.
     *   Unified button system (`.btn-primary`, `.btn-outline`).
     *   Global accent color implementation (`.accent`) across all headers.
-*   **Enhanced SEO:** Improved metadata management and dynamic titles for better indexability.
+*   **Enhanced SEO:** Improved metadata management, dynamic titles, and **JSON-LD structured data integration** (Person/SoftwareEngineer schema) for better indexability and search engine visibility.
 *   **Refined Mobile UX:** Optimized grid layouts and navigation for mobile devices.
 
 ## 🔮 Future Roadmap (v6.0)

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Online Bookstore Backend",
+    "category": "Backend"
+  },
+  {
+    "id": 2,
+    "title": "Employee Payroll Batch Processor",
+    "category": "Automation"
+  },
+  {
+    "id": 3,
+    "title": "Lockify App",
+    "category": "Mobile App"
+  },
+  {
+    "id": 4,
+    "title": "Esports Tournament App",
+    "category": "Mobile App"
+  },
+  {
+    "id": 5,
+    "title": "Pet Care & Aid Ecosystem",
+    "category": "Mobile App"
+  },
+  {
+    "id": 6,
+    "title": "Bizzare E-commerce Engine",
+    "category": "Full Stack"
+  },
+  {
+    "id": 7,
+    "title": "XCom Scalable E-commerce Platform",
+    "category": "Backend"
+  },
+  {
+    "id": 8,
+    "title": "TextWizard (Text Utility)",
+    "category": "Frontend"
+  }
+]

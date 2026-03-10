@@ -125,7 +125,7 @@
 
 .nav-cta:hover {
   background-color: var(--accent-primary);
-  color: #ffffff;
+  color: #ffffff; /* Consistent with .btn-primary in index.css */
   box-shadow: 0 0 18px color-mix(in srgb, var(--accent-primary) 35%, transparent);
 }
 

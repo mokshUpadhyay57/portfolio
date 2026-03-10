@@ -8,7 +8,8 @@ const useSEO = ({
   ogTitle, 
   ogDescription, 
   ogImage = 'https://mokshcodes.netlify.app/og-image.png', 
-  twitterCard = 'summary_large_image' 
+  twitterCard = 'summary_large_image',
+  jsonLd
 }) => {
   useEffect(() => {
     // 1. Update Title
@@ -55,7 +56,18 @@ const useSEO = ({
     setMetaTag('name', 'twitter:description', ogDescription || description);
     setMetaTag('name', 'twitter:image', ogImage);
 
-  }, [title, description, keywords, canonical, ogTitle, ogDescription, ogImage, twitterCard]);
+    // 7. Structured Data (JSON-LD)
+    if (jsonLd) {
+      let script = document.querySelector('script[type="application/ld+json"]');
+      if (!script) {
+        script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(script);
+      }
+      script.text = JSON.stringify(jsonLd);
+    }
+
+  }, [title, description, keywords, canonical, ogTitle, ogDescription, ogImage, twitterCard, jsonLd]);
 };
 
 export default useSEO;

@@ -191,8 +191,6 @@
 .project-actions {
   display: flex;
   gap: 12px;
-  margin-top: auto;
-  padding-top: 24px;
 }
 
 .project-actions a {
@@ -260,7 +258,7 @@
   padding: 5px 10px;
   border-radius: 8px;
   background-color: var(--accent-primary);
-  color: white;
+  color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 

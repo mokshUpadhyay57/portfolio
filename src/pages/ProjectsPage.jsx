@@ -36,9 +36,11 @@ const ProjectsPage = () => {
       </div>
 
       <div className="projects-grid">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        {projects
+          .filter((project) => !project.hidden)
+          .map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
       </div>
     </div>
   );

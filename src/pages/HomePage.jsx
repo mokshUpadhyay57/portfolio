@@ -32,7 +32,30 @@ function Home() {
     title: "Home",
     description: "Welcome to the portfolio of Moksh Upadhyay, a Java Backend Engineer and Full Stack Developer. Discover projects, services, and technical expertise.",
     keywords: "Moksh Upadhyay, Home, Java Backend, Full Stack Developer, Spring Boot, React Portfolio",
-    canonical: "https://mokshcodes.netlify.app/"
+    canonical: "https://mokshcodes.netlify.app/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Moksh Upadhyay",
+      "jobTitle": "Java Backend Engineer",
+      "url": "https://mokshcodes.netlify.app/",
+      "sameAs": [
+        "https://github.com/mokshUpadhyay57",
+        "https://www.linkedin.com/in/mokshupadhyay57"
+      ],
+      "knowsAbout": [
+        "Java",
+        "Spring Boot",
+        "React",
+        "Node.js",
+        "Flutter",
+        "Kotlin",
+        "MySQL",
+        "Full Stack Development",
+        "REST APIs"
+      ],
+      "description": "Moksh Upadhyay is a Java Backend Engineer specializing in building scalable backend systems, REST APIs, and full-stack applications."
+    }
   });
   const [displayText, setDisplayText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);

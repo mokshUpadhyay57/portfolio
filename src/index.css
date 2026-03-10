@@ -10,6 +10,7 @@
   /* Text */
   --text-primary: #f8fafc;  /* slate-50 main text */
   --text-secondary: #94a3b8; /* slate-400 secondary text */
+  --white: #ffffff;         /* pure white for accent contrast */
 
   /* Accent */
   --accent-primary: #6366f1; /* indigo-500 modern accent */
@@ -36,9 +37,10 @@
   --bg-section: #f5f5f7;
   --bg-card: #ffffff;
 
-/* Text */
+  /* Text */
   --text-primary: #111827;
   --text-secondary: #4b5563;
+  --white: #ffffff;
 
   /* Accent */
   --accent-primary: #7c3aed;
@@ -46,7 +48,7 @@
 
   /* Borders */
   --border-color: #e5e7eb;
-    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   --card-shadow-hover:
     0 8px 20px rgba(0, 0, 0, 0.08),
     0 18px 40px rgba(0, 0, 0, 0.12);
@@ -131,7 +133,7 @@ button, .btn {
 
 .btn-primary {
   background-color: var(--accent-primary);
-  color: #ffffff !important;
+  color: var(--white) !important;
 }
 
 .btn-primary:hover {

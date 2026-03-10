@@ -18,7 +18,7 @@ function AboutPage() {
 
           {/* Left Side – Image */}
           <div className="about-image">
-            <img src={profileImg} alt="Moksh Upadhyay" />
+            <img src={profileImg} alt="Moksh Upadhyay" loading="lazy" />
           </div>
 
           {/* Right Side – Content */}

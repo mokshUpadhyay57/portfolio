@@ -9,7 +9,7 @@ export const timelineData = [
   },
   {
     year: "Feb 2024 - Jun 2024",
-    title: "Internship",
+    title: "Research & Development Intern",
     company: "CDAC Noida",
     description: "Optimized Tesseract OCR performance for archival Hindi documents, significantly enhancing recognition accuracy of degraded text. Developed robust data preprocessing pipelines to automate noise reduction and normalization for historical datasets. Curated large-scale labeled datasets for YOLO-based signature verification, improving object detection precision.",
     tags: ["Python", "Tesseract OCR", "YOLO", "OpenCV"],
@@ -17,7 +17,7 @@ export const timelineData = [
   },
   {
     year: "May 2021 - Jun 2021",
-    title: "Summer Training",
+    title: "Full Stack Developer Trainee",
     company: "Tech Access Learning Pvt. Ltd.",
     description: "Developed and deployed 'X-Com,' a full-stack e-commerce platform using Django, focusing on scalable architecture and secure transaction handling. Mastered Python-based backend development and relational database management to deliver high-performance web applications.",
     tags: ["Html", "Css", "Javascript", "Django"],

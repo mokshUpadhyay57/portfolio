@@ -101,6 +101,61 @@
   color: var(--text-secondary);
 }
 
+/* Features List */
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.feature-item .accent {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Outcomes Grid */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.outcome-card {
+  display: flex;
+  gap: 1rem;
+  background: color-mix(in srgb, var(--bg-section) 40%, transparent);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.outcome-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-primary);
+}
+
+.outcome-card p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 0;
+}
+
 .problem-list {
   list-style: none;
   padding: 0;

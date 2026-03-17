@@ -1,5 +1,5 @@
 import "../styles/ProjectCard.css";
-import { Github, Globe, Smartphone, ExternalLink } from "lucide-react";
+import { Github, Globe, Smartphone, ExternalLink, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
@@ -9,6 +9,7 @@ const ProjectCard = ({ project }) => {
     description, 
     category = [], 
     tech = [], 
+    outcomes = [],
     github, 
     website, 
     android, 
@@ -49,6 +50,13 @@ const ProjectCard = ({ project }) => {
         </div>
 
         <p className="project-desc">{description}</p>
+
+        {outcomes && outcomes.length > 0 && (
+          <div className="project-impact-highlight">
+            <Zap size={14} className="accent" />
+            <span>{outcomes[0]}</span>
+          </div>
+        )}
 
         <div className="tech-stack">
           {tech.slice(0, 5).map((item, index) => (

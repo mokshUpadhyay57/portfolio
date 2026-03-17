@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import projects from "../components/data/projectsData";
 import useSEO from "../hooks/useSEO";
-import { Github, Globe, Smartphone, ArrowLeft, ChevronRight } from "lucide-react";
+import { Github, Globe, Smartphone, ArrowLeft, ChevronRight, CheckCircle2, Zap } from "lucide-react";
 import "./ProjectDetailPage.css";
 import { useEffect } from "react";
 
@@ -15,6 +15,17 @@ function ProjectDetailPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  const ogImageUrl = project 
+    ? `${window.location.origin}/.netlify/functions/og-image?title=${encodeURIComponent(project.title)}&category=${encodeURIComponent(project.category[0])}`
+    : "";
+
+  useSEO({
+    title: project ? project.title : "Project Not Found",
+    description: project ? project.description : "The requested project could not be found.",
+    keywords: project ? `${project.title}, ${project.tech.join(", ")}, Moksh Upadhyay Portfolio` : "Project Not Found",
+    ogImage: ogImageUrl,
+  });
+
   if (!project) {
     return (
       <div className="not-found-container">
@@ -23,17 +34,6 @@ function ProjectDetailPage() {
       </div>
     );
   }
-
-  const ogImageUrl = `${window.location.origin}/.netlify/functions/og-image?title=${encodeURIComponent(
-    project.title
-  )}&category=${encodeURIComponent(project.category[0])}`;
-
-  useSEO({
-    title: project.title,
-    description: project.description,
-    keywords: `${project.title}, ${project.tech.join(", ")}, Moksh Upadhyay Portfolio`,
-    ogImage: ogImageUrl,
-  });
 
   return (
     <div className="project-detail-page">
@@ -81,17 +81,45 @@ function ProjectDetailPage() {
             </section>
 
             <section className="detail-section">
-              <h2 className="section-title">Why I Built This</h2>
+              <h2 className="section-title">Strategic Rationale</h2>
               <p className="section-text">{project.whyBuilt}</p>
             </section>
 
+            {project.features && (
+              <section className="detail-section">
+                <h2 className="section-title">Core Features</h2>
+                <div className="features-list">
+                  {project.features.map((feature, i) => (
+                    <div key={i} className="feature-item">
+                      <CheckCircle2 size={18} className="accent" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {project.outcomes && (
+              <section className="detail-section">
+                <h2 className="section-title">Key Outcomes & Impact</h2>
+                <div className="outcomes-grid">
+                  {project.outcomes.map((outcome, i) => (
+                    <div key={i} className="outcome-card">
+                      <Zap size={20} className="accent" />
+                      <p>{outcome}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             <section className="detail-section">
-              <h2 className="section-title">How It's Built</h2>
+              <h2 className="section-title">Technical Implementation</h2>
               <p className="section-text">{project.howBuilt}</p>
             </section>
 
             <section className="detail-section">
-              <h2 className="section-title">Challenges & Solutions</h2>
+              <h2 className="section-title">Challenges & Engineering Solutions</h2>
               <ul className="problem-list">
                 {project.problems.map((prob, i) => (
                   <li key={i} className="problem-item">
@@ -116,7 +144,7 @@ function ProjectDetailPage() {
 
             {project.images && project.images.length > 0 && (
               <div className="sidebar-block">
-                <h3 className="block-title">Screenshots</h3>
+                <h3 className="block-title">Project Visuals</h3>
                 <div className="detail-gallery">
                   {project.images.map((img, i) => (
                     <img key={i} src={img} alt={`${project.title} screenshot ${i+1}`} loading="lazy" />

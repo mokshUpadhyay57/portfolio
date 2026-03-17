@@ -118,6 +118,24 @@
   margin: 0.5rem 0;
 }
 
+.project-impact-highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: color-mix(in srgb, var(--accent-primary) 5%, transparent);
+  border-left: 2px solid var(--accent-primary);
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+}
+
+.project-impact-highlight span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 .tech-stack {
   display: flex;
   flex-wrap: wrap;

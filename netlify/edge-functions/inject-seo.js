@@ -1,4 +1,4 @@
-import projects from "./projects.json" assert { type: "json" };
+import projects from "./projects.json" with { type: "json" };
 
 export default async (request, context) => {
   const url = new URL(request.url);

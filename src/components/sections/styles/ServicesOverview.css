@@ -1,0 +1,72 @@
+/* src/components/sections/styles/ServicesOverview.css */
+
+.services-overview-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-overview-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.services-overview-intro {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.services-overview-card {
+  background-color: color-mix(in srgb, var(--bg-section) 70%, transparent);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.services-overview-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.services-overview-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.services-overview-card-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.services-overview-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.services-overview-link:hover {
+  opacity: 0.8;
+}

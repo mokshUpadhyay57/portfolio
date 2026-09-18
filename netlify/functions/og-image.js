@@ -2,6 +2,10 @@ import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const handler = async (event) => {
   try {
@@ -13,7 +17,7 @@ export const handler = async (event) => {
     
     try {
       fontData = fs.readFileSync(fontPath);
-    } catch (e) {
+    } catch {
       console.error("Font loading failed, check path:", fontPath);
       // Fallback or re-throw
       throw new Error(`Font file not found at ${fontPath}`);

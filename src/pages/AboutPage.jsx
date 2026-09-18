@@ -39,6 +39,11 @@ function AboutPage() {
               I also have exposure to building <strong>native and hybrid applications</strong>, as well as web applications and websites with admin panels. Familiar with <strong>Linux environments</strong>, with working knowledge of <strong>Git and Docker</strong>, focused on writing clean and reliable backend code.
             </p>
 
+            <h2 className="about-subtitle" style={{ marginTop: '20px', marginBottom: '10px', fontSize: '1.5rem', fontWeight: 'bold' }}>My Approach</h2>
+            <p>
+              I prioritize clean code, performance, and reliability. I believe in open communication with clients and stakeholders to ensure technical solutions perfectly align with business goals.
+            </p>
+
             <div className="about-cta">
               <a href={resumePdf} download="Moksh_Upadhyay_Resume.pdf" className="btn btn-primary">
                 Download Resume

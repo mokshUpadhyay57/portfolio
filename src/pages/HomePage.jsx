@@ -3,6 +3,7 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import useSEO from "../hooks/useSEO";
 import Timeline from "../components/sections/src/Timeline";
+import ServicesOverview from "../components/sections/src/ServicesOverview";
 import Skills from "../components/sections/src/Skills";
 import FeaturedProjects from "../components/sections/src/FeaturedProjects";
 import Recommendations from "../components/sections/src/Recommendations";
@@ -10,20 +11,20 @@ import Contact from "../components/sections/src/Contact";
 
 const roles = [
   {
-    title: "Java Backend Engineer",
-    subtitle: "Building scalable backend systems & REST APIs",
+    title: "Software Engineer",
+    subtitle: "Building scalable backend architectures...",
     stack: "Java | Spring Boot | MySQL", 
   },
   {
-    title: "Web Developer",
-    subtitle: "Creating modern, responsive web applications",
-    stack: "React | Node.js | Express.js | Tailwind CSS",
+    title: "Web Solutions",
+    subtitle: "Delivering robust web applications...",
+    stack: "React | Node.js | Tailwind",
 
   },
   {
-    title: "Android Developer",
-    subtitle: "Developing mobile apps with Flutter & Kotlin",
-    stack: "Kotlin | Flutter | Firebase | React Native",
+    title: "Mobile Development",
+    subtitle: "Creating seamless mobile experiences...",
+    stack: "Kotlin | Flutter | React Native",
   },
 ];
 
@@ -106,9 +107,7 @@ function Home() {
           <h2 className="hero-role">Java Backend Engineer</h2>
 
           <p className="hero-description">
-            I design and build scalable backend systems, REST APIs, and
-            full-stack applications using Java, Spring Boot, and modern
-            technologies.
+            I help businesses build scalable backend systems, high-performance APIs, and robust full-stack applications that drive growth and deliver exceptional user experiences.
           </p>
 
           <div className="hero-actions">
@@ -117,7 +116,7 @@ function Home() {
             </Link>
             <div className="cta-group">
               <Link to="/contact">
-                <button className="btn btn-outline">Hire Me</button>
+                <button className="btn btn-outline">Discuss Your Project</button>
               </Link>
             </div>
           </div>
@@ -131,6 +130,7 @@ function Home() {
         </div>
       </section>
 
+      <ServicesOverview />
       <Timeline />
       <Skills />
       <FeaturedProjects />

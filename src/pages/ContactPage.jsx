@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, Send, Briefcase, Globe, CircleDollarSign, Check
 import { contactDetails } from '../components/data/contactDetails';
 import useSEO from '../hooks/useSEO';
 import emailjs from '@emailjs/browser';
+import CustomSelect from '../components/ui/CustomSelect';
 
 const IconComponents = {
   Github: Github,
@@ -189,60 +190,60 @@ ${formData.message}
               </div>
               <div className="form-group">
                 <label htmlFor="projectType">Project Category</label>
-                <select
+                <CustomSelect
                   id="projectType"
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleChange}
-                  className={formData.projectType === '' ? 'placeholder-selected' : ''}
-                  required
-                >
-                  <option value="">Select Project Category</option>
-                  <option value="New Project">New Project</option>
-                  <option value="Existing Project">Existing Project</option>
-                  <option value="Bug Fix / Optimization">Bug Fix / Optimization</option>
-                  <option value="New Feature">New Feature</option>
-                  <option value="Other">Other</option>
-                </select>
+                  required={true}
+                  placeholder="Select Project Category"
+                  options={[
+                    { value: "New Project", label: "New Project" },
+                    { value: "Existing Project", label: "Existing Project" },
+                    { value: "Bug Fix / Optimization", label: "Bug Fix / Optimization" },
+                    { value: "New Feature", label: "New Feature" },
+                    { value: "Other", label: "Other" }
+                  ]}
+                />
               </div>
 
               <div className="form-group-row" style={{ display: 'flex', gap: '1rem', width: '100%' }}>
                 <div className="form-group" style={{ flex: 1 }}>
                   <label htmlFor="budget">Budget Range</label>
-                  <select
+                  <CustomSelect
                     id="budget"
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className={formData.budget === '' ? 'placeholder-selected' : ''}
-                    required
-                  >
-                    <option value="">Select Budget</option>
-                    <option value="Under ₹10k">Under ₹10k</option>
-                    <option value="₹10k–₹25k">₹10k–₹25k</option>
-                    <option value="₹25k–₹50k">₹25k–₹50k</option>
-                    <option value="₹50k–₹1L">₹50k–₹1L</option>
-                    <option value="₹1L+">₹1L+</option>
-                    <option value="Not sure">Not sure</option>
-                  </select>
+                    required={true}
+                    placeholder="Select Budget"
+                    options={[
+                      { value: "Under ₹10k", label: "Under ₹10k" },
+                      { value: "₹10k–₹25k", label: "₹10k–₹25k" },
+                      { value: "₹25k–₹50k", label: "₹25k–₹50k" },
+                      { value: "₹50k–₹1L", label: "₹50k–₹1L" },
+                      { value: "₹1L+", label: "₹1L+" },
+                      { value: "Not sure", label: "Not sure" }
+                    ]}
+                  />
                 </div>
 
                 <div className="form-group" style={{ flex: 1 }}>
                   <label htmlFor="timeline">Timeline</label>
-                  <select
+                  <CustomSelect
                     id="timeline"
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleChange}
-                    className={formData.timeline === '' ? 'placeholder-selected' : ''}
-                    required
-                  >
-                    <option value="">Select Timeline</option>
-                    <option value="2–4 weeks">2–4 weeks</option>
-                    <option value="1–2 months">1–2 months</option>
-                    <option value="3+ months">3+ months</option>
-                    <option value="Flexible">Flexible</option>
-                  </select>
+                    required={true}
+                    placeholder="Select Timeline"
+                    options={[
+                      { value: "2–4 weeks", label: "2–4 weeks" },
+                      { value: "1–2 months", label: "1–2 months" },
+                      { value: "3+ months", label: "3+ months" },
+                      { value: "Flexible", label: "Flexible" }
+                    ]}
+                  />
                 </div>
               </div>
 

@@ -238,7 +238,6 @@ ${formData.message}
                     required
                   >
                     <option value="">Select Timeline</option>
-                    <option value="ASAP">ASAP</option>
                     <option value="2–4 weeks">2–4 weeks</option>
                     <option value="1–2 months">1–2 months</option>
                     <option value="3+ months">3+ months</option>

@@ -23,6 +23,10 @@ function Recommendations() {
     setActiveIndex((prev) => (prev + 1) % recommendationsData.length);
   };
 
+  if (recommendationsData.length === 0) {
+    return null;
+  }
+
   return (
     <section 
       className="recommendations section" 

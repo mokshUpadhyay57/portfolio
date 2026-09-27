@@ -69,7 +69,7 @@ const ProjectCard = ({ project }) => {
 
       <div className="project-footer">
         <Link to={`/projects/${id}`} className="view-details-btn">
-          View Details <ExternalLink size={14} />
+          View Case Study <ExternalLink size={14} />
         </Link>
         
         <div className="project-actions">

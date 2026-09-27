@@ -145,22 +145,63 @@
   border: 1px solid var(--border-color);
   border-radius: 10px;
   text-align: left;
-  padding: 24px;
   width: 100%;
-  max-width: 460px;
-  min-height: 220px;
+  max-width: 520px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-primary) 15%, transparent);
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  background-color: color-mix(in srgb, var(--bg-main) 50%, var(--bg-section));
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background-color: #ff5f56; }
+.terminal-dot.yellow { background-color: #ffbd2e; }
+.terminal-dot.green { background-color: #27c93f; }
+
+.terminal-title {
+  flex-grow: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  margin-right: 44px; /* Offset to center title considering dots */
+}
+
+.terminal-body {
+  padding: 32px 24px;
+  flex-grow: 1;
   display: flex;
   align-items: flex-start;
-  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-primary) 15%, transparent);
 }
 
 .terminal pre {
   font-family: var(--font-mono);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.8;
   color: var(--accent-primary);
   white-space: pre-wrap;
+  margin: 0;
 }
 
 .terminal pre::after {

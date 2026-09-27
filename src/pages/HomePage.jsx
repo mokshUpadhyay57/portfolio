@@ -131,7 +131,17 @@ function Home() {
         {/* RIGHT */}
         <div className="hero-right">
           <div className="terminal">
-            <pre>{displayText}</pre>
+            <div className="terminal-header">
+              <div className="terminal-dots">
+                <span className="terminal-dot red"></span>
+                <span className="terminal-dot yellow"></span>
+                <span className="terminal-dot green"></span>
+              </div>
+              <span className="terminal-title">jules@dev ~</span>
+            </div>
+            <div className="terminal-body">
+              <pre>{displayText}</pre>
+            </div>
           </div>
         </div>
       </section>

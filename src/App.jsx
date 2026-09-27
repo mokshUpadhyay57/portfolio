@@ -8,7 +8,8 @@ import ContactPage from "./pages/ContactPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import ProjectDetailPage from "./pages/ProjectDetailPage.jsx";
 import BackToTop from "./components/layouts/BackToTop.jsx";
-import { Routes, Route } from "react-router-dom";       
+import { Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';       
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <BackToTop/>
+      <Analytics />
     </>
   )
 }

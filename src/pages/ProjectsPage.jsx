@@ -19,20 +19,20 @@ const ProjectsPage = () => {
       </div>
 
       <div className="projects-stats">
-         <div className="stat-card">
-    <h3>{projects.length}</h3>
-    <span>Projects Delivered</span>
-  </div>
+        <div className="stat-card">
+          <h3>{projects.length}</h3>
+          <span>Total Projects</span>
+        </div>
 
-  <div className="stat-card">
-    <h3>Primary Backend Stack: Java, Spring Boot, REST APIs, PostgreSQL/MySQL</h3>
-    <span>Primary Focus</span>
-  </div>
+        <div className="stat-card">
+          <h3>Java & Spring Boot</h3>
+          <span>Primary Focus</span>
+        </div>
 
-  <div className="stat-card">
-    <h3>Personal & Academic</h3>
-    <span>Projects</span>
-  </div>
+        <div className="stat-card">
+          <h3>Android & Web</h3>
+          <span>Secondary Focus</span>
+        </div>
       </div>
 
       <div className="projects-grid">

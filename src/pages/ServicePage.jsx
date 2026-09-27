@@ -15,7 +15,7 @@ const ServicePage = () => {
   const getIcon = (title) => {
     const iconStyle = { width: "28px", height: "28px", color: "var(--accent-primary)" };
     
-    if (title.includes("Backend")) {
+    if (title.includes("Backend") || title.includes("API") || title.includes("Java")) {
       return (
         <svg style={iconStyle} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v4a2 2 0 00-2-2m-14 0h14"></path>
@@ -36,6 +36,10 @@ const ServicePage = () => {
     );
   };
 
+  const getSeoRoute = (title) => {
+    return "/services/" + title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+  };
+
   return (
     <div className="service-page">
       <h1>Services <span className="accent">I Offer</span></h1>
@@ -48,7 +52,7 @@ const ServicePage = () => {
               </div>
               <div className="title-group">
                 {service.featured && <span className="recommended-tag">Recommended</span>}
-                <h2>{service.title}</h2>
+                <h2><Link to={getSeoRoute(service.title)} style={{ color: 'inherit', textDecoration: 'none' }}>{service.title}</Link></h2>
               </div>
             </div>
 
@@ -78,20 +82,6 @@ const ServicePage = () => {
                   ))}
                 </ul>
               </div>
-              
-              {/* <div className="detail-section">
-                <h3>
-                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                  </svg>
-                  Expected Result:
-                </h3>
-                <ul>
-                  {service.result.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div> */}
             </div>
             
             <Link to="/contact" className="cta-wrapper"> 

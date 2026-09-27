@@ -30,6 +30,8 @@ const ContactPage = () => {
     email: '',
     message: '',
     projectType: '',
+    budget: '',
+    timeline: '',
     honeypot: '' // Hidden field for bots
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,7 +47,7 @@ const ContactPage = () => {
   };
 
   const resetForm = () => {
-    setFormData({ name: '', email: '', message: '', projectType: '', honeypot: '' });
+    setFormData({ name: '', email: '', message: '', projectType: '', budget: '', timeline: '', honeypot: '' });
     setIsSubmitted(false);
     setSendError(null);
   }
@@ -74,11 +76,19 @@ const ContactPage = () => {
       return;
     }
 
+    const fullMessage = `
+Budget: ${formData.budget}
+Timeline: ${formData.timeline}
+
+Requirement:
+${formData.message}
+    `;
+
     const templateParams = {
       name: formData.name,       // {{name}}
       reply_to: formData.email,   // {{reply_to}}
       title: formData.projectType,// {{title}}
-      message: formData.message,  // {{message}}
+      message: fullMessage,  // {{message}}
     };
 
     console.log('Sending inquiry notification...', templateParams);
@@ -87,7 +97,7 @@ const ContactPage = () => {
       .then((result) => {
         console.log('Email successfully sent!', result.status, result.text);
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', message: '', projectType: '' });
+        setFormData({ name: '', email: '', message: '', projectType: '', budget: '', timeline: '' });
       }, (error) => {
         console.error('EmailJS Error:', error);
         setSendError(`Send failed: ${error.text || 'Check console'}`);
@@ -140,7 +150,7 @@ const ContactPage = () => {
           ) : (
             <form ref={form} onSubmit={handleSubmit} className="contact-form">
               {/* Honeypot field - Hidden from users, used to catch bots */}
-              <div className="form-group-hp" aria-hidden="true">
+              <div className="form-group-hp" aria-hidden="true" style={{ display: 'none' }}>
                 <label htmlFor="honeypot">Leave this field empty</label>
                 <input
                   type="text"
@@ -178,7 +188,7 @@ const ContactPage = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="projectType">Project Type</label>
+                <label htmlFor="projectType">Project Category</label>
                 <select
                   id="projectType"
                   name="projectType"
@@ -187,13 +197,56 @@ const ContactPage = () => {
                   className={formData.projectType === '' ? 'placeholder-selected' : ''}
                   required
                 >
-                  <option value="">Select Project Type</option>
-                  <option value="Website - Single or Multi Page">Website (Single / Multi Page)</option>
-                  <option value="Backend API Development">Backend API Development</option>
-                  <option value="Mobile App - Simple or Hybrid">Mobile App (Simple / Hybrid)</option>
-                  <option value="Full App Development with Website">Full App Development with Website</option>
+                  <option value="">Select Project Category</option>
+                  <option value="New Project">New Project</option>
+                  <option value="Existing Project">Existing Project</option>
+                  <option value="Bug Fix / Optimization">Bug Fix / Optimization</option>
+                  <option value="New Feature">New Feature</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
+
+              <div className="form-group-row" style={{ display: 'flex', gap: '1rem', width: '100%' }}>
+                <div className="form-group" style={{ flex: 1 }}>
+                  <label htmlFor="budget">Budget Range</label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className={formData.budget === '' ? 'placeholder-selected' : ''}
+                    required
+                  >
+                    <option value="">Select Budget</option>
+                    <option value="Under ₹10k">Under ₹10k</option>
+                    <option value="₹10k–₹25k">₹10k–₹25k</option>
+                    <option value="₹25k–₹50k">₹25k–₹50k</option>
+                    <option value="₹50k–₹1L">₹50k–₹1L</option>
+                    <option value="₹1L+">₹1L+</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+
+                <div className="form-group" style={{ flex: 1 }}>
+                  <label htmlFor="timeline">Timeline</label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    className={formData.timeline === '' ? 'placeholder-selected' : ''}
+                    required
+                  >
+                    <option value="">Select Timeline</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="2–4 weeks">2–4 weeks</option>
+                    <option value="1–2 months">1–2 months</option>
+                    <option value="3+ months">3+ months</option>
+                    <option value="Flexible">Flexible</option>
+                  </select>
+                </div>
+              </div>
+
               <div className="form-group">
                 <label htmlFor="message">Your Requirement</label>
                 <textarea

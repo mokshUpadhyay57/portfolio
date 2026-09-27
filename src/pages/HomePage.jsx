@@ -106,17 +106,23 @@ function Home() {
 
           <h2 className="hero-role">Java Backend Engineer</h2>
 
+          <h3 className="hero-subheading">I build web apps, MVPs, APIs and backend systems for startups</h3>
+
           <p className="hero-description">
             I help businesses build scalable backend systems, high-performance APIs, and robust full-stack applications that drive growth and deliver exceptional user experiences.
           </p>
 
+          <div className="hero-stat-badge">
+            <span className="accent" style={{ fontWeight: 'bold' }}>2+ years</span> production experience
+          </div>
+
           <div className="hero-actions">
-            <Link to="/projects">
-              <button className="btn btn-primary">View Projects</button>
+            <Link to="/contact">
+              <button className="btn btn-primary">Start a Project</button>
             </Link>
             <div className="cta-group">
-              <Link to="/contact">
-                <button className="btn btn-outline">Discuss Your Project</button>
+              <Link to="/projects">
+                <button className="btn btn-outline">View My Work</button>
               </Link>
             </div>
           </div>

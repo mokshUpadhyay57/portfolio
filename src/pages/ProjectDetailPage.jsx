@@ -81,8 +81,13 @@ function ProjectDetailPage() {
             </section>
 
             <section className="detail-section">
-              <h2 className="section-title">Strategic Rationale</h2>
-              <p className="section-text">{project.whyBuilt}</p>
+              <h2 className="section-title">The Problem</h2>
+              <p className="section-text">{project.problem}</p>
+            </section>
+
+            <section className="detail-section">
+              <h2 className="section-title">The Solution</h2>
+              <p className="section-text">{project.solution}</p>
             </section>
 
             {project.features && (
@@ -99,7 +104,7 @@ function ProjectDetailPage() {
               </section>
             )}
 
-            {project.outcomes && (
+            {project.outcomes && project.outcomes.length > 0 && (
               <section className="detail-section">
                 <h2 className="section-title">Key Outcomes & Impact</h2>
                 <div className="outcomes-grid">
@@ -113,9 +118,21 @@ function ProjectDetailPage() {
               </section>
             )}
 
+            {project.results && (
+              <section className="detail-section">
+                <h2 className="section-title">Results</h2>
+                <p className="section-text">{project.results}</p>
+              </section>
+            )}
+
             <section className="detail-section">
-              <h2 className="section-title">Technical Implementation</h2>
-              <p className="section-text">{project.howBuilt}</p>
+              <h2 className="section-title">Architecture</h2>
+              <p className="section-text">{project.architecture}</p>
+            </section>
+
+            <section className="detail-section">
+              <h2 className="section-title">My Contribution</h2>
+              <p className="section-text">{project.myContribution}</p>
             </section>
 
             <section className="detail-section">

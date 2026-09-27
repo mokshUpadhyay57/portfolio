@@ -51,23 +51,23 @@
 
 .custom-select-options {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 4px); /* Tighter margin */
   left: 0;
   right: 0;
-  background-color: var(--bg-card); /* Use card background for contrast */
+  background-color: var(--bg-main); /* Match input background */
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--card-shadow-hover); /* Slightly stronger shadow for depth */
   z-index: 100;
   max-height: 250px;
   overflow-y: auto;
   list-style: none;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0; /* Tighter padding on the container */
   margin: 0;
 
   /* Custom scrollbar for dropdown */
   scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--border-color) 80%, transparent) var(--bg-card);
+  scrollbar-color: color-mix(in srgb, var(--border-color) 80%, transparent) var(--bg-main);
 }
 
 .custom-select-options::-webkit-scrollbar {
@@ -75,7 +75,7 @@
 }
 
 .custom-select-options::-webkit-scrollbar-track {
-  background: var(--bg-card);
+  background: var(--bg-main);
   border-radius: 12px;
 }
 
@@ -85,21 +85,21 @@
 }
 
 .custom-select-option {
-  padding: 0.8rem 1.2rem;
+  padding: 0.6rem 1.2rem; /* Tighter padding on individual options */
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller text for options */
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .custom-select-option:hover {
-  background-color: var(--accent-primary);
-  color: var(--white);
+  background-color: color-mix(in srgb, var(--bg-main) 85%, transparent); /* Subtle hover instead of solid blue */
+  color: var(--accent-primary);
 }
 
 .custom-select-option.selected {
-  background-color: color-mix(in srgb, var(--accent-primary) 20%, transparent);
+  background-color: color-mix(in srgb, var(--accent-primary) 10%, transparent);
   color: var(--accent-primary);
   font-weight: 600;
 }

@@ -26,11 +26,11 @@ const ProjectsPage = () => {
 
         <div className="stat-card">
           <h3>Java & Spring Boot</h3>
-          <span>Primary Backend Stack</span>
+          <span>Primary Focus</span>
         </div>
 
         <div className="stat-card">
-          <h3>Personal & Academic</h3>
+          <h3>Android & Web</h3>
           <span>Secondary Focus</span>
         </div>
       </div>

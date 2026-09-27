@@ -137,7 +137,7 @@ function Home() {
                 <span className="terminal-dot yellow"></span>
                 <span className="terminal-dot green"></span>
               </div>
-              <span className="terminal-title">jules@dev ~</span>
+              <span className="terminal-title">moksh@codes ~</span>
             </div>
             <div className="terminal-body">
               <pre>{displayText}</pre>

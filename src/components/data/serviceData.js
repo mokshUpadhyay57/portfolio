@@ -2,23 +2,6 @@
 
 export const servicesData = [
   {
-    title: "Backend & API Development",
-    subtitle: "Robust backend systems, custom APIs, and seamless integrations.",
-    idealFor: "Enterprises and businesses needing scalable servers, secure endpoints, or third-party integrations (like payment gateways).",
-    included: [
-      "Java Spring Boot applications",
-      "RESTful API design & implementation",
-      "Microservices architecture",
-      "Third-party & payment gateway integrations"
-    ],
-    result: [
-      "Scalable application",
-      "Secure and reliable data flow",
-      "High performance"
-    ],
-    cta: "Start Backend Project"
-  },
-  {
     title: "Full-Stack Web & MVP Development",
     subtitle: "End-to-end web solutions and rapid prototyping.",
     idealFor: "Startups and businesses wanting to test ideas quickly or needing complete custom web platforms.",
@@ -34,6 +17,23 @@ export const servicesData = [
       "Complete web platform"
     ],
     cta: "Build Web App / MVP"
+  },
+  {
+    title: "Backend & API Development",
+    subtitle: "Robust backend systems, custom APIs, and seamless integrations.",
+    idealFor: "Enterprises and businesses needing scalable servers, secure endpoints, or third-party integrations (like payment gateways).",
+    included: [
+      "Java Spring Boot applications",
+      "RESTful API design & implementation",
+      "Microservices architecture",
+      "Third-party & payment gateway integrations"
+    ],
+    result: [
+      "Scalable application",
+      "Secure and reliable data flow",
+      "High performance"
+    ],
+    cta: "Start Backend Project"
   },
   {
     title: "Mobile App Development",

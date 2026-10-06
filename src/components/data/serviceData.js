@@ -2,111 +2,43 @@
 
 export const servicesData = [
   {
-    title: "Java Spring Boot Development",
-    subtitle: "Enterprise-grade Spring Boot applications.",
-    idealFor: "Enterprises needing robust, scalable Java backend systems.",
+    title: "Full-Stack Web & MVP Development",
+    subtitle: "End-to-end web solutions and rapid prototyping.",
+    idealFor: "Startups and businesses wanting to test ideas quickly or needing complete custom web platforms.",
     included: [
-      "Spring Boot APIs",
-      "Microservices architecture",
-      "Spring Security",
-      "Database integration"
-    ],
-    result: [
-      "Scalable application",
-      "Secure backend",
-      "High performance"
-    ],
-    cta: "Start Spring Boot Project"
-  },
-  {
-    title: "REST API Development",
-    subtitle: "Custom API design and implementation.",
-    idealFor: "Businesses needing to expose data or connect systems securely.",
-    included: [
-      "API design & documentation",
-      "Secure endpoints",
-      "Rate limiting",
-      "Third-party integrations"
-    ],
-    result: [
-      "Reliable API",
-      "Easy integration",
-      "Secure data flow"
-    ],
-    cta: "Build an API"
-  },
-  {
-    title: "MVP Development",
-    subtitle: "Rapid prototyping and minimum viable products.",
-    idealFor: "Startups wanting to test their ideas quickly and efficiently.",
-    included: [
-      "Core feature development",
-      "Rapid iterations",
-      "Scalable foundation",
-      "Deployment setup"
+      "React Frontend development",
+      "Backend connectivity",
+      "Rapid iterations for MVPs",
+      "Scalable foundation"
     ],
     result: [
       "Market-ready product",
-      "Fast launch time",
-      "Cost-effective build"
-    ],
-    cta: "Launch Your MVP"
-  },
-  {
-    title: "Payment & API Integrations",
-    subtitle: "Connecting external systems and payment gateways.",
-    idealFor: "Platforms requiring Stripe, PayPal, or custom third-party data.",
-    included: [
-      "Payment gateway setup",
-      "Webhook handling",
-      "API synchronization",
-      "Security best practices"
-    ],
-    result: [
-      "Seamless payments",
-      "Automated data flow",
-      "Reliable connectivity"
-    ],
-    cta: "Integrate APIs"
-  },
-  {
-    title: "Bug Fixing & Optimization",
-    subtitle: "Resolving issues and improving performance.",
-    idealFor: "Existing applications with bugs or slow load times.",
-    included: [
-      "Code review & refactoring",
-      "Database optimization",
-      "Performance tuning",
-      "Security patches"
-    ],
-    result: [
-      "Faster load times",
-      "Stable application",
-      "Reduced technical debt"
-    ],
-    cta: "Optimize App"
-  },
-  {
-    title: "React & Full-Stack Development",
-    subtitle: "End-to-end web applications.",
-    idealFor: "Businesses needing complete custom web solutions.",
-    included: [
-      "Frontend with React",
-      "Backend connectivity",
-      "Responsive design",
-      "State management"
-    ],
-    result: [
       "Dynamic user interface",
-      "Smooth interactions",
       "Complete web platform"
     ],
-    cta: "Build Full-Stack App"
+    cta: "Build Web App / MVP"
   },
   {
-    title: "Mobile Development",
+    title: "Backend & API Development",
+    subtitle: "Robust backend systems, custom APIs, and seamless integrations.",
+    idealFor: "Enterprises and businesses needing scalable servers, secure endpoints, or third-party integrations (like payment gateways).",
+    included: [
+      "Java Spring Boot applications",
+      "RESTful API design & implementation",
+      "Microservices architecture",
+      "Third-party & payment gateway integrations"
+    ],
+    result: [
+      "Scalable application",
+      "Secure and reliable data flow",
+      "High performance"
+    ],
+    cta: "Start Backend Project"
+  },
+  {
+    title: "Mobile App Development",
     subtitle: "High-performance Android & iOS applications.",
-    idealFor: "Startups & Businesses launching MVPs",
+    idealFor: "Startups & Businesses looking to launch mobile apps or MVPs.",
     included: [
       "Native mobile apps",
       "Backend API integration",
@@ -116,8 +48,7 @@ export const servicesData = [
     result: [
       "Installable app build",
       "Smooth user experience",
-      "Connected to live backend",
-      "Ready for release"
+      "Ready for App Store & Play Store release"
     ],
     cta: "Start Mobile Project"
   }

@@ -102,16 +102,18 @@
 
 .service-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.2rem;
   margin-bottom: 1.5rem;
   padding-right: 4rem; /* Reserve space for the corner tag */
+  min-height: 90px;
 }
 
 .title-group {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  margin-top: 0.2rem;
 }
 
 .icon-wrapper {
@@ -183,6 +185,10 @@
   border-bottom: 1px solid color-mix(in srgb, var(--border-color) 30%, transparent);
 }
 
+.service-details .detail-section:first-child {
+  min-height: 140px;
+}
+
 .service-details .detail-section:last-child {
   border-bottom: none;
 }
@@ -240,6 +246,12 @@
 /* =========================
    Button Styles
 ========================= */
+
+.cta-wrapper {
+  margin-top: auto;
+  display: block;
+  text-decoration: none;
+}
 
 .service-card .btn {
   margin-top: 1.5rem;

@@ -51,22 +51,5 @@ export const servicesData = [
       "Ready for App Store & Play Store release"
     ],
     cta: "Start Mobile Project"
-  },
-  {
-    title: "Maintenance & Optimization",
-    subtitle: "Resolving issues, improving performance, and technical debt reduction.",
-    idealFor: "Existing applications with bugs, slow load times, or needing upgrades.",
-    included: [
-      "Code review & refactoring",
-      "Database optimization",
-      "Performance tuning",
-      "Security patches"
-    ],
-    result: [
-      "Faster load times",
-      "Stable application",
-      "Reduced technical debt"
-    ],
-    cta: "Optimize Application"
   }
 ];

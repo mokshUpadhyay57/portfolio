@@ -41,7 +41,7 @@
 
 .service-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 grid for 4 items */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns side by side */
   gap: 1.5rem; /* Reduced gap to save horizontal space */
   align-items: stretch;
 }

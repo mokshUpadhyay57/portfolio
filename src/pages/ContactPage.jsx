@@ -92,11 +92,8 @@ ${formData.message}
       message: fullMessage,  // {{message}}
     };
 
-    console.log('Sending inquiry notification...', templateParams);
-
     emailjs.send(serviceId, templateId, templateParams, publicKey)
-      .then((result) => {
-        console.log('Email successfully sent!', result.status, result.text);
+      .then(() => {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', message: '', projectType: '', budget: '', timeline: '' });
       }, (error) => {

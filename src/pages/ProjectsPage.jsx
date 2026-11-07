@@ -36,11 +36,12 @@ const ProjectsPage = () => {
       </div>
 
       <div className="projects-grid">
-        {projects
-          .filter((project) => !project.hidden)
-          .map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        {projects.reduce((acc, project) => {
+          if (!project.hidden) {
+            acc.push(<ProjectCard key={project.id} project={project} />);
+          }
+          return acc;
+        }, [])}
       </div>
     </div>
   );

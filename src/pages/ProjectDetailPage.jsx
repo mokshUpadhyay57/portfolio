@@ -8,7 +8,8 @@ import { useEffect } from "react";
 function ProjectDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const project = projects.find((p) => p.id === parseInt(id));
+  const found = projects.find((p) => p.id === parseInt(id));
+  const project = found && !found.hidden ? found : undefined;
 
   // Scroll to top on mount
   useEffect(() => {
@@ -46,7 +47,7 @@ function ProjectDetailPage() {
         <header className="detail-header">
           <div className="header-content">
             <h1 className="detail-title">{project.title}</h1>
-            <div className="detail-categories">
+                        <div className="detail-categories">
               {project.category.map((cat, i) => (
                 <span key={i} className="detail-cat">{cat}</span>
               ))}
@@ -71,74 +72,79 @@ function ProjectDetailPage() {
           </div>
         </header>
 
-        {/* Main Content Grid */}
+        {/* Visual area */}
+        {project.images && project.images.length > 0 ? (
+          <div className="detail-gallery hero-gallery">
+            {project.images.map((img, i) => (
+              <img key={i} src={img} alt={`${project.title} screenshot ${i + 1}`} loading="lazy" />
+            ))}
+          </div>
+        ) : project.flow ? (
+          <div className="flow-diagram" aria-label={`${project.title} architecture`}>
+            {project.flow.map((step, i) => (
+              Array.isArray(step) ? (
+                <div key={i} className="flow-group">
+                  {step.map((name) => (
+                    <span key={name} className="flow-step">{name}</span>
+                  ))}
+                </div>
+              ) : (
+                <span key={i} className="flow-step has-arrow">{step}</span>
+              )
+            ))}
+          </div>
+        ) : (
+          <div className="visual-placeholder"><span>{project.title}</span></div>
+        )}
+
         <div className="detail-grid">
-          {/* Left Column: Context & Tech */}
           <div className="detail-main">
             <section className="detail-section">
-              <h2 className="section-title">Overview</h2>
-              <p className="section-text">{project.description}</p>
-            </section>
-
-            <section className="detail-section">
-              <h2 className="section-title">The Problem</h2>
+              <h2 className="section-title">The Challenge</h2>
               <p className="section-text">{project.problem}</p>
             </section>
 
             <section className="detail-section">
-              <h2 className="section-title">The Solution</h2>
+              <h2 className="section-title">What I Built</h2>
               <p className="section-text">{project.solution}</p>
-            </section>
-
-            {project.features && (
-              <section className="detail-section">
-                <h2 className="section-title">Core Features</h2>
+              {project.features && (
                 <div className="features-list">
-                  {project.features.map((feature, i) => (
+                  {project.features.slice(0, 4).map((feature, i) => (
                     <div key={i} className="feature-item">
                       <CheckCircle2 size={18} className="accent" />
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
-              </section>
-            )}
+              )}
+            </section>
 
-            {project.outcomes && project.outcomes.length > 0 && (
+            {project.results && project.results !== "In progress." && (
               <section className="detail-section">
-                <h2 className="section-title">Key Outcomes & Impact</h2>
-                <div className="outcomes-grid">
-                  {project.outcomes.map((outcome, i) => (
-                    <div key={i} className="outcome-card">
-                      <Zap size={20} className="accent" />
-                      <p>{outcome}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {project.results && (
-              <section className="detail-section">
-                <h2 className="section-title">Results</h2>
+                <h2 className="section-title">The Outcome</h2>
                 <p className="section-text">{project.results}</p>
+                {project.outcomes && project.outcomes.length > 0 && (
+                  <div className="outcomes-grid">
+                    {project.outcomes.map((outcome, i) => (
+                      <div key={i} className="outcome-card">
+                        <Zap size={20} className="accent" />
+                        <p>{outcome}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
             )}
 
             <section className="detail-section">
-              <h2 className="section-title">Architecture</h2>
+              <h2 className="section-title">How It Works</h2>
               <p className="section-text">{project.architecture}</p>
             </section>
 
             <section className="detail-section">
-              <h2 className="section-title">My Contribution</h2>
-              <p className="section-text">{project.myContribution}</p>
-            </section>
-
-            <section className="detail-section">
-              <h2 className="section-title">Challenges & Engineering Solutions</h2>
+              <h2 className="section-title">Key Engineering Wins</h2>
               <ul className="problem-list">
-                {project.problems.map((prob, i) => (
+                {project.problems.slice(0, 3).map((prob, i) => (
                   <li key={i} className="problem-item">
                     <ChevronRight size={18} className="accent" />
                     <span>{prob}</span>
@@ -148,7 +154,6 @@ function ProjectDetailPage() {
             </section>
           </div>
 
-          {/* Right Column: Tech & Visuals */}
           <aside className="detail-sidebar">
             <div className="sidebar-block">
               <h3 className="block-title">Tech Stack</h3>
@@ -158,17 +163,6 @@ function ProjectDetailPage() {
                 ))}
               </div>
             </div>
-
-            {project.images && project.images.length > 0 && (
-              <div className="sidebar-block">
-                <h3 className="block-title">Project Visuals</h3>
-                <div className="detail-gallery">
-                  {project.images.map((img, i) => (
-                    <img key={i} src={img} alt={`${project.title} screenshot ${i+1}`} loading="lazy" />
-                  ))}
-                </div>
-              </div>
-            )}
           </aside>
         </div>
       </div>

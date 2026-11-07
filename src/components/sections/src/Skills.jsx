@@ -13,10 +13,10 @@ function Skills() {
           <div className="skill-card">
             <h4>Backend Development</h4>
             <p className="tech">
-              Java · Spring Boot · Spring MVC · Hibernate · REST APIs
+              Java · Spring MVC · Hibernate · JSP · REST APIs
             </p>
             <p className="desc">
-              Backend services, API design, integrations, production fixes.
+              Backend services, API design, integrations, production fixes. Worked with Spring Boot and Spring Security.
             </p>
           </div>
 

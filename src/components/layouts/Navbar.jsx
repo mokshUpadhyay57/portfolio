@@ -3,7 +3,7 @@ import "./Navbar.css";
 import ThemeToggle from "../toggles/ThemeToggle";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import resumePdf from "../../assets/Moksh_Upadhyay_1.7_Experience.pdf";
+import resumePdf from "../../assets/Moksh_Upadhyay_2-year_Experience.pdf";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

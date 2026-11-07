@@ -18,8 +18,17 @@ function Contact() {
         </p>
 
         <Link to="/contact" className="btn primary contact-redirect-btn">
-          Contact Me
+          Get a Free Quote
         </Link>
+
+        <p style={{ marginTop: "1rem" }}>
+          Or reach me directly:{" "}
+          <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+          {" · "}
+          <a href={contactDetails.whatsappUrl} target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+        </p>
 
         {/* OTHER OPTIONS */}
         <div className="contact-platforms">

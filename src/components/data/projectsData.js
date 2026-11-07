@@ -1,5 +1,34 @@
 const projects = [
   {
+    id: 6,
+    title: "Travel Booking API Integrations",
+    category: ["Backend", "Case Study", "API Integration"],
+    description: "Integrated global hotel inventory suppliers (HotelBeds, Paximum) and DST Searcher into a travel-booking platform so real-time booking runs through one workflow.",
+    tech: ["Java 8", "Spring MVC", "Hibernate", "REST APIs", "MySQL", "PostgreSQL"],
+    github: "",
+    featured: true,
+    flow: ["Booking platform", "REST APIs", ["HotelBeds", "Paximum", "DST Searcher"]],
+    hidden: false,
+    problem: "A travel-booking platform needed hotel inventory from several external suppliers, each with its own API, and its booking APIs were slow under high traffic.",
+    solution: "Integrated HotelBeds, Paximum and DST Searcher behind the platform's REST APIs and optimized the high-traffic booking endpoints.",
+    whyBuilt: "Client work. Details kept general to respect confidentiality.",
+    features: [
+      "Hotel inventory from HotelBeds and Paximum available in one booking flow",
+      "DST Searcher integrated into search",
+      "Real-time availability and booking through REST APIs"
+    ],
+    architecture: "Java backend using Spring MVC and Hibernate, with REST APIs connecting the booking platform to HotelBeds, Paximum and DST Searcher.",
+    myContribution: "Built the supplier integrations and optimized the high-traffic booking APIs, alongside resolving production defects.",
+    outcomes: ["Booking API latency reduced by 25%"],
+    howBuilt: "Java 8 with Spring MVC and Hibernate on MySQL and PostgreSQL.",
+    problems: [
+      "Slow, high-traffic booking APIs; optimized them for a 25% latency reduction.",
+      "Several suppliers with different APIs; integrated them into a single real-time booking workflow."
+    ],
+    results: "Real-time booking workflows streamlined across multiple suppliers, and booking API latency cut by 25%.",
+    images: []
+  },
+  {
     id: 1,
     title: "Lockify App",
     category: ["Mobile App", "FinTech", "Full Stack"],
@@ -31,32 +60,31 @@ const projects = [
   },
   {
     id: 2,
-    title: "E-commerce / Online Bookstore",
-    category: ["Web", "Full Stack", "Systems"],
-    description: "A sophisticated monolithic retail engine demonstrating deep state management and optimized database strategies for high-fidelity operations.",
-    tech: ["Django", "JavaScript ES6", "PostgreSQL", "CSS3"],
+    title: "BIZARRE Online Store",
+    category: ["Web", "Full Stack", "E-commerce"],
+    description: "A custom e-commerce store with session-based carts and Paytm payments, built end to end.",
+    tech: ["Django", "Paytm", "SQLite", "JavaScript ES6"],
     github: "https://github.com/mokshUpadhyay57/BizarreEcom",
     featured: true,
     hidden: false,
     problem: "Need for a performant, custom-built e-commerce platform with complex session and inventory management.",
-    solution: "A monolithic web application leveraging Django and PostgreSQL for reliable relational data management and transactional integrity.",
-    whyBuilt: "Designed as a technical masterclass in monolithic efficiency, focusing on end-to-end data persistence and relational integrity.",
+    solution: "A monolithic Django web application with a relational data model and Paytm checkout for online payments.",
+    whyBuilt: "Designed to cover the full e-commerce cycle in one codebase: catalog, cart, checkout and payment.",
     features: [
       "Persistent session-based state management for complex cart lifecycles",
-      "Optimized PostgreSQL schema for high-volume product catalogs",
+      "Relational schema for product catalog, carts and orders",
       "Dynamic AJAX-driven UI for a seamless, non-blocking user experience",
-      "Hardened checkout orchestration with row-level database locking"
+      "Paytm payment gateway integration at checkout"
     ],
-    architecture: "Django MVT architecture backed by a PostgreSQL database, with vanilla JavaScript for client-side interactivity.",
-    myContribution: "Architected the database schema, developed the backend logic, and implemented the dynamic frontend interface.",
+    architecture: "Django MVT architecture backed by SQLite, with vanilla JavaScript for client-side interactivity and Paytm for payments.",
+    myContribution: "Architected the database schema, developed the backend logic, integrated Paytm, and implemented the dynamic frontend interface.",
     outcomes: [],
     howBuilt: "Leveraged Django's robust MVT pattern for server-side logic and integrated ES6 JavaScript for dynamic client-side interactivity.",
     problems: [
       "Persistent state management; architected custom middleware for robust session handling.",
-      "Relational query bottlenecks; optimized data retrieval via advanced prefetching.",
-      "Concurrency control; implemented row-level locking to prevent inventory overselling."
+      "Relational query bottlenecks; optimized data retrieval via advanced prefetching."
     ],
-    results: "Successfully built a high-performance e-commerce engine with reliable transactional consistency.",
+    results: "A working end-to-end online store: browse, cart, checkout and Paytm payment.",
     images: []
   },
   {
@@ -95,7 +123,7 @@ const projects = [
     category: ["Mobile App", "Real-time Systems"],
     description: "A specialized orchestration platform for esports logistics, providing real-time tournament management and automated scoring telemetry.",
     tech: ["Kotlin", "Android SDK", "Firebase Realtime DB", "MVVM"],
-    github: "https://github.com/yourusername/esports",
+    github: "",
     featured: false,
     hidden: false,
     problem: "Manual tournament management and bracket generation is time-consuming and error-prone.",
@@ -123,30 +151,143 @@ const projects = [
     id: 5,
     title: "Employee Payroll Batch Processor",
     category: ["Backend", "Automation"],
-    description: "An enterprise-grade batch processing engine designed to automate complex payroll lifecycles with zero manual intervention and 100% calculation precision.",
+    description: "A batch processing engine to automate monthly payroll calculation and PDF payslip generation without manual intervention.",
     tech: ["Spring Batch", "Quartz Scheduler", "MySQL", "PDFBox"],
     github: "",
     featured: false,
-    hidden: false,
+    hidden: true,
+    inProgress: true,
     problem: "Manual payroll processing for large workforces leads to operational friction and calculation errors.",
     solution: "An automated Spring Batch application orchestrating payroll calculations, PDF payslip generation, and data persistence.",
-    whyBuilt: "Built to eliminate operational friction and manual calculation errors in large-scale financial processing for enterprise workforces.",
+    whyBuilt: "Built to remove manual calculation errors from payroll and to practise production-style batch processing.",
     features: [
-      "Resilient chunk-oriented data processing framework",
-      "Automated PDF generation for individual payslip dispatch",
+      "Chunk-oriented data processing",
+      "Automated PDF generation for individual payslips",
       "Cron-based scheduling for hands-free monthly execution",
-      "Comprehensive error logging and skip-logic for corrupt records"
+      "Error logging and skip-logic for corrupt records"
     ],
     architecture: "Java-based batch processor utilizing Spring Batch, scheduled with Quartz, and connected to a MySQL relational database.",
-    myContribution: "Configured the batch jobs, wrote the calculation logic, and implemented dynamic PDF generation.",
+    myContribution: "Designing the batch jobs, calculation logic, and PDF generation.",
     outcomes: [],
-    howBuilt: "Architected around the Spring Batch framework. Implemented Quartz for robust job scheduling and Apache PDFBox for dynamic document generation.",
+    howBuilt: "Architected around the Spring Batch framework, with Quartz for job scheduling and Apache PDFBox for document generation.",
     problems: [
-      "Memory exhaustion during large datasets; optimized memory footprint using chunking.",
-      "Transient I/O failures; engineered a robust skip-and-retry logic framework.",
-      "Regulatory variability; developed a modular calculation engine for rapid configuration."
+      "Large datasets; chunked processing keeps memory use low.",
+      "Transient I/O failures; skip-and-retry logic for failed records.",
+      "Changing payroll rules; a modular calculation layer so rules can be updated quickly."
     ],
-    results: "Delivered a highly robust, scheduled automation tool capable of processing extensive datasets securely and accurately.",
+    results: "In progress.",
+    images: []
+  },
+  {
+    id: 7,
+    title: "Booking Management App (Spring MVC + Hibernate)",
+    category: ["Backend", "Full Stack"],
+    description: "A client-style booking and CRUD application built with Spring MVC, Hibernate and MySQL.",
+    tech: ["Java", "Spring MVC", "Hibernate", "JSP", "MySQL"],
+    github: "",
+    featured: false,
+    hidden: true,
+    inProgress: true,
+    problem: "Small businesses need a simple way to take bookings and manage them without spreadsheets.",
+    solution: "A web application where customers create bookings and staff view, edit and cancel them.",
+    whyBuilt: "A reference project showing the Java backend work I take on for clients, end to end.",
+    features: [
+      "Create, view, update and cancel bookings",
+      "Hibernate-mapped MySQL schema",
+      "Validation and clear error handling",
+      "REST endpoints alongside JSP views"
+    ],
+    architecture: "Spring MVC controllers, service layer and Hibernate DAOs over MySQL, with JSP views.",
+    myContribution: "Designing and building the whole application.",
+    outcomes: [],
+    howBuilt: "Java with Spring MVC, Hibernate and JSP.",
+    problems: [
+      "Double bookings; check availability inside a transaction.",
+      "Messy input; validate on the server and return clear errors."
+    ],
+    results: "In progress.",
+    images: []
+  },
+  {
+    id: 8,
+    title: "TextWizard (Text Utility)",
+    category: ["Web", "Frontend", "Utility"],
+    description: "A fast, privacy-first text utility that transforms and cleans text entirely in the browser.",
+    tech: ["React", "JavaScript ES6", "RegEx"],
+    github: "https://github.com/mokshUpadhyay57/TextWizard",
+    website: "https://txtwiz.netlify.app",
+    featured: true,
+    hidden: false,
+    problem: "Online text tools often send your text to a server, and many are slow or cluttered for quick everyday tasks.",
+    solution: "A client-side React tool that processes text instantly in the browser, so nothing leaves the user's device.",
+    features: [
+      "Instant client-side text transformations",
+      "Regex-based cleanup and formatting",
+      "Works offline as a Progressive Web App",
+      "Responsive, tool-first interface"
+    ],
+    architecture: "A React single-page app with all processing done client-side using JavaScript and RegEx, deployed on Netlify.",
+    myContribution: "Designed and built the whole tool.",
+    outcomes: [],
+    problems: [
+      "Large inputs freezing the UI; debounced processing and optimized rendering.",
+      "Privacy; kept every operation 100% client-side."
+    ],
+    results: "A live, free tool that handles everyday text tasks instantly without sending data anywhere.",
+    images: []
+  },
+  {
+    id: 9,
+    title: "XCom E-commerce Platform",
+    category: ["Web", "Backend", "Python Training"],
+    description: "A Django e-commerce platform built during a Python training program, covering product catalog, accounts and ordering.",
+    tech: ["Django", "JavaScript", "SQL"],
+    github: "https://github.com/mokshUpadhyay57/Xcom-Django-Summer-Training-Project",
+    featured: false,
+    hidden: false,
+    problem: "The platform needed a structured product catalog with reliable data handling and secure user accounts.",
+    solution: "A Django web application with a hierarchical product model, clean data handling and hardened authentication.",
+    features: [
+      "Hierarchical product and category data model",
+      "Data cleaning and migration scripts",
+      "Responsive UI with vanilla JavaScript",
+      "Secure authentication and session handling"
+    ],
+    architecture: "Django MVT application on a relational SQL database, with vanilla JavaScript on the front end.",
+    myContribution: "Worked on the data models, migration scripts, authentication and front-end behaviour.",
+    outcomes: [],
+    problems: [
+      "Messy legacy data; wrote sanitization and validation scripts before migrating.",
+      "Front-end responsiveness; tuned asset loading and scripts."
+    ],
+    results: "A working catalog-to-checkout e-commerce platform delivered during the Python training.",
+    images: []
+  },
+  {
+    id: 10,
+    title: "Online Bookstore Backend",
+    category: ["Backend", "Spring Boot"],
+    description: "A Spring Boot backend for a bookstore with secure login, role-based access and order processing.",
+    tech: ["Spring Boot", "Spring Security", "JPA/Hibernate", "MySQL"],
+    featured: false,
+    hidden: true,
+    problem: "A multi-user bookstore needs secure accounts, controlled access by role, and orders that stay consistent under concurrent use.",
+    solution: "A layered Spring Boot REST backend with JWT authentication, role-based access control and transactional order handling.",
+    features: [
+      "Stateless JWT authentication",
+      "Role-based access control for customers and admins",
+      "Catalog search and inventory management",
+      "Transactional order processing"
+    ],
+    architecture: "Layered Spring Boot application (controller, service, repository) using Spring Security and Spring Data JPA over MySQL.",
+    myContribution: "Designed and built the backend.",
+    outcomes: [],
+    problems: [
+      "Concurrent orders; used database-level locking to protect stock.",
+      "Credential safety; BCrypt password hashing and secure token handling.",
+      "Slow searches; indexed and tuned catalog queries."
+    ],
+    results: "A secure, role-aware backend ready to power a bookstore front end.",
     images: []
   }
 ];

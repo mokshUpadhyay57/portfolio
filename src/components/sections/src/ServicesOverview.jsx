@@ -14,7 +14,7 @@ const ServicesOverview = () => {
         </p>
 
         <div className="services-overview-grid">
-          {servicesData.slice(0, 3).map((service, index) => (
+          {servicesData.map((service, index) => (
             <div key={index} className="services-overview-card">
               <h3 className="services-overview-card-title">{service.title}</h3>
               <p className="services-overview-card-subtitle">{service.subtitle}</p>

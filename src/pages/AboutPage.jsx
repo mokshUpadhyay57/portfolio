@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "./AboutPage.css";
 import profileImg from "../assets/profile.jpg";
-import resumePdf from "../assets/Moksh_Upadhyay_1.7_Experience.pdf";
 import useSEO from "../hooks/useSEO";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import resumePdf from "../assets/Moksh_Upadhyay_2-year_Experience.pdf";
 
 function AboutPage() {
   useSEO({
     title: "About Me",
     description: "Welcome to the portfolio of Moksh Upadhyay, a Java Backend Engineer and Full Stack Developer. Discover projects, services, and technical expertise.",
-    keywords: "Moksh Upadhyay, About, Java Backend, Full Stack Developer, Spring Boot, React Portfolio",
+    keywords: "Moksh Upadhyay, About, Java Backend, Full Stack Developer, Spring MVC, Hibernate, React Portfolio",
     canonical: "https://mokshcodes.netlify.app/about"
   });
 
@@ -22,7 +22,7 @@ function AboutPage() {
   const faqs = [
     {
       q: "What types of projects do you typically take on?",
-      a: "I focus on developing scalable backend systems using Java and Spring Boot, as well as full-stack web and mobile applications. Whether you need a robust REST API, an MVP to test a new idea, or custom integrations for an existing system, I can help build a reliable solution."
+      a: "I focus on developing scalable backend systems using Java, Spring MVC and Hibernate, as well as websites, e-commerce stores and Android/Flutter mobile applications. Whether you need a robust REST API, an MVP to test a new idea, or custom integrations for an existing system, I can help build a reliable solution."
     },
     {
       q: "Do you work with startups or established businesses?",
@@ -56,11 +56,11 @@ function AboutPage() {
               </div>
 
               <p>
-                <strong>Software Developer</strong> with <strong>2+ years</strong> of professional software development experience working on production-grade backend systems. I primarily build and maintain scalable <strong>REST APIs using Java and Spring Boot</strong>, while debugging live production issues, analyzing system behavior, and optimizing performance for stability and low response times.
+                <strong>Software Developer</strong> with <strong>2+ years</strong> of professional software development experience working on production-grade backend systems. I primarily build and maintain scalable <strong>REST APIs using Java, Spring MVC and Hibernate</strong>, while debugging live production issues, analyzing system behavior, and optimizing performance for stability and low response times.
               </p>
 
               <p>
-                My experience includes <strong>Spring MVC, Spring Boot, Hibernate, and JDBC</strong>, along with <strong>MySQL and PostgreSQL</strong> for query optimization, indexing, and transaction management. I implement authentication and authorization using <strong>Spring Security and JWT</strong>, handle structured exception management, and manage third-party API integrations in production environments.
+                My experience includes <strong>Spring MVC, Hibernate, JSP, and JDBC</strong>, along with <strong>MySQL and PostgreSQL</strong> for query optimization, indexing, and transaction management. I handle structured exception management and manage third-party API integrations in production environments. I have also worked with <strong>Spring Boot and Spring Security</strong>.
               </p>
 
               <p>
@@ -80,7 +80,7 @@ function AboutPage() {
       <section className="why-work-with-me section" style={{ padding: '4rem 0', backgroundColor: 'var(--bg-secondary)' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '3rem', fontSize: '2rem' }}>Why Work With <span className="accent">Me</span></h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '2rem' }}>
             <div style={{ padding: '2rem', backgroundColor: 'var(--bg-primary)', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
               <h3 style={{ marginBottom: '1rem' }}>Production-Ready Focus</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>I don't just write code that works on my machine. Having spent 2+ years debugging live systems, I build software that is robust, properly logged, and secure for production environments.</p>

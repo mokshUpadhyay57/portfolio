@@ -91,3 +91,22 @@
     text-align: center;
   }
 }
+
+/* =========================
+   Responsive fixes (phones)
+========================= */
+.footer-socials {
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-socials {
+    justify-content: center;
+  }
+  .footer-links-group a,
+  .footer-socials a {
+    display: inline-block;
+    padding: 0.5rem 0;
+  }
+}

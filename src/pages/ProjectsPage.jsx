@@ -6,8 +6,8 @@ import "./ProjectsPage.css";
 const ProjectsPage = () => {
   useSEO({
     title: "Projects",
-    description: "Explore the portfolio of Moksh Upadhyay. Showcase of Java Backend systems, Spring Boot APIs, React web apps, and Mobile applications.",
-    keywords: "Java Projects, Spring Boot, React, Full Stack, Portfolio, Moksh Upadhyay",
+    description: "Explore the portfolio of Moksh Upadhyay. Showcase of Java Backend systems, Spring MVC APIs, web apps, and Mobile applications.",
+    keywords: "Java Projects, Spring MVC, Hibernate, React, Full Stack, Portfolio, Moksh Upadhyay",
     canonical: "https://mokshcodes.netlify.app/projects"
   });
   
@@ -25,7 +25,7 @@ const ProjectsPage = () => {
         </div>
 
         <div className="stat-card">
-          <h3>Java & Spring Boot</h3>
+          <h3>Java, Spring MVC & Hibernate</h3>
           <span>Primary Focus</span>
         </div>
 

@@ -3,17 +3,29 @@ import useSEO from "../hooks/useSEO";
 import "./ServicePage.css"; // Reuse styling where appropriate, or create a specific one
 
 const seoData = {
-  "java-spring-boot-development": {
-    title: "Java Spring Boot Development Services",
-    description: "Expert Java Spring Boot development services for scalable, enterprise-grade backend systems and APIs.",
-    content: "I specialize in building robust, secure, and highly scalable enterprise backend systems using Java and Spring Boot. From microservices to monolithic architectures, I ensure your application can handle high traffic and complex business logic with ease.",
-    keywords: "Java, Spring Boot, Backend Development, Microservices, Enterprise Architecture"
+  "java-backend-development": {
+    title: "Java Backend Development Services",
+    description: "Scalable Java backend systems, REST APIs and integrations using Spring MVC and Hibernate.",
+    content: "I build reliable backend systems with Java, Spring MVC and Hibernate, backed by MySQL or PostgreSQL. That includes REST API design, third-party and payment integrations, and fixing performance problems in live systems, so your application handles real traffic and real business logic.",
+    keywords: "Java, Spring MVC, Hibernate, REST APIs, API Integration, Backend Development"
   },
-  "rest-api-development": {
-    title: "RESTful API Development & Integration",
-    description: "Custom REST API development and third-party integration services.",
-    content: "APIs are the backbone of modern software. I develop custom, secure REST APIs that allow your systems to communicate efficiently. I also specialize in integrating third-party services like payment gateways and external data sources.",
-    keywords: "API Development, REST APIs, API Integration, Webhooks, API Security"
+  "web-development": {
+    title: "Web Development for Businesses & Startups",
+    description: "Landing pages, business websites and full e-commerce stores with third-party integrations.",
+    content: "From a single landing page to a complete online store with payments and third-party integrations, I build responsive, fast websites that are easy to maintain. You get a working product, not just a design.",
+    keywords: "Web Development, Landing Page, Business Website, E-commerce Development, React, Django"
+  },
+  "android-mobile-apps": {
+    title: "Android & Mobile App Development",
+    description: "Native Android (Kotlin) and cross-platform Flutter apps connected to a live backend.",
+    content: "I build native Android apps with Kotlin and cross-platform apps with Flutter, connected to Firebase or your own REST backend. You get an installable, store-ready build with authentication and a smooth user experience.",
+    keywords: "Android Development, Kotlin, Flutter, Mobile Apps, Firebase"
+  },
+  "bug-fixing-maintenance": {
+    title: "Bug Fixing & Maintenance",
+    description: "Resolving issues and improving performance for existing applications.",
+    content: "If your application is slow, buggy, or hard to maintain, I can help. I provide bug diagnosis and fixes, code reviews, database optimization, and strategic refactoring so your application runs smoothly in production.",
+    keywords: "Bug Fixing, Maintenance, Performance Optimization, Refactoring, Technical Debt"
   },
   "mvp-development": {
     title: "MVP Development for Startups",
@@ -21,30 +33,6 @@ const seoData = {
     content: "Launch your startup idea faster with a Minimum Viable Product (MVP). I help you identify core features and build a functioning product rapidly, allowing you to validate your market and attract early adopters without overspending.",
     keywords: "MVP Development, Startup MVP, Rapid Prototyping, Agile Development"
   },
-  "payment-api-integrations": {
-    title: "Payment & API Integrations",
-    description: "Connecting external systems and payment gateways securely.",
-    content: "I provide robust integration services for payment gateways like Stripe and PayPal, as well as third-party APIs. I ensure secure data synchronization, reliable webhook handling, and seamless user experiences across your platforms.",
-    keywords: "API Integration, Payment Gateway, Stripe, Webhooks, Backend Services"
-  },
-  "bug-fixing-optimization": {
-    title: "Bug Fixing & Performance Optimization",
-    description: "Resolving issues and improving performance for existing applications.",
-    content: "If your application is slow, buggy, or hard to maintain, I can help. I provide thorough code reviews, database optimization, and strategic refactoring to eliminate technical debt and ensure your application runs smoothly in production.",
-    keywords: "Bug Fixing, Performance Optimization, Refactoring, Technical Debt"
-  },
-  "react-full-stack-development": {
-    title: "React & Full-Stack Web Development",
-    description: "End-to-end web application development using React and modern backends.",
-    content: "I create responsive, dynamic, and user-friendly web applications. By combining React on the frontend with a powerful backend, I deliver full-stack solutions that provide an exceptional user experience and drive business growth.",
-    keywords: "Web Application Development, Full-Stack Development, React, Custom Web Apps"
-  },
-  "mobile-development": {
-    title: "Mobile App Development",
-    description: "High-performance Android and cross-platform mobile applications.",
-    content: "I build responsive, high-performance mobile applications that connect seamlessly to your backend infrastructure. Whether you need a native Android app or a cross-platform solution, I ensure a smooth and reliable user experience.",
-    keywords: "Mobile Development, Android, Cross-platform, Mobile Apps"
-  }
 };
 
 const SEOLandingPage = () => {

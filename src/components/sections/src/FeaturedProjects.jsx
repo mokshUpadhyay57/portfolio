@@ -4,7 +4,7 @@ import projects from "../../data/projectsData";
 import ProjectCard from "./ProjectCard";
 
 function FeaturedProjects() {
-  const featuredProjects = projects.filter(project => project.featured).slice(0, 2);
+  const featuredProjects = projects.filter(project => project.featured).slice(0, 4);
 
   return (
     <section className="projects section light" id="projects">

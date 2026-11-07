@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './ContactPage.css';
-import { Github, Linkedin, Mail, Send, Briefcase, Globe, CircleDollarSign, CheckCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Send, Briefcase, Globe, CircleDollarSign, CheckCircle, MessageCircle } from 'lucide-react';
 import { contactDetails } from '../components/data/contactDetails';
 import useSEO from '../hooks/useSEO';
 import emailjs from '@emailjs/browser';
@@ -15,6 +15,7 @@ const IconComponents = {
   Globe: Globe,
   CircleDollarSign: CircleDollarSign,
   CheckCircle: CheckCircle,
+  MessageCircle: MessageCircle,
 };
 
 const ContactPage = () => {
@@ -117,6 +118,12 @@ ${formData.message}
              <div className="contact-item">
               {React.createElement(IconComponents.Mail, { size: 20 })}
               <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+            </div>
+            <div className="contact-item">
+              {React.createElement(IconComponents.MessageCircle, { size: 20 })}
+              <a href={contactDetails.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                WhatsApp {contactDetails.whatsappDisplay}
+              </a>
             </div>
           </div>
           <div className="social-links">

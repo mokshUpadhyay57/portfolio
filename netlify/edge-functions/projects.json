@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "title": "Online Bookstore Backend",
-    "category": "Backend"
+    "title": "Lockify App",
+    "category": "Mobile App"
   },
   {
     "id": 2,
-    "title": "Employee Payroll Batch Processor",
-    "category": "Automation"
+    "title": "BIZARRE Online Store",
+    "category": "Web"
   },
   {
     "id": 3,
-    "title": "Lockify App",
+    "title": "Pet Care & Aid Ecosystem",
     "category": "Mobile App"
   },
   {
@@ -21,22 +21,17 @@
   },
   {
     "id": 5,
-    "title": "Pet Care & Aid Ecosystem",
-    "category": "Mobile App"
+    "title": "Employee Payroll Batch Processor",
+    "category": "Backend"
   },
   {
     "id": 6,
-    "title": "Bizzare E-commerce Engine",
-    "category": "Web"
+    "title": "Travel Booking API Integrations",
+    "category": "Backend"
   },
   {
     "id": 7,
-    "title": "XCom E-commerce Platform",
-    "category": "Web"
-  },
-  {
-    "id": 8,
-    "title": "TextWizard (Text Utility)",
-    "category": "Web"
+    "title": "Booking Management App (Spring MVC + Hibernate)",
+    "category": "Backend"
   }
 ]

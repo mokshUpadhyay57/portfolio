@@ -1,5 +1,7 @@
 export const contactDetails = {
   email: 'mokshupadhyay.cs57@gmail.com',
+  whatsappUrl: 'https://wa.me/918595238995',
+  whatsappDisplay: '+91 85952 38995',
   social: [
     {
       name: 'GitHub',

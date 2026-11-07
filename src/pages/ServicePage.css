@@ -168,8 +168,8 @@
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
-  min-height: 3rem; 
+  margin: 0 0 1.5rem;
+  min-height: 4.5rem; /* room for 3 lines so every card starts its details at the same height */
   text-align: left;
 }
 
@@ -177,14 +177,28 @@
    Service Details
 ========================= */
 
+/* Rows (header, subtitle, ideal-for, what-you-get, CTA) align across cards via subgrid */
+.service-cards .service-card {
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+.service-details {
+  display: contents;
+}
+
 .service-details .detail-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid color-mix(in srgb, var(--border-color) 30%, transparent);
 }
 
 .service-details .detail-section:last-child {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .service-details h3 {
@@ -209,6 +223,9 @@
   padding-left: 1.5rem;
   margin: 0;
   text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .service-card ul {
@@ -241,8 +258,14 @@
    Button Styles
 ========================= */
 
+.service-card .cta-wrapper {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: block;
+}
+
 .service-card .btn {
-  margin-top: 1.5rem;
+  margin-top: 0;
   width: 100%;
   padding: 1.1rem;
   font-size: 0.95rem;
@@ -295,4 +318,35 @@
   .service-card {
     padding: 2rem;
   }
+}
+
+/* =========================
+   Responsive fixes (phones)
+========================= */
+@media (max-width: 768px) {
+  .service-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .service-card {
+    min-width: 0;
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+  .service-card-header {
+    padding-right: 0;
+  }
+  .service-card .btn {
+    white-space: normal;
+  }
+}
+
+/* Tablets / small laptops: 2 columns instead of a cramped 3 */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .service-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.service-cards > * {
+  min-width: 0;
 }

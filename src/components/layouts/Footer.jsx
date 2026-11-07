@@ -28,11 +28,11 @@ function Footer() {
           <div className="footer-links-group seo-links">
             <h4>Expertise</h4>
             <ul>
-              <li><Link to="/services/java-spring-boot-development">Java & Spring Boot</Link></li>
-              <li><Link to="/services/rest-api-development">REST API Development</Link></li>
+              <li><Link to="/services/java-backend-development">Java Backend Development</Link></li>
+              <li><Link to="/services/web-development">Web Development</Link></li>
+              <li><Link to="/services/android-mobile-apps">Android & Mobile Apps</Link></li>
               <li><Link to="/services/mvp-development">MVP Development</Link></li>
-              <li><Link to="/services/payment-api-integrations">API Integrations</Link></li>
-              <li><Link to="/services/react-full-stack-development">Full-Stack Development</Link></li>
+              <li><Link to="/services/bug-fixing-maintenance">Bug Fixing & Maintenance</Link></li>
             </ul>
           </div>
         </div>

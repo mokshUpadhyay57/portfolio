@@ -7,13 +7,14 @@ import ServicesOverview from "../components/sections/src/ServicesOverview";
 import Skills from "../components/sections/src/Skills";
 import FeaturedProjects from "../components/sections/src/FeaturedProjects";
 import Recommendations from "../components/sections/src/Recommendations";
+import HowIWork from "../components/sections/src/HowIWork";
 import Contact from "../components/sections/src/Contact";
 
 const roles = [
   {
     title: "Software Engineer",
     subtitle: "Building scalable backend architectures...",
-    stack: "Java | Spring Boot | MySQL", 
+    stack: "Java | Spring MVC | Hibernate",
   },
   {
     title: "Web Solutions",
@@ -24,7 +25,7 @@ const roles = [
   {
     title: "Mobile Development",
     subtitle: "Creating seamless mobile experiences...",
-    stack: "Kotlin | Flutter | React Native",
+    stack: "Kotlin | Flutter | Firebase",
   },
 ];
 
@@ -32,7 +33,7 @@ function Home() {
   useSEO({
     title: "Home",
     description: "Welcome to the portfolio of Moksh Upadhyay, a Java Backend Engineer and Full Stack Developer. Discover projects, services, and technical expertise.",
-    keywords: "Moksh Upadhyay, Home, Java Backend, Full Stack Developer, Spring Boot, React Portfolio",
+    keywords: "Moksh Upadhyay, Home, Java Backend, Full Stack Developer, Spring MVC, Hibernate, React Portfolio",
     canonical: "https://mokshcodes.netlify.app/",
     jsonLd: {
       "@context": "https://schema.org",
@@ -46,7 +47,8 @@ function Home() {
       ],
       "knowsAbout": [
         "Java",
-        "Spring Boot",
+        "Spring MVC",
+        "Hibernate",
         "React",
         "Node.js",
         "Flutter",
@@ -151,6 +153,7 @@ function Home() {
       <Skills />
       <FeaturedProjects />
       <Recommendations />
+      <HowIWork />
       <Contact />
 
     </div>

@@ -8,7 +8,7 @@ function About() {
 
         <div className="about-content">
           <p className="about-intro">
-            Backend-focused Software Development Engineer with 1.5+ years of
+            Backend-focused Software Development Engineer with 2+ years of
             professional experience building and optimizing production-grade
             systems and API-driven applications.
           </p>
@@ -29,13 +29,9 @@ function About() {
           </p>
 
           <p>
-            In a research and development capacity at CDAC, I specialized in OCR
-            system optimization for archival documents. I engineered structured
-            data preprocessing pipelines that significantly enhanced text
-            recognition accuracy and automated historical document digitization.
-            Additionally, I curated high-precision datasets for YOLO-based
-            object detection, directly improving verification performance and
-            recognition reliability.
+            Earlier, as an R&D intern at CDAC, I worked on OCR accuracy for
+            archival documents and dataset preparation for signature
+            verification.
           </p>
 
           <p>

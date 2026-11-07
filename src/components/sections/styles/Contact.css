@@ -121,3 +121,11 @@
     max-width: 200px;
   }
 }
+
+/* Comfortable tap targets for the direct-contact links on touch screens */
+@media (max-width: 768px) {
+  .contact-container > p a {
+    display: inline-block;
+    padding: 0.5rem 0.25rem;
+  }
+}

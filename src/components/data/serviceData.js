@@ -2,38 +2,56 @@
 
 export const servicesData = [
   {
-    title: "Java Spring Boot Development",
-    subtitle: "Enterprise-grade Spring Boot applications.",
-    idealFor: "Enterprises needing robust, scalable Java backend systems.",
+    title: "Web Development",
+    subtitle: "Landing pages, business websites and full e-commerce stores with third-party integrations.",
+    idealFor: "Businesses and founders who need a fast, professional web presence or an online store.",
     included: [
-      "Spring Boot APIs",
-      "Microservices architecture",
-      "Spring Security",
-      "Database integration"
+      "Landing pages & business websites",
+      "Full e-commerce with payment gateway",
+      "Third-party API integrations",
+      "Responsive, SEO-friendly design"
     ],
     result: [
-      "Scalable application",
-      "Secure backend",
-      "High performance"
+      "Live, mobile-friendly website",
+      "Working checkout and payments",
+      "Easy to maintain and extend"
     ],
-    cta: "Start Spring Boot Project"
+    cta: "Start a Web Project"
   },
   {
-    title: "REST API Development",
-    subtitle: "Custom API design and implementation.",
-    idealFor: "Businesses needing to expose data or connect systems securely.",
+    title: "Android & Mobile Apps",
+    subtitle: "Native Android (Kotlin) and cross-platform (Flutter) apps connected to a live backend.",
+    idealFor: "Startups and businesses launching an app on the Play Store.",
     included: [
-      "API design & documentation",
-      "Secure endpoints",
-      "Rate limiting",
-      "Third-party integrations"
+      "Native Android with Kotlin",
+      "Hybrid apps with Flutter",
+      "Firebase / REST API integration",
+      "Authentication and store-ready builds"
     ],
     result: [
-      "Reliable API",
-      "Easy integration",
-      "Secure data flow"
+      "Installable app build",
+      "Smooth user experience",
+      "Connected to live backend",
+      "Ready for release"
     ],
-    cta: "Build an API"
+    cta: "Start a Mobile Project"
+  },
+  {
+    title: "Java Backend Development",
+    subtitle: "Spring MVC, Hibernate aur REST APIs se scalable backend systems aur integrations.",
+    idealFor: "Teams needing reliable Java backends, APIs and third-party or payment integrations.",
+    included: [
+      "Spring MVC & Hibernate backends",
+      "REST API design & documentation",
+      "Third-party and payment integrations",
+      "MySQL / PostgreSQL schema & tuning"
+    ],
+    result: [
+      "Scalable backend",
+      "Clean, documented APIs",
+      "Reliable integrations"
+    ],
+    cta: "Build a Java Backend"
   },
   {
     title: "MVP Development",
@@ -53,72 +71,20 @@ export const servicesData = [
     cta: "Launch Your MVP"
   },
   {
-    title: "Payment & API Integrations",
-    subtitle: "Connecting external systems and payment gateways.",
-    idealFor: "Platforms requiring Stripe, PayPal, or custom third-party data.",
+    title: "Bug Fixing & Maintenance",
+    subtitle: "Resolving issues and improving performance of existing applications.",
+    idealFor: "Existing applications with bugs, broken features or slow load times.",
     included: [
-      "Payment gateway setup",
-      "Webhook handling",
-      "API synchronization",
-      "Security best practices"
-    ],
-    result: [
-      "Seamless payments",
-      "Automated data flow",
-      "Reliable connectivity"
-    ],
-    cta: "Integrate APIs"
-  },
-  {
-    title: "Bug Fixing & Optimization",
-    subtitle: "Resolving issues and improving performance.",
-    idealFor: "Existing applications with bugs or slow load times.",
-    included: [
+      "Bug diagnosis & fixes",
       "Code review & refactoring",
       "Database optimization",
-      "Performance tuning",
-      "Security patches"
+      "Ongoing maintenance"
     ],
     result: [
       "Faster load times",
       "Stable application",
       "Reduced technical debt"
     ],
-    cta: "Optimize App"
-  },
-  {
-    title: "React & Full-Stack Development",
-    subtitle: "End-to-end web applications.",
-    idealFor: "Businesses needing complete custom web solutions.",
-    included: [
-      "Frontend with React",
-      "Backend connectivity",
-      "Responsive design",
-      "State management"
-    ],
-    result: [
-      "Dynamic user interface",
-      "Smooth interactions",
-      "Complete web platform"
-    ],
-    cta: "Build Full-Stack App"
-  },
-  {
-    title: "Mobile Development",
-    subtitle: "High-performance Android & iOS applications.",
-    idealFor: "Startups & Businesses launching MVPs",
-    included: [
-      "Native mobile apps",
-      "Backend API integration",
-      "User authentication",
-      "Store-ready builds"
-    ],
-    result: [
-      "Installable app build",
-      "Smooth user experience",
-      "Connected to live backend",
-      "Ready for release"
-    ],
-    cta: "Start Mobile Project"
+    cta: "Fix My App"
   }
 ];

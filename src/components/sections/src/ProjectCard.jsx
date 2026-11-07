@@ -13,8 +13,9 @@ const ProjectCard = ({ project }) => {
     github, 
     website, 
     android, 
-    image, 
-    comingSoon 
+    image,
+    comingSoon,
+    inProgress
   } = project;
 
   return (
@@ -30,11 +31,13 @@ const ProjectCard = ({ project }) => {
             loading="lazy"
           />
           {comingSoon && <span className="badge">Coming Soon</span>}
+          {inProgress && <span className="badge">In Progress</span>}
         </div>
       ) : (
         <div className="project-image-placeholder">
           <span>{title}</span>
           {comingSoon && <span className="badge">Coming Soon</span>}
+          {inProgress && <span className="badge">In Progress</span>}
         </div>
       )}
       
